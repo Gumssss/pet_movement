@@ -1,0 +1,21 @@
+{
+  "key": "qwen38_27b",
+  "stage": "pilot",
+  "peak_lr": 0.0001,
+  "optimizer_step": 3,
+  "total_steps": 3,
+  "sampler_epoch": 1,
+  "train_answer_nll": 0.5397630446665996,
+  "learning_rates": [
+    0.0,
+    0.0
+  ],
+  "wall_seconds": 100.32930946210399,
+  "microbatch_per_gpu": 96,
+  "gradient_accumulation": 2,
+  "effective_batch_size": 192,
+  "actual_samples_this_update": 192,
+  "cuda_visible_devices": "GPU-0ded27d3-e266-f20b-2476-f2980be2980e",
+  "peak_allocated_GiB": 74.49768257141113,
+  "peak_reserved_GiB": 83.71875
+}

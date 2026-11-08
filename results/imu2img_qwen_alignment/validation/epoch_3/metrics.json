@@ -1,0 +1,172 @@
+{
+  "macro_f1": 0.12874986111263353,
+  "balanced_accuracy": 0.26788249178935863,
+  "accuracy": 0.29490162894013117,
+  "model": "Qwen3.5-4B",
+  "split": "validation",
+  "windows": 4727,
+  "inference_backend": "vllm",
+  "prompt_language": "en",
+  "status_counts": {
+    "ok": 4727
+  },
+  "parse_success_rate": 1.0,
+  "failures_counted_as_incorrect": true,
+  "prediction_counts": {
+    "Walking": 1775,
+    "Sitting": 2925,
+    "Lying chest": 22,
+    "Sniffing": 5
+  },
+  "classification_report": {
+    "Galloping": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 12.0
+    },
+    "Lying chest": {
+      "precision": 0.36363636363636365,
+      "recall": 0.007619047619047619,
+      "f1-score": 0.014925373134328358,
+      "support": 1050.0
+    },
+    "Sitting": {
+      "precision": 0.3193162393162393,
+      "recall": 0.9368104312938816,
+      "f1-score": 0.47628760836308004,
+      "support": 997.0
+    },
+    "Sniffing": {
+      "precision": 1.0,
+      "recall": 0.007194244604316547,
+      "f1-score": 0.014285714285714285,
+      "support": 695.0
+    },
+    "Standing": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 859.0
+    },
+    "Trotting": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 630.0
+    },
+    "Walking": {
+      "precision": 0.25183098591549297,
+      "recall": 0.9235537190082644,
+      "f1-score": 0.39575033200531207,
+      "support": 484.0
+    },
+    "accuracy": 0.29490162894013117,
+    "macro avg": {
+      "precision": 0.27639765555258516,
+      "recall": 0.26788249178935863,
+      "f1-score": 0.12874986111263353,
+      "support": 4727.0
+    },
+    "weighted avg": {
+      "precision": 0.32093561870098813,
+      "recall": 0.29490162894013117,
+      "f1-score": 0.14639350950881702,
+      "support": 4727.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      12,
+      0
+    ],
+    [
+      0,
+      8,
+      988,
+      0,
+      0,
+      0,
+      54,
+      0
+    ],
+    [
+      0,
+      4,
+      934,
+      0,
+      0,
+      0,
+      59,
+      0
+    ],
+    [
+      0,
+      3,
+      187,
+      5,
+      0,
+      0,
+      500,
+      0
+    ],
+    [
+      0,
+      7,
+      779,
+      0,
+      0,
+      0,
+      73,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      630,
+      0
+    ],
+    [
+      0,
+      0,
+      37,
+      0,
+      0,
+      0,
+      447,
+      0
+    ]
+  ],
+  "confusion_rows": [
+    "Galloping",
+    "Lying chest",
+    "Sitting",
+    "Sniffing",
+    "Standing",
+    "Trotting",
+    "Walking"
+  ],
+  "confusion_columns": [
+    "Galloping",
+    "Lying chest",
+    "Sitting",
+    "Sniffing",
+    "Standing",
+    "Trotting",
+    "Walking",
+    "__INVALID__"
+  ],
+  "mean_input_tokens": 200.0,
+  "total_input_tokens": 945400,
+  "total_generated_tokens": 36067
+}

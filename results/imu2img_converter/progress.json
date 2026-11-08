@@ -1,0 +1,9 @@
+{
+  "epoch": 10,
+  "epochs": 10,
+  "train_windows_seen_this_epoch": 16461,
+  "train_windows_per_epoch": 16461,
+  "train_loss": 0.26954652469051427,
+  "wall_seconds": 43.24245255405549,
+  "cuda_peak_allocated_GiB": 11.579208374023438
+}

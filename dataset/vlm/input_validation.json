@@ -1,0 +1,30 @@
+{
+  "test_images": 3708,
+  "fixed_window_alignment": true,
+  "all_image_hashes_verified": true,
+  "dimensions": [
+    1280,
+    1152
+  ],
+  "lossless_webp_rgb": true,
+  "private_metadata_absent": true,
+  "anonymous_filenames": true,
+  "training_only_scale_recomputed": true,
+  "same_prompt_for_both_models": true,
+  "original_baseline_and_split_fingerprints_unchanged": true,
+  "validation_seconds": 0.6018818310694769,
+  "frozen_output_parser_cases_checked": 8,
+  "render_code_sha256": "18671d8bcdb94979fe4813f19db52a0bcc300bf85e332734a56e5b6525ddbdf2",
+  "render_versions": {
+    "matplotlib": "3.11.1",
+    "numpy": "2.3.5",
+    "pillow": "12.3.0"
+  },
+  "multimodal_visual_tokens_per_image": 1440,
+  "actual_model_input_tokens_per_sample": [
+    2096,
+    2096
+  ],
+  "nonconstant_visual_payload_verified": true,
+  "unique_test_image_hashes": 3708
+}

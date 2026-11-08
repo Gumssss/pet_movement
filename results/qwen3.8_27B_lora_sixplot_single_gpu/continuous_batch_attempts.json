@@ -1,0 +1,17 @@
+[
+  {
+    "microbatch": 12,
+    "status": "insufficient_capacity",
+    "log": "results/qwen3.8_27B_lora_sixplot_single_gpu/single_gpu_check_batch12.log"
+  },
+  {
+    "microbatch": 11,
+    "status": "insufficient_capacity",
+    "log": "results/qwen3.8_27B_lora_sixplot_single_gpu/single_gpu_check_batch11.log"
+  },
+  {
+    "microbatch": 10,
+    "status": "passed",
+    "log": "results/qwen3.8_27B_lora_sixplot_single_gpu/single_gpu_check_batch10.log"
+  }
+]

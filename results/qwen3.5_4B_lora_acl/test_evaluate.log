@@ -1,0 +1,10 @@
+{
+  "model": "Qwen3.5-4B-lora",
+  "test_windows": 3708,
+  "macro_f1": 0.6735484200473429,
+  "balanced_accuracy": 0.6764632223756261,
+  "accuracy": 0.6232470334412082,
+  "status_counts": {
+    "ok": 3708
+  }
+}

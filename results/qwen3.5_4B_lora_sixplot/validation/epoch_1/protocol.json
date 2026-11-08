@@ -1,0 +1,54 @@
+{
+  "model": "Qwen3.5-4B-lora-sixplot",
+  "base_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "key": "sixplot",
+  "split": "validation",
+  "classes": [
+    "Galloping",
+    "Lying chest",
+    "Sitting",
+    "Sniffing",
+    "Standing",
+    "Trotting",
+    "Walking"
+  ],
+  "expected_windows": 4727,
+  "epoch": 1,
+  "inference_backend": "vllm",
+  "vllm_version": "0.26.0",
+  "qwen_base_weights_frozen": true,
+  "lora_r": 4,
+  "lora_alpha": 8,
+  "converter_updated": false,
+  "prompt_sha256": "ac4659d4c4f2d1366c7d34a36b81ab35cb50dcb2acbe598f3ffbe0bad541f209",
+  "image_manifest_sha256": "2ba0d6e46d868b8b1e4114f95adbd65fb185b3072303f1257a9760b545064424",
+  "image_dir": "dataset/vlm/supervised",
+  "image_size": [
+    1280,
+    1152
+  ],
+  "visual_tokens": 1440,
+  "adapter_sha256": "98ae982c80775a37119c6735ac74f96de251c7fb59377c6a7b7f0c68d8eda553",
+  "training_protocol_sha256": "2a596c2ac25a7ff890bb7b726267901ccbcbe4aa4dcc603042a8fcae365d5f9f",
+  "windows_sha256": "04b09eea20d60f63c581c782db5accb4750678f3f5e8a061dc55f01dcd0f9202",
+  "split_sha256": "3c8bc060f4f31da0d012a3ae419de626f3438bbaf23e3f7aa37dc7695aa35862",
+  "generation": {
+    "temperature": 0,
+    "enable_thinking": false,
+    "max_new_tokens": 32,
+    "seed": 20261101,
+    "guided_decoding": false
+  },
+  "engine": {
+    "dtype": "bfloat16",
+    "tensor_parallel_size": 1,
+    "max_model_len": 4096,
+    "max_num_seqs": 32,
+    "max_num_batched_tokens": 8192,
+    "gpu_memory_utilization": 0.85,
+    "enable_prefix_caching": false,
+    "min_pixels": 65536,
+    "max_pixels": 1474560,
+    "flashinfer_sampler": false
+  }
+}

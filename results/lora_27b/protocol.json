@@ -1,0 +1,69 @@
+{
+  "state": "authorized_before_new_validation_outputs",
+  "start_date": "2026-11-05",
+  "keys": [
+    "qwen35_27b",
+    "qwen38_27b"
+  ],
+  "mode": "joint",
+  "base_models": {
+    "qwen35_27b": {
+      "name": "Qwen3.5-27B",
+      "revision": "fc05daec18b0a78c049392ed2e771dde82bdf654"
+    },
+    "qwen38_27b": {
+      "name": "Qwen3.8-27B",
+      "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0"
+    }
+  },
+  "lora": {
+    "r": 4,
+    "alpha": 8,
+    "dropout": 0.05,
+    "target_scopes": [
+      "ViT",
+      "visual_projection",
+      "language_attention"
+    ],
+    "initialization": "Fresh from each original BF16 base, reseed before creating LoRA; no prior adapters"
+  },
+  "warm_converter": "models/IMU2IMG-Qwen3.5-4B-aligned/converter.safetensors",
+  "warm_converter_sha256": "3be624934ae5d8fefb282dc61159ecdc5b7b9ad939777d2b80a5fb7cfdb604d3",
+  "lr_candidates": [
+    0.0001,
+    3e-05,
+    1e-05
+  ],
+  "pilot_optimizer_steps": 100,
+  "pilot_sampling": "Cycle training-only DistributedSampler if exhausted; same seed/order/initialization for every LR",
+  "lr_selection": "Full4727-window validation greedy vLLM macro-F1 after100 optimizer updates; lowest LR on exact ties; test excluded",
+  "formal_epochs": 3,
+  "formal_initialization": "Restart from the original base + same fresh LoRA + same warm converter after LR selection",
+  "checkpoint_selection": "Full validation greedy vLLM macro-F1 across3 formal epochs; earliest on ties; test excluded",
+  "scheduler": "10% linear warmup +90% cosine decay to zero; applied separately to each100-step pilot and full formal run",
+  "optimizer": "AdamW",
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "epsilon": 1e-08,
+  "weight_decay": 0.01,
+  "max_grad_norm": 1.0,
+  "converter_lr_ratio": 0.05,
+  "gradient_checkpointing": true,
+  "use_reentrant": false,
+  "batch_rule": "Largest common stable per-GPU microbatch verified on both models; at least2GiB reserved headroom; two-GPU DDP, no extra accumulation",
+  "world_size": 2,
+  "gradient_accumulation": 1,
+  "precision": "BF16 base/forward; FP32 LoRA/converter/AdamW; fixed8bit STE images",
+  "seed": 20261101,
+  "train_windows": 16461,
+  "validation_windows": 4727,
+  "test_windows": 3708,
+  "windows_sha256": "04b09eea20d60f63c581c782db5accb4750678f3f5e8a061dc55f01dcd0f9202",
+  "splits_sha256": "3c8bc060f4f31da0d012a3ae419de626f3438bbaf23e3f7aa37dc7695aa35862",
+  "cache_sha256": "0be823f51ecae5b5e6a11460ce7f2cb5f3a4294b12a64d19f1a9e12183e6369f",
+  "prompt_sha256": "3c7e5c664620114df7b8a010f5c4f8736ba164f504991aa8ecf7859b437805a1",
+  "label_budget": "Same16461 labeled training windows reused for pilots/full training and prior converter training; all extra optimization/validation compute is recorded",
+  "test_note": "Fixed dog-disjoint test cohort has been viewed historically; no new test feedback used for LR or checkpoint selection"
+}

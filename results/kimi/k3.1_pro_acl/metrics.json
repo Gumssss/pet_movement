@@ -1,0 +1,238 @@
+{
+  "macro_f1": 0.26509172285815746,
+  "balanced_accuracy": 0.40803623972517855,
+  "accuracy": 0.2961165048543689,
+  "model": "kimi-k3.1-pro",
+  "inference_backend": "moonshot_api",
+  "experiment": "imu_2s_acl_shared_axis_zero_shot_en_kimi_api",
+  "test_windows": 3708,
+  "status_counts": {
+    "ok": 3708
+  },
+  "parse_success_rate": 1.0,
+  "failures_counted_as_incorrect": true,
+  "classification_report": {
+    "Galloping": {
+      "precision": 0.1016260162601626,
+      "recall": 0.8620689655172413,
+      "f1-score": 0.18181818181818182,
+      "support": 29.0
+    },
+    "Lying chest": {
+      "precision": 0.3389830508474576,
+      "recall": 0.04602991944764097,
+      "f1-score": 0.08105369807497467,
+      "support": 869.0
+    },
+    "Sitting": {
+      "precision": 0.4,
+      "recall": 0.08118081180811808,
+      "f1-score": 0.13496932515337423,
+      "support": 813.0
+    },
+    "Sniffing": {
+      "precision": 0.35219399538106233,
+      "recall": 0.45454545454545453,
+      "f1-score": 0.39687703318152245,
+      "support": 671.0
+    },
+    "Standing": {
+      "precision": 0.24279538904899137,
+      "recall": 0.5871080139372822,
+      "f1-score": 0.3435270132517839,
+      "support": 574.0
+    },
+    "Trotting": {
+      "precision": 0.36795252225519287,
+      "recall": 0.5961538461538461,
+      "f1-score": 0.45504587155963305,
+      "support": 416.0
+    },
+    "Walking": {
+      "precision": 0.30677290836653387,
+      "recall": 0.22916666666666666,
+      "f1-score": 0.262350936967632,
+      "support": 336.0
+    },
+    "accuracy": 0.2961165048543689,
+    "macro avg": {
+      "precision": 0.3014748403084858,
+      "recall": 0.40803623972517855,
+      "f1-score": 0.26509172285815746,
+      "support": 3708.0
+    },
+    "weighted avg": {
+      "precision": 0.33833713493584544,
+      "recall": 0.2961165048543689,
+      "f1-score": 0.24983183508922086,
+      "support": 3708.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      25,
+      0,
+      0,
+      1,
+      0,
+      3,
+      0,
+      0
+    ],
+    [
+      1,
+      40,
+      56,
+      131,
+      501,
+      82,
+      58,
+      0
+    ],
+    [
+      2,
+      47,
+      66,
+      132,
+      521,
+      26,
+      19,
+      0
+    ],
+    [
+      66,
+      0,
+      4,
+      305,
+      8,
+      217,
+      71,
+      0
+    ],
+    [
+      3,
+      29,
+      38,
+      126,
+      337,
+      18,
+      23,
+      0
+    ],
+    [
+      147,
+      0,
+      0,
+      18,
+      0,
+      248,
+      3,
+      0
+    ],
+    [
+      2,
+      2,
+      1,
+      153,
+      21,
+      80,
+      77,
+      0
+    ]
+  ],
+  "confusion_rows": [
+    "Galloping",
+    "Lying chest",
+    "Sitting",
+    "Sniffing",
+    "Standing",
+    "Trotting",
+    "Walking"
+  ],
+  "confusion_columns": [
+    "Galloping",
+    "Lying chest",
+    "Sitting",
+    "Sniffing",
+    "Standing",
+    "Trotting",
+    "Walking",
+    "__INVALID__"
+  ],
+  "per_dog": {
+    "20": {
+      "macro_f1": 0.19111941112579886,
+      "balanced_accuracy": 0.2729644229785932,
+      "accuracy": 0.25559105431309903,
+      "windows": 313
+    },
+    "21": {
+      "macro_f1": 0.22224287320713884,
+      "balanced_accuracy": 0.32499257489234157,
+      "accuracy": 0.2761904761904762,
+      "windows": 420
+    },
+    "25": {
+      "macro_f1": 0.2758334644981888,
+      "balanced_accuracy": 0.3811057440813967,
+      "accuracy": 0.33053221288515405,
+      "windows": 714
+    },
+    "28": {
+      "macro_f1": 0.23232799680268457,
+      "balanced_accuracy": 0.41123279882451164,
+      "accuracy": 0.2849002849002849,
+      "windows": 351
+    },
+    "51": {
+      "macro_f1": 0.23595242704433791,
+      "balanced_accuracy": 0.34427287393019546,
+      "accuracy": 0.26881720430107525,
+      "windows": 372
+    },
+    "52": {
+      "macro_f1": 0.23313912635602366,
+      "balanced_accuracy": 0.4370796589954868,
+      "accuracy": 0.3125,
+      "windows": 336
+    },
+    "61": {
+      "macro_f1": 0.2450800362555141,
+      "balanced_accuracy": 0.30824707333553997,
+      "accuracy": 0.29867256637168144,
+      "windows": 452
+    },
+    "65": {
+      "macro_f1": 0.30455039325966266,
+      "balanced_accuracy": 0.433522897231312,
+      "accuracy": 0.3013698630136986,
+      "windows": 365
+    },
+    "68": {
+      "macro_f1": 0.24905985911643155,
+      "balanced_accuracy": 0.4347024497084746,
+      "accuracy": 0.3012987012987013,
+      "windows": 385
+    }
+  },
+  "dog_bootstrap_95ci": {
+    "macro_f1": [
+      0.23776924952419906,
+      0.28377420694947075
+    ],
+    "balanced_accuracy": [
+      0.37484657151954365,
+      0.4326131565122812
+    ],
+    "accuracy": [
+      0.27926864332415074,
+      0.31111180642469755
+    ]
+  },
+  "total_input_tokens": 4308696,
+  "total_generated_tokens": 701025,
+  "request_wall_seconds_p50": 9.08196591451997,
+  "request_wall_seconds_p95": 16.90242053827969,
+  "latency_note": "Observed per-request client wall time includes network, provider queueing, inference and transport retry waits; concurrent requests overlap.",
+  "billing_note": "API-reported usage retained per response. Actual charges are provider-side; unanswered network retries may incur extra charges not visible in responses."
+}

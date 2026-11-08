@@ -1,0 +1,20 @@
+{
+  "export_size": [
+    224,
+    224
+  ],
+  "actual_vllm_visual_tokens": 49,
+  "total_input_tokens": 930,
+  "raw_template_tokens_with_one_image_placeholder": 882,
+  "image_grid_thw": [
+    1,
+    14,
+    14
+  ],
+  "merged_visual_grid": [
+    7,
+    7
+  ],
+  "note": "Actual engine prompt token count equals template tokens minus one placeholder plus 49 image tokens; no resizing away from paper grid.",
+  "grid_note": "14x14 pre-merge grid is inferred from square224 image, 16px patch and observed49 merged tokens; engine prompt token accounting verifies49."
+}

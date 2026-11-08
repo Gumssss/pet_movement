@@ -1,0 +1,35 @@
+{
+  "version": "imu2img_learned_rgb_pet_v1",
+  "paper_doi": "10.1145/3714394.3756208",
+  "window_manifest_sha256": "04b09eea20d60f63c581c782db5accb4750678f3f5e8a061dc55f01dcd0f9202",
+  "split_sha256": "3c8bc060f4f31da0d012a3ae419de626f3438bbaf23e3f7aa37dc7695aa35862",
+  "converter_training_protocol_sha256": "55487660acc5e10d0b909e2925c2d79f1c27cf789e3ae3c31e9438ecc6e19225",
+  "converter_weights_sha256": "a8e6f9df2e1a4a743c31f554d1f78274cf2b3de5ed9a1176a67d9368a92a2e6a",
+  "selected_epoch": 7,
+  "width": 224,
+  "height": 224,
+  "input_signal": "Per-time-step RMS sqrt(mean(x^2,y^2,z^2)) separately for acceleration and gyroscope; center crop original indices [2:198] to 196 samples; 49 non-overlapping 4-sample patches.",
+  "image": {
+    "width": 224,
+    "height": 224,
+    "token_grid": [
+      7,
+      7
+    ],
+    "tile_size": [
+      32,
+      32
+    ],
+    "layout": "row-major chronological token order",
+    "channels": {
+      "R": "learned acceleration RMS",
+      "G": "learned gyroscope RMS",
+      "B": "constant missing modality"
+    },
+    "pixel_mapping": "tanh output [-1,1] -> round(127.5*(z+1)) -> uint8; fixed mapping, no per-image rescaling"
+  },
+  "image_format": "WebP lossless RGB; no private metadata",
+  "test_windows": 3708,
+  "out_of_range": "Fixed tanh [-1,1] to uint8 mapping; no adaptive contrast/stretching; numerical range and pixel hashes logged",
+  "supervision_note": "Image converter and ViT were supervised on original training labels; Qwen receives no examples and no training updates."
+}

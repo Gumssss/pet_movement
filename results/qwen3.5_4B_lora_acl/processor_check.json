@@ -1,0 +1,27 @@
+{
+  "input_tokens": 1022,
+  "image_grid_thw": [
+    1,
+    26,
+    32
+  ],
+  "visual_tokens": 208,
+  "export_size": [
+    512,
+    409
+  ],
+  "processed_size": [
+    512,
+    416
+  ],
+  "supervision": "Only JSON answer tokens plus assistant end-of-message EOS. Entire image/user/nonthinking prefix and padding masked with -100.",
+  "target_token_counts": {
+    "Galloping": 9,
+    "Lying chest": 9,
+    "Sitting": 8,
+    "Sniffing": 9,
+    "Standing": 7,
+    "Trotting": 9,
+    "Walking": 7
+  }
+}

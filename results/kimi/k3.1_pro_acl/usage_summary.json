@@ -1,0 +1,14 @@
+{
+  "responses": 3708,
+  "reported_usage_totals": {
+    "prompt_tokens": 4308696,
+    "completion_tokens": 701025,
+    "total_tokens": 5009721,
+    "completion_tokens_details.reasoning_tokens": 622892,
+    "prompt_tokens_details.cache_write_tokens": 3493018,
+    "cached_tokens": 303974,
+    "prompt_tokens_details.cached_tokens": 303974
+  },
+  "transport_retry_attempts": 0,
+  "note": "Only provider-reported usage for received responses; actual invoice may include unobserved retry work. Nested details overlap with top-level totals; do not add them together."
+}

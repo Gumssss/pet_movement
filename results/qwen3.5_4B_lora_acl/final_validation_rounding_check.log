@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/tmp/pet_finish_lora.py", line 229, in <module>
+    if __name__=='__main__':finish()
+                            ^^^^^^^^
+  File "/tmp/pet_finish_lora.py", line 98, in finish
+    merge=verify_merge()
+          ^^^^^^^^^^^^^^
+  File "/tmp/pet_finish_lora.py", line 70, in verify_merge
+    assert torch.equal(actual,expected), (tensor_name,error)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('model.language_model.layers.0.linear_attn.in_proj_a.weight', 0.000244140625)

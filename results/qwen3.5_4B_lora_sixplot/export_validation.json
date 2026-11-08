@@ -1,0 +1,24 @@
+{
+  "selected_epoch": 3,
+  "adapter_sha256": "664be0fe8595155603784ce947329f2231edcca17b59cb21c449fa950aa72a6f",
+  "merged_for_vllm": true,
+  "nonzero_scopes": {
+    "ViT": {
+      "module": "base_model.model.model.visual.blocks.0.attn.qkv",
+      "delta_l1": 806.9811401367188
+    },
+    "visual_projection": {
+      "module": "base_model.model.model.visual.merger.linear_fc1",
+      "delta_l1": 3539.892578125
+    },
+    "language_attention": {
+      "module": "base_model.model.model.language_model.layers.0.linear_attn.out_proj",
+      "delta_l1": 528.541259765625
+    }
+  },
+  "merged_files_sha256": {
+    "model-00001-of-00002.safetensors": "49600c350522ab5c21d40e71e49449363af56efc636f51c4639b2f530e040ab4",
+    "model-00002-of-00002.safetensors": "d6d8d55a2d84d2db243bb007433ffa53d07a38ba293742471386177a27330464"
+  },
+  "source_checkpoint": "models/Qwen3.5-4B-lora-sixplot/checkpoints/epoch_3"
+}

@@ -1,0 +1,7 @@
+{
+  "phase": "engine_initialization",
+  "formal_samples": 0,
+  "reason": "Optional FlashInfer sampler JIT could not find nvcc; /usr/local/cuda absent",
+  "resolution": "VLLM_USE_FLASHINFER_SAMPLER=0; native vLLM sampler, unchanged greedy inference",
+  "log": "attempt_1.log"
+}

@@ -1,0 +1,56 @@
+{
+  "model": "Qwen3.8-27B-lora-imu2img-joint",
+  "key": "qwen38_27b",
+  "stage": "formal",
+  "tag": "3",
+  "split": "validation",
+  "classes": [
+    "Galloping",
+    "Lying chest",
+    "Sitting",
+    "Sniffing",
+    "Standing",
+    "Trotting",
+    "Walking"
+  ],
+  "base_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "expected_windows": 4727,
+  "inference_backend": "vllm",
+  "vllm_version": "0.26.0",
+  "qwen_base_weights_frozen": true,
+  "lora_r": 4,
+  "lora_alpha": 8,
+  "image_dir": "dataset/vlm_imu2img_qwen38_27b_lora_joint/validation/epoch_3",
+  "image_manifest_sha256": "9d242afd747155bdf290dc449e0701a6c20fd17633255dc71deee0f569e182f4",
+  "render_protocol_sha256": "eaca5ae1ca7dd9f0fd1637f492fb5b4c4bbd9204eb98c5af733250c949aeb827",
+  "adapter_sha256": "d28991bef04c671091aaa622e01e92b9632b4c1a40810767127aa7dabe9d2996",
+  "converter_sha256": "972e7c8c07274db9c0a92c78ad3a0a92633aca59feb9580aedf4a4fb9f4dad3d",
+  "training_protocol_sha256": "4af7f1a6ff43a286cf34f2163cfd407ad21cd110dee266e8f8e4ab4999996212",
+  "prompt_sha256": "3c7e5c664620114df7b8a010f5c4f8736ba164f504991aa8ecf7859b437805a1",
+  "windows_sha256": "04b09eea20d60f63c581c782db5accb4750678f3f5e8a061dc55f01dcd0f9202",
+  "splits_sha256": "3c8bc060f4f31da0d012a3ae419de626f3438bbaf23e3f7aa37dc7695aa35862",
+  "image_size": [
+    224,
+    224
+  ],
+  "visual_tokens": 49,
+  "generation": {
+    "temperature": 0,
+    "enable_thinking": false,
+    "max_new_tokens": 32,
+    "seed": 20261101,
+    "guided_decoding": false
+  },
+  "engine": {
+    "dtype": "bfloat16",
+    "tensor_parallel_size": 1,
+    "max_model_len": 4096,
+    "max_num_seqs": 32,
+    "max_num_batched_tokens": 8192,
+    "gpu_memory_utilization": 0.85,
+    "enable_prefix_caching": false,
+    "min_pixels": 50176,
+    "max_pixels": 1474560,
+    "flashinfer_sampler": false
+  }
+}

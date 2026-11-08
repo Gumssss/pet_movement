@@ -1,0 +1,15 @@
+{
+  "key": "qwen35_27b",
+  "stage": "pilot",
+  "tag": "3e-5",
+  "split": "validation",
+  "converter_sha256": "6a2f4dfff31e6d388303f397ecf095f642b732ace1886492a2bfca57c8d63e85",
+  "width": 224,
+  "height": 224,
+  "image_format": "WebP lossless RGB",
+  "blue_channel": 128,
+  "input": "Original2s/200sample windows; acceleration/gyro triaxial RMS, center196 samples,49 chronological4sample patches",
+  "precision": "FP32 converter with BF16 forward, fixed8bit rounding matching STE training forward",
+  "windows_sha256": "04b09eea20d60f63c581c782db5accb4750678f3f5e8a061dc55f01dcd0f9202",
+  "splits_sha256": "3c8bc060f4f31da0d012a3ae419de626f3438bbaf23e3f7aa37dc7695aa35862"
+}

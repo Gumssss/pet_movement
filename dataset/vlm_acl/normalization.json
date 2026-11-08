@@ -1,0 +1,34 @@
+{
+  "fit_split": "train",
+  "fit_windows": 16461,
+  "fit_dogs": 27,
+  "fit_samples_per_channel": 3292200,
+  "channels": [
+    "ANeck_x",
+    "ANeck_y",
+    "ANeck_z",
+    "GNeck_x",
+    "GNeck_y",
+    "GNeck_z"
+  ],
+  "mean": [
+    -0.1751796832855272,
+    -0.44397270044591924,
+    -0.5708856333611895,
+    -0.2169025772484264,
+    -0.3539897019620956,
+    -0.14952282292548755
+  ],
+  "std": [
+    0.3739010691720563,
+    0.6098421323741116,
+    0.33600870360551827,
+    40.069562656922024,
+    48.40023675176171,
+    40.66677947028727
+  ],
+  "ddof": 0,
+  "std_floor": 1e-06,
+  "computation_dtype": "float64",
+  "rule": "one global per-channel training mean/std; reused for all dogs and windows; no target-dog or per-window fitting"
+}

@@ -1,0 +1,27 @@
+{
+  "3.8-27B": {
+    "export_size": [
+      1280,
+      1152
+    ],
+    "processed_size": [
+      1280,
+      1152
+    ],
+    "image_grid_thw": [
+      1,
+      72,
+      80
+    ],
+    "image_tokens": 1440,
+    "total_input_tokens": 2230,
+    "max_pixel_reconstruction_error": 0,
+    "prompt_language": "en",
+    "prompt_sha256": "ac4659d4c4f2d1366c7d34a36b81ab35cb50dcb2acbe598f3ffbe0bad541f209",
+    "processor_class": "Qwen2VLImageProcessor",
+    "vllm_mm_processor_kwargs": {
+      "min_pixels": 65536,
+      "max_pixels": 1474560
+    }
+  }
+}

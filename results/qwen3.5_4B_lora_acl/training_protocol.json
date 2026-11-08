@@ -1,0 +1,98 @@
+{
+  "model": "Qwen3.5-4B-lora",
+  "base_model": "Qwen/Qwen3.5-4B",
+  "base_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "lora": {
+    "r": 4,
+    "alpha": 8,
+    "scaling": 2,
+    "modules_per_scope": {
+      "ViT": 96,
+      "visual_projection": 2,
+      "language_attention": 152
+    },
+    "trainable_parameters": 5226496,
+    "trainable_parameters_by_scope": {
+      "ViT": 1572864,
+      "visual_projection": 59392,
+      "language_attention": 3594240
+    }
+  },
+  "classes": [
+    "Galloping",
+    "Lying chest",
+    "Sitting",
+    "Sniffing",
+    "Standing",
+    "Trotting",
+    "Walking"
+  ],
+  "seed": 20261101,
+  "epochs": 3,
+  "learning_rate": 0.0002,
+  "optimizer": "AdamW",
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "epsilon": 1e-08,
+  "weight_decay": 0.01,
+  "scheduler": "linear",
+  "warmup_ratio": 0.05,
+  "max_grad_norm": 1.0,
+  "lora_dropout": 0.05,
+  "dtype": "bfloat16 base, float32 LoRA/optimizer",
+  "gradient_checkpointing": false,
+  "microbatch_per_gpu": 8,
+  "world_size": 2,
+  "gradient_accumulation": 2,
+  "effective_batch_size": 32,
+  "checkpoint_selection": "Lowest full validation answer-token negative log likelihood across 3 epochs; test never used for selection.",
+  "train_windows": 16461,
+  "validation_windows": 4727,
+  "test_windows": 3708,
+  "training_labels": "All original training windows; unweighted assistant-only token cross entropy; no class resampling/augmentation.",
+  "ddp_sampler_padding_per_epoch": 1,
+  "data_dir": "dataset/vlm_acl",
+  "supervised_manifest_sha256": "c7b89099b6b01014eb1bc1c39f8bbc5049d7ed90c85e41bc77a1d246cc2ea1e3",
+  "prompt_sha256": "10f93478c6dc4ced4084c7f049e70476bb0e1bd9ae7a09f114b1ffa4653a57f8",
+  "windows_sha256": "04b09eea20d60f63c581c782db5accb4750678f3f5e8a061dc55f01dcd0f9202",
+  "split_sha256": "3c8bc060f4f31da0d012a3ae419de626f3438bbaf23e3f7aa37dc7695aa35862",
+  "render_protocol_sha256": "e1c58b73dc297515fdbc6fa3b61cf1872063796476f7e6ccfcbbf15b7177accb",
+  "normalization_sha256": "3db0e4033c204fc657e2b702efe65f85b4a6437ecae299e9c71f758162466ef2",
+  "processor": {
+    "input_tokens": 1022,
+    "image_grid_thw": [
+      1,
+      26,
+      32
+    ],
+    "visual_tokens": 208,
+    "export_size": [
+      512,
+      409
+    ],
+    "processed_size": [
+      512,
+      416
+    ],
+    "supervision": "Only JSON answer tokens plus assistant end-of-message EOS. Entire image/user/nonthinking prefix and padding masked with -100.",
+    "target_token_counts": {
+      "Galloping": 9,
+      "Lying chest": 9,
+      "Sitting": 8,
+      "Sniffing": 9,
+      "Standing": 7,
+      "Trotting": 9,
+      "Walking": 7
+    }
+  },
+  "trainer": "Transformers + PEFT; vLLM for all generated validation/test predictions",
+  "versions": {
+    "torch": "2.11.0",
+    "transformers": "5.14.1",
+    "peft": "0.21.2",
+    "flash-linear-attention": "0.6.0",
+    "fla-core": "0.6.0"
+  }
+}

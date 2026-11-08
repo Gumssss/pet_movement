@@ -1,0 +1,36 @@
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/723 [00:00<?, ?it/s]Loading weights: 100%|██████████| 723/723 [00:00<00:00, 17703.37it/s]
+{
+  "purpose": "Training-only backward check, no optimizer update",
+  "key": "imu2img_frozen",
+  "microbatch": 4,
+  "loss": 0.12615931034088135,
+  "qwen_base_frozen_no_grad_and_versions_unchanged": true,
+  "lora_grad_norms": {
+    "ViT": 1.3409656833652324,
+    "visual_projection": 0.1276108357250265,
+    "language_attention": 1.7804057572268126
+  },
+  "converter_grad_norms": {
+    "encoders": 0.0,
+    "decoders": 0.0
+  },
+  "official_processor_equal": true,
+  "peak_allocated_GiB": 15.242786884307861,
+  "wall_seconds": 1.5647282979916781,
+  "processor": {
+    "prefix_tokens": 200,
+    "grid": [
+      1,
+      14,
+      14
+    ],
+    "visual_tokens": 49,
+    "image_size": [
+      224,
+      224
+    ],
+    "prompt_sha256": "3c7e5c664620114df7b8a010f5c4f8736ba164f504991aa8ecf7859b437805a1"
+  },
+  "code_sha256": "4e33609a5ea09e1b6014d249b0d981dbee44a13a45e94d802542a078f21cbc8e"
+}

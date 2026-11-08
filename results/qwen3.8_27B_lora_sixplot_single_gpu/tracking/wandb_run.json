@@ -1,0 +1,10 @@
+{
+  "mode": "offline",
+  "id": "64qvqpk2",
+  "project": "pet-movement",
+  "group": "qwen38-27b-sixplot-lora",
+  "name": "qwen38-27b-sixplot-formal-lr1e-4",
+  "files_dir": "/home/exet6233/pet/pet_movement/results/qwen3.8_27B_lora_sixplot_single_gpu/tracking/wandb/offline-run-20261105_154422-64qvqpk2/files",
+  "website_url": null,
+  "sdk_version": "0.31.0"
+}

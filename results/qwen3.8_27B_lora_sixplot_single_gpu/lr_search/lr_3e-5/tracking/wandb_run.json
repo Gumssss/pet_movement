@@ -1,0 +1,10 @@
+{
+  "mode": "offline",
+  "id": "q7ty7h3j",
+  "project": "pet-movement",
+  "group": "qwen38-27b-sixplot-lora",
+  "name": "qwen38-27b-sixplot-pilot-lr3e-5",
+  "files_dir": "/home/exet6233/pet/pet_movement/results/qwen3.8_27B_lora_sixplot_single_gpu/lr_search/lr_3e-5/tracking/wandb/offline-run-20261105_123630-q7ty7h3j/files",
+  "website_url": null,
+  "sdk_version": "0.31.0"
+}

@@ -1,0 +1,21 @@
+{
+  "windows_sha256": "04b09eea20d60f63c581c782db5accb4750678f3f5e8a061dc55f01dcd0f9202",
+  "split_sha256": "3c8bc060f4f31da0d012a3ae419de626f3438bbaf23e3f7aa37dc7695aa35862",
+  "render_protocol_sha256": "e1c58b73dc297515fdbc6fa3b61cf1872063796476f7e6ccfcbbf15b7177accb",
+  "normalization_sha256": "3db0e4033c204fc657e2b702efe65f85b4a6437ecae299e9c71f758162466ef2",
+  "manifest_sha256": "c7b89099b6b01014eb1bc1c39f8bbc5049d7ed90c85e41bc77a1d246cc2ea1e3",
+  "counts": {
+    "train": 16461,
+    "validation": 4727
+  },
+  "all_channels": [
+    "ANeck_x",
+    "ANeck_y",
+    "ANeck_z",
+    "GNeck_x",
+    "GNeck_y",
+    "GNeck_z"
+  ],
+  "test_dogs_excluded": true,
+  "rule": "Exact original ACL renderer and training-only normalization/range; train/val only; original test files untouched."
+}

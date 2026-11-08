@@ -1,0 +1,12 @@
+{
+  "test_windows": 3708,
+  "same_acl_images_and_prompt": true,
+  "raw_prediction_metrics_consistent": true,
+  "prior_files_unchanged": 92,
+  "api_model_verified": "kimi-k3.1-pro",
+  "scores": {
+    "macro_f1": 0.26509172285815746,
+    "balanced_accuracy": 0.40803623972517855,
+    "accuracy": 0.2961165048543689
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "test_windows": 3708,
+  "image_hashes_dimensions_metadata_verified": true,
+  "same_acl_prompt_verified": true,
+  "only_test_images_sent": true,
+  "test_window_order_verified": true
+}

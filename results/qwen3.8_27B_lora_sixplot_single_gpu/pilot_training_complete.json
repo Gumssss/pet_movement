@@ -1,0 +1,99 @@
+{
+  "stage": "pilot",
+  "qwen_base_sha256_before": "ab3628e0fc2dd5fc3b51ae3ec07eb8e524a2eff7eb7e69b4e54c5e9b3d164eb5",
+  "qwen_base_sha256_after": "ab3628e0fc2dd5fc3b51ae3ec07eb8e524a2eff7eb7e69b4e54c5e9b3d164eb5",
+  "qwen_base_versions_unchanged": true,
+  "qwen_base_gradients_always_none": true,
+  "initial_lora_sha256": "f51bbf2ea667a9eeef46a331787cebac70dbb419b2f42459886627bc12c3d01e",
+  "trials": [
+    {
+      "stage": "pilot",
+      "peak_lr": 0.0001,
+      "optimizer_steps": 100,
+      "sampler_epochs_started": 1,
+      "sample_presentations": 1000,
+      "input_order_sha256_per_rank": [
+        "dbc23cbee121249dd0460590e4f1232376b0bf6462c7e76a95b92981e6ef4fb6"
+      ],
+      "initial_lora_sha256": "f51bbf2ea667a9eeef46a331787cebac70dbb419b2f42459886627bc12c3d01e",
+      "qwen_base_versions_unchanged": true,
+      "qwen_base_gradients_always_none": true,
+      "session_wall_seconds": 2197.965761465952,
+      "microbatch_per_gpu": 10,
+      "gradient_accumulation": 1,
+      "effective_batch_size": 10,
+      "gpu_uuid": "GPU-0ded27d3-e266-f20b-2476-f2980be2980e",
+      "peak_allocated_GiB": 79.58475303649902,
+      "peak_reserved_GiB": 88.080078125,
+      "common_code_sha256": "d3d7c17bb48f7dc3acc31195d81742633c06470c2c1d4c2ca8d77493c03f345b",
+      "code_sha256": "1f2b28c2805bb29df450985c0e47e418c11c2630e7e302cf91f4ad5b0d887ce2",
+      "checkpoint": {
+        "path": "models/Qwen3.8-27B-lora-sixplot-single-gpu/lr_search/lr_1e-4",
+        "adapter_sha256": "2906c25140a894d4234dbf32e1431871e97f0c15d2079b33539dc67509013bb5"
+      }
+    },
+    {
+      "stage": "pilot",
+      "peak_lr": 3e-05,
+      "optimizer_steps": 100,
+      "sampler_epochs_started": 1,
+      "sample_presentations": 1000,
+      "input_order_sha256_per_rank": [
+        "dbc23cbee121249dd0460590e4f1232376b0bf6462c7e76a95b92981e6ef4fb6"
+      ],
+      "initial_lora_sha256": "f51bbf2ea667a9eeef46a331787cebac70dbb419b2f42459886627bc12c3d01e",
+      "qwen_base_versions_unchanged": true,
+      "qwen_base_gradients_always_none": true,
+      "session_wall_seconds": 2214.718669015914,
+      "microbatch_per_gpu": 10,
+      "gradient_accumulation": 1,
+      "effective_batch_size": 10,
+      "gpu_uuid": "GPU-0ded27d3-e266-f20b-2476-f2980be2980e",
+      "peak_allocated_GiB": 79.5839672088623,
+      "peak_reserved_GiB": 87.943359375,
+      "common_code_sha256": "d3d7c17bb48f7dc3acc31195d81742633c06470c2c1d4c2ca8d77493c03f345b",
+      "code_sha256": "1f2b28c2805bb29df450985c0e47e418c11c2630e7e302cf91f4ad5b0d887ce2",
+      "checkpoint": {
+        "path": "models/Qwen3.8-27B-lora-sixplot-single-gpu/lr_search/lr_3e-5",
+        "adapter_sha256": "f3c9765aaec4e9c0b21f53acb903f25dda8eb8820974c0a8ccafb0a3980f69c5"
+      }
+    },
+    {
+      "stage": "pilot",
+      "peak_lr": 1e-05,
+      "optimizer_steps": 100,
+      "sampler_epochs_started": 1,
+      "sample_presentations": 1000,
+      "input_order_sha256_per_rank": [
+        "dbc23cbee121249dd0460590e4f1232376b0bf6462c7e76a95b92981e6ef4fb6"
+      ],
+      "initial_lora_sha256": "f51bbf2ea667a9eeef46a331787cebac70dbb419b2f42459886627bc12c3d01e",
+      "qwen_base_versions_unchanged": true,
+      "qwen_base_gradients_always_none": true,
+      "session_wall_seconds": 2210.833565214998,
+      "microbatch_per_gpu": 10,
+      "gradient_accumulation": 1,
+      "effective_batch_size": 10,
+      "gpu_uuid": "GPU-0ded27d3-e266-f20b-2476-f2980be2980e",
+      "peak_allocated_GiB": 79.5839672088623,
+      "peak_reserved_GiB": 87.423828125,
+      "common_code_sha256": "d3d7c17bb48f7dc3acc31195d81742633c06470c2c1d4c2ca8d77493c03f345b",
+      "code_sha256": "1f2b28c2805bb29df450985c0e47e418c11c2630e7e302cf91f4ad5b0d887ce2",
+      "checkpoint": {
+        "path": "models/Qwen3.8-27B-lora-sixplot-single-gpu/lr_search/lr_1e-5",
+        "adapter_sha256": "c0fb8286a8dfbfd1c2d83078a824278bd5de6aa70cabb5e4c18518da3730cc9f"
+      }
+    }
+  ],
+  "whole_session_wall_seconds": 6673.12798848399,
+  "completed_utc": "2026-11-05T13:51:04.059033+00:00",
+  "source_sha256": {
+    "scripts/sixplot_qwen38_lora.py": "1f2b28c2805bb29df450985c0e47e418c11c2630e7e302cf91f4ad5b0d887ce2",
+    "scripts/sixplot_qwen38_common.py": "d3d7c17bb48f7dc3acc31195d81742633c06470c2c1d4c2ca8d77493c03f345b",
+    "scripts/sixplot_tracking.py": "dc72b703865270bb35957b733f8e24634abeb9735b3b98abfa99a97414dd1c64",
+    "scripts/train_qwen35_lora.py": "dc45934822d7573947cb4e23932bbcb89d5a6fe61ef1410091f48bc3fd768ff0",
+    "scripts/lora_comparison.py": "616e6642c14ec550eab1b74a73b144437e2228b3083597c93a89150dddc004a9",
+    "scripts/qwen_classify.py": "1d020caef57b93ffb121f6adb9581145ce630b137dd38709d6597de7427e0e24",
+    "scripts/eval_imu2img_alignment.py": "b985bcc1198259993db38bc4e01eec328a6953c53c9c5ea34ef8ad551373257e"
+  }
+}

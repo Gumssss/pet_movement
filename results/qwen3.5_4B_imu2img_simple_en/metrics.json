@@ -1,0 +1,239 @@
+{
+  "macro_f1": 0.023738872403560828,
+  "balanced_accuracy": 0.14285714285714285,
+  "accuracy": 0.09061488673139159,
+  "model": "Qwen3.5-4B",
+  "split": "test",
+  "windows": 3708,
+  "inference_backend": "vllm",
+  "prompt_language": "en",
+  "status_counts": {
+    "ok": 3708
+  },
+  "parse_success_rate": 1.0,
+  "failures_counted_as_incorrect": true,
+  "prediction_counts": {
+    "Walking": 3708
+  },
+  "classification_report": {
+    "Galloping": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 29.0
+    },
+    "Lying chest": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 869.0
+    },
+    "Sitting": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 813.0
+    },
+    "Sniffing": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 671.0
+    },
+    "Standing": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 574.0
+    },
+    "Trotting": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 416.0
+    },
+    "Walking": {
+      "precision": 0.09061488673139159,
+      "recall": 1.0,
+      "f1-score": 0.1661721068249258,
+      "support": 336.0
+    },
+    "accuracy": 0.09061488673139159,
+    "macro avg": {
+      "precision": 0.012944983818770227,
+      "recall": 0.14285714285714285,
+      "f1-score": 0.023738872403560828,
+      "support": 3708.0
+    },
+    "weighted avg": {
+      "precision": 0.008211057697342927,
+      "recall": 0.09061488673139159,
+      "f1-score": 0.015057666637857355,
+      "support": 3708.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      29,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      869,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      813,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      671,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      574,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      416,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      336,
+      0
+    ]
+  ],
+  "confusion_rows": [
+    "Galloping",
+    "Lying chest",
+    "Sitting",
+    "Sniffing",
+    "Standing",
+    "Trotting",
+    "Walking"
+  ],
+  "confusion_columns": [
+    "Galloping",
+    "Lying chest",
+    "Sitting",
+    "Sniffing",
+    "Standing",
+    "Trotting",
+    "Walking",
+    "__INVALID__"
+  ],
+  "mean_input_tokens": 200.0,
+  "total_input_tokens": 741600,
+  "total_generated_tokens": 22248,
+  "per_dog": {
+    "20": {
+      "macro_f1": 0.009700176366843033,
+      "balanced_accuracy": 0.16666666666666666,
+      "accuracy": 0.03514376996805112,
+      "windows": 313
+    },
+    "21": {
+      "macro_f1": 0.04809052333804809,
+      "balanced_accuracy": 0.14285714285714285,
+      "accuracy": 0.20238095238095238,
+      "windows": 420
+    },
+    "25": {
+      "macro_f1": 0.030395136778115502,
+      "balanced_accuracy": 0.14285714285714285,
+      "accuracy": 0.11904761904761904,
+      "windows": 714
+    },
+    "28": {
+      "macro_f1": 0.023871689668034317,
+      "balanced_accuracy": 0.14285714285714285,
+      "accuracy": 0.09116809116809117,
+      "windows": 351
+    },
+    "51": {
+      "macro_f1": 0.0045351473922902496,
+      "balanced_accuracy": 0.14285714285714285,
+      "accuracy": 0.016129032258064516,
+      "windows": 372
+    },
+    "52": {
+      "macro_f1": 0.005012531328320802,
+      "balanced_accuracy": 0.14285714285714285,
+      "accuracy": 0.017857142857142856,
+      "windows": 336
+    },
+    "61": {
+      "macro_f1": 0.04112554112554113,
+      "balanced_accuracy": 0.16666666666666666,
+      "accuracy": 0.168141592920354,
+      "windows": 452
+    },
+    "65": {
+      "macro_f1": 0.017627616599338963,
+      "balanced_accuracy": 0.14285714285714285,
+      "accuracy": 0.06575342465753424,
+      "windows": 365
+    },
+    "68": {
+      "macro_f1": 0.007936507936507936,
+      "balanced_accuracy": 0.14285714285714285,
+      "accuracy": 0.02857142857142857,
+      "windows": 385
+    }
+  },
+  "dog_bootstrap_95ci": {
+    "macro_f1": [
+      0.013304660820240446,
+      0.03308999371216297
+    ],
+    "balanced_accuracy": [
+      0.14285714285714285,
+      0.14285714285714285
+    ],
+    "accuracy": [
+      0.04884064186420221,
+      0.13098500374685598
+    ]
+  }
+}

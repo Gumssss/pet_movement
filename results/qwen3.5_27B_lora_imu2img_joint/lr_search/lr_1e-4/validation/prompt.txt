@@ -1,0 +1,6 @@
+Classify the dog's behavior from this learned IMU representation.
+The image contains a 7-by-7 grid of learned patches, ordered chronologically from left to right and then top to bottom.
+Red contains acceleration-derived features; green contains gyroscope-derived features. Blue is constant because no magnetometer is available.
+Pixel brightness does not directly represent raw signal amplitude.
+Choose exactly one label: Galloping, Lying chest, Sitting, Sniffing, Standing, Trotting, Walking.
+Return only one JSON object in the form {"label":"LABEL"}. Use an exact label from the list. Do not include explanations, extra fields, or Markdown.

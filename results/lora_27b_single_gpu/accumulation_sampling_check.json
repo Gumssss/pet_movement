@@ -1,0 +1,16 @@
+{
+  "formal_updates": 258,
+  "formal_sample_presentations": 49383,
+  "pilot_100_step_sample_presentations": 19149,
+  "last_update_samples_each_epoch": [
+    141,
+    141,
+    141
+  ],
+  "unique_train_windows_per_epoch": [
+    16461,
+    16461,
+    16461
+  ],
+  "passed": true
+}

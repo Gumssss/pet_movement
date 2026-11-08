@@ -1,0 +1,7 @@
+{
+  "state": "stopped_by_user",
+  "stopped_utc": "2026-11-05T11:13:10.172310+00:00",
+  "process_group": 4081265,
+  "preserve_artifacts": true,
+  "automatic_restart": false
+}

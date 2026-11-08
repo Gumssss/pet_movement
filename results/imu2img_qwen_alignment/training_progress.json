@@ -1,0 +1,9 @@
+{
+  "epoch": 3,
+  "optimizer_step": 1545,
+  "total_optimizer_steps": 1545,
+  "train_answer_nll_so_far": 0.2077714045856597,
+  "learning_rate": 0.0,
+  "wall_seconds": 601.964780679089,
+  "cuda_peak_allocated_GiB_rank0": 25.844521522521973
+}

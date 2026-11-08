@@ -1,0 +1,12 @@
+{
+  "key": "imu2img_frozen",
+  "epoch": 1,
+  "optimizer_step": 515,
+  "total_steps": 1545,
+  "train_answer_nll": 0.1094549440370757,
+  "learning_rates": [
+    0.00014042263122017725
+  ],
+  "wall_seconds": 294.6663479169365,
+  "peak_allocated_GiB_rank0": 15.399023532867432
+}

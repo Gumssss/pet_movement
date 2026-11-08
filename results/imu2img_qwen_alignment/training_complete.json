@@ -1,0 +1,13 @@
+{
+  "epochs": 3,
+  "optimizer_steps": 1545,
+  "trainable_parameters": 835584,
+  "qwen_trainable_parameters": 0,
+  "qwen_in_memory_sha256_before": "83798a04335da0c1e533fca5a2bd595ddf75782fe2d12af353478bd3d4879bb0",
+  "qwen_in_memory_sha256_after": "83798a04335da0c1e533fca5a2bd595ddf75782fe2d12af353478bd3d4879bb0",
+  "qwen_parameter_versions_unchanged": true,
+  "session_wall_seconds": 629.011219029082,
+  "session_optimizer_steps": 1545,
+  "code_sha256": "c1c386bf19fdea9042c95fc6f4ec89dd3875cb0f1488c6fbf36590c4b1b82e85",
+  "checkpoint_selection_pending": "Full validation vLLM macro-F1 over3 checkpoints; no test used"
+}

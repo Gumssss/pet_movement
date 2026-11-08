@@ -1,0 +1,10 @@
+RENDER VALIDATION 1
+RENDER VALIDATION 2
+RENDER VALIDATION 3
+START FULL VALIDATION SELECTION AND TEST
+Traceback (most recent call last):
+  File "/tmp/pet_alignment_pipeline.py", line 16, in <module>
+    subprocess.run([PY,'-B','scripts/eval_imu2img_alignment.py','aligned-all','--device','cuda:0'],cwd=ROOT,stdout=f,stderr=subprocess.STDOUT,check=True)
+  File "/home/exet6233/miniconda3/envs/ecg/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/home/exet6233/pet/pet_movement/.venv/bin/python', '-B', 'scripts/eval_imu2img_alignment.py', 'aligned-all', '--device', 'cuda:0']' returned non-zero exit status 1.

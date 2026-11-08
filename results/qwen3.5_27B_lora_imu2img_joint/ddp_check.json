@@ -1,0 +1,23 @@
+{
+  "stage": "pilot",
+  "peak_lr": 0.0001,
+  "optimizer_steps": 3,
+  "sampler_epochs_started": 1,
+  "sample_presentations": 576,
+  "input_order_sha256_per_rank": [
+    "83d5d58547a55b457d5624fec58f83ee8d4ad738a7d9eb97fd43b00a09e45762",
+    "2f8709a27511e13549c7fdf738b29cb71be578b2d8b6c766e30284d6bedf28ef"
+  ],
+  "initial_lora_sha256": "f51bbf2ea667a9eeef46a331787cebac70dbb419b2f42459886627bc12c3d01e",
+  "warm_converter_sha256": "3be624934ae5d8fefb282dc61159ecdc5b7b9ad939777d2b80a5fb7cfdb604d3",
+  "qwen_base_versions_unchanged": true,
+  "qwen_base_gradients_always_none": true,
+  "session_wall_seconds": 50.141179780010134,
+  "peak_allocated_GiB_rank0": 74.49768543243408,
+  "peak_reserved_GiB_rank0": 80.919921875,
+  "common_code_sha256": "1406d23d540173548e99a2bede8d5d667e5461990df1fb45d3c0afeed1c8f88e",
+  "code_sha256": "29fe19f1e64b50592fd0f2203ffd41d6acdaeaf0aeb1992cbd5ee1d1efa5fb81",
+  "microbatch_per_gpu": 96,
+  "effective_batch_size": 192,
+  "technical_only": true
+}

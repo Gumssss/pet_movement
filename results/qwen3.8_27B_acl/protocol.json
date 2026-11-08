@@ -1,0 +1,63 @@
+{
+  "experiment": "imu_2s_acl_shared_axis_zero_shot_en",
+  "model": "Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "classes": [
+    "Galloping",
+    "Lying chest",
+    "Sitting",
+    "Sniffing",
+    "Standing",
+    "Trotting",
+    "Walking"
+  ],
+  "prompt_sha256": "10f93478c6dc4ced4084c7f049e70476bb0e1bd9ae7a09f114b1ffa4653a57f8",
+  "render_protocol_sha256": "e1c58b73dc297515fdbc6fa3b61cf1872063796476f7e6ccfcbbf15b7177accb",
+  "research_sha256": "584cf1a9a9e64cc1b9462c0bfd0b7146a64cc381527c6536494e244c9d232778",
+  "windows_sha256": "04b09eea20d60f63c581c782db5accb4750678f3f5e8a061dc55f01dcd0f9202",
+  "planned_inputs_sha256": "54d8b75257b697e1911519451aad648943bad724d7dd84b7d7853dea1509316c",
+  "evaluation_split": "test",
+  "expected_windows": 3708,
+  "training_examples": 0,
+  "generation": {
+    "do_sample": false,
+    "enable_thinking": false,
+    "max_new_tokens": 32,
+    "dtype": "bfloat16"
+  },
+  "parsing": "exact label-only JSON; optional enclosing fence; casefold label matching; failures counted wrong",
+  "out_of_range_policy": "training-fixed shared limits; clipped display with colored boundary triangles; per-channel counts and standardized min/max logged",
+  "inference_backend": "vllm",
+  "backend_version": "0.26.0",
+  "engine": {
+    "tensor_parallel_size": 1,
+    "max_model_len": 4096,
+    "max_num_seqs": 32,
+    "max_num_batched_tokens": 8192,
+    "gpu_memory_utilization": 0.85,
+    "enable_prefix_caching": false,
+    "quantization": null,
+    "speculative_decoding": false,
+    "guided_decoding": false,
+    "flashinfer_sampler": false,
+    "sampler": "vllm_native"
+  },
+  "timing_scope": "vLLM engine call includes internal preprocessing, scheduling, GPU execution and detokenization",
+  "prompt_language": "en",
+  "model_repo_id": "Qwen/Qwen3.8-27B",
+  "prompt_source_file": "dataset/vlm_acl/prompt.txt",
+  "research_source_file": "dataset/vlm_acl/method.md",
+  "processor_check_sha256": "a55d68a19d734f221db66d238e42a9feba1959b8e2bdae766d136fb5f1b75010",
+  "images_manifest_sha256": "c041b9b33cbcb73c99398a347221890b93d6bc62e00bc5f9104451603fbee839",
+  "comparison_note": "Same Qwen3.8-27B, English behavioral priors, vLLM and test windows; changes include channel-wise training standardization, shared-axis overlay, paper-size image and matching visual-description text. This is not a full few-shot/VisGen reproduction.",
+  "data_dir": "dataset/vlm_acl",
+  "input_image_size": [
+    512,
+    409
+  ],
+  "processor_grid": [
+    1,
+    26,
+    32
+  ]
+}

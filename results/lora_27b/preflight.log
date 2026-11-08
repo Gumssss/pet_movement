@@ -1,0 +1,2 @@
+RUN results/qwen3.5_27B_lora_imu2img_joint/ddp_check.log
+RUN results/qwen3.8_27B_lora_imu2img_joint/ddp_check.log

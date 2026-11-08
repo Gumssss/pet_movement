@@ -1,0 +1,54 @@
+{
+  "experiment": "imu_2s_acl_shared_axis_zero_shot_en_kimi_api",
+  "model": "kimi-k3.1-pro",
+  "model_revision": null,
+  "revision_note": "Provider model alias; server weights/revision and internal inference framework are not inspectable.",
+  "base_url": "https://api.moonshot.ai/v1",
+  "inference_backend": "moonshot_api",
+  "evaluation_split": "test",
+  "expected_windows": 3708,
+  "training_examples": 0,
+  "classes": [
+    "Galloping",
+    "Lying chest",
+    "Sitting",
+    "Sniffing",
+    "Standing",
+    "Trotting",
+    "Walking"
+  ],
+  "prompt_language": "en",
+  "data_dir": "dataset/vlm_acl",
+  "prompt_sha256": "10f93478c6dc4ced4084c7f049e70476bb0e1bd9ae7a09f114b1ffa4653a57f8",
+  "render_protocol_sha256": "e1c58b73dc297515fdbc6fa3b61cf1872063796476f7e6ccfcbbf15b7177accb",
+  "normalization_sha256": "3db0e4033c204fc657e2b702efe65f85b4a6437ecae299e9c71f758162466ef2",
+  "images_manifest_sha256": "c041b9b33cbcb73c99398a347221890b93d6bc62e00bc5f9104451603fbee839",
+  "windows_sha256": "04b09eea20d60f63c581c782db5accb4750678f3f5e8a061dc55f01dcd0f9202",
+  "split_sha256": "3c8bc060f4f31da0d012a3ae419de626f3438bbaf23e3f7aa37dc7695aa35862",
+  "input_image_size": [
+    512,
+    409
+  ],
+  "image_mime_type": "image/webp",
+  "generation": {
+    "reasoning_effort": "low",
+    "max_tokens": 4096,
+    "thinking": "always enabled by provider",
+    "temperature": "provider-fixed 1.0; omitted in request",
+    "top_p": "provider-fixed 0.95; omitted in request",
+    "n": 1,
+    "seed": null,
+    "tools": false,
+    "guided_decoding": false
+  },
+  "payload": "One test image encoded as a WebP data URL and the unchanged English prompt; no filename, dog ID, Task, window ID or truth sent.",
+  "parsing": "Same exact label-only JSON parser as Qwen; only final message.content parsed; failures count as incorrect; no semantic retries.",
+  "transport_retry_policy": "At most 5 attempts for 429, 5xx and network failures; identical payload, exponential backoff. Network retries can duplicate billable server work.",
+  "comparison_note": "Same ACL images, prompt and test windows as Qwen3.8-27B ACL. Model, provider image preprocessing, reasoning, sampling, output budget and execution infrastructure differ; API server processing/resolution is not inspectable.",
+  "documentation": [
+    "https://platform.kimi.ai/docs/get-your-api-key",
+    "https://platform.kimi.com/docs/guide/kimi-k3-1-pro-quickstart",
+    "https://platform.kimi.com/docs/api/models-overview",
+    "https://platform.kimi.com/docs/guide/use-kimi-vision-model"
+  ]
+}

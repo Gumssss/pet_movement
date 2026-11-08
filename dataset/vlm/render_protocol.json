@@ -1,0 +1,88 @@
+{
+  "version": "imu_2s_v1",
+  "window_manifest_sha256": "04b09eea20d60f63c581c782db5accb4750678f3f5e8a061dc55f01dcd0f9202",
+  "split_sha256": "3c8bc060f4f31da0d012a3ae419de626f3438bbaf23e3f7aa37dc7695aa35862",
+  "channels": [
+    "ANeck_x",
+    "ANeck_y",
+    "ANeck_z",
+    "GNeck_x",
+    "GNeck_y",
+    "GNeck_z"
+  ],
+  "colors": [
+    "#0072B2",
+    "#D55E00",
+    "#009E73",
+    "#CC79A7",
+    "#E69F00",
+    "#332288"
+  ],
+  "sampling_hz": 100,
+  "samples_per_window": 200,
+  "input_signal": "raw stored values; no magnitude reduction or normalization",
+  "scale_fit_split": "train",
+  "scale_fit_windows": 16461,
+  "range_rule": "per-channel training quantiles 0.001 and 0.999 plus 5% of that span on both sides",
+  "quantile_method": "numpy linear",
+  "quantiles": [
+    [
+      -1.6308590173721313,
+      -2.577636957168579,
+      -2.410156011581421,
+      -249.1944122314453,
+      -273.2544250488281,
+      -227.17286682128906
+    ],
+    [
+      1.4243160486221313,
+      1.4619139432907104,
+      0.6997069716453552,
+      212.89064025878906,
+      280.5786437988281,
+      249.69483947753906
+    ]
+  ],
+  "y_limits": [
+    [
+      -1.7836177706718446,
+      1.5770748019218446
+    ],
+    [
+      -2.7796145021915435,
+      1.6638914883136748
+    ],
+    [
+      -2.5656491607427596,
+      0.855200120806694
+    ],
+    [
+      -272.29866485595704,
+      235.9948928833008
+    ],
+    [
+      -300.9460784912109,
+      308.2702972412109
+    ],
+    [
+      -251.01625213623046,
+      273.5382247924805
+    ]
+  ],
+  "out_of_range": "display clipped at fixed axes; boundary triangles; all counts/min/max logged per image",
+  "width": 1280,
+  "height": 1152,
+  "dpi": 100,
+  "font": "DejaVu Sans",
+  "font_size_pt": 11,
+  "line_width_pt": 1.2,
+  "background": "white",
+  "time_axis_seconds": [
+    0,
+    2
+  ],
+  "image_format": "WebP lossless RGB; no metadata",
+  "test_windows": 3708,
+  "filename_rule": "sample_ + first 20 hex characters of SHA256(window_id) + .webp",
+  "rendering_label_access": "labels are used only to verify cache alignment; never drawn or encoded in image metadata"
+}

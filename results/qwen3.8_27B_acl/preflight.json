@@ -1,0 +1,14 @@
+{
+  "split": "train",
+  "purpose": "technical check only; not included in evaluation",
+  "response": "{\"label\":\"Galloping\"}",
+  "parsed_label": "Galloping",
+  "status": "ok",
+  "input_tokens": 1022,
+  "generated_tokens": 8,
+  "preprocess_seconds": 0.06175160501152277,
+  "generation_seconds": 9.709858259069733,
+  "image_to_response_seconds": 9.771609864081256,
+  "load_seconds": 35.49661703396123,
+  "device": "cuda:0"
+}

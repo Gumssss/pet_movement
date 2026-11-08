@@ -1,0 +1,55 @@
+{
+  "model": "Qwen3.5-4B",
+  "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "qwen_finetuned": false,
+  "qwen_trainable_parameters": 0,
+  "experiment": "imu2img_frozen_qwen_old_prompt_validation",
+  "kind": "old_prompt_validation",
+  "split": "validation",
+  "expected_windows": 4727,
+  "classes": [
+    "Galloping",
+    "Lying chest",
+    "Sitting",
+    "Sniffing",
+    "Standing",
+    "Trotting",
+    "Walking"
+  ],
+  "inference_backend": "vllm",
+  "backend_version": "0.26.0",
+  "prompt_language": "en",
+  "prompt": "Task: Given the attached IMU-derived image from a dog's collar sensor, classify the main behavior throughout the original 2-second window. The source has 200 samples at 100 Hz in six channels: ANeck_x, ANeck_y, ANeck_z, GNeck_x, GNeck_y, and GNeck_z. The image was produced by an IMU2IMG-style learned encoder and decoder. It is a 224-by-224 RGB image arranged as a 7-by-7 grid of 32-by-32 tiles. Token order follows time from left to right and then top to bottom. Red encodes acceleration RMS and green encodes gyroscope RMS; blue is fixed middle gray because no magnetometer is available. Each RMS combines the three source axes at each time step. The converter center-crops the source window to 196 samples and uses 49 four-sample patches. There are no plotted time axes or directly visible six-channel traces. Pixel brightness is a learned representation, not a raw sensor value or a verified physical unit. Treat the following qualitative trace descriptions as source-signal context, not direct pixel thresholds.\n\nThe following behavior definitions and qualitative IMU cues come from the literature and inferences about signal mechanisms. They may overlap and are not deterministic thresholds. Body size, speed, head and neck orientation, collar rotation, and additional movements can all affect the traces. Do not assume that any behavior has a fixed axis value, amplitude, or frequency. The three static postures can be particularly difficult to distinguish from a collar sensor.\n\nGalloping: A fast, asymmetric three-beat or four-beat gait. The signals may contain relatively strong, repeated acceleration pulses, groups of peaks with different shapes or strengths, and neck rotation fluctuations. Consider rhythm and waveform shape together; do not classify a window as Galloping solely because it has the largest amplitude.\nLying chest: A prone posture with the chest and abdomen resting on the ground. When still, acceleration usually varies slightly around relatively stable baselines, and gyroscope signals are relatively steady; the head may be raised or turned. Baselines and small movements can overlap with Sitting and Standing, with no universal distinguishing axis value.\nSitting: A seated posture with the rump resting on the ground. When still, acceleration usually varies slightly around relatively stable baselines, and gyroscope signals are relatively steady; small neck adjustments may occur. Head and neck orientation can cause overlap with Lying chest and Standing, with no universal distinguishing axis value.\nSniffing: In this task, the head is below the back line and the muzzle is close to the ground, possibly while standing or moving slowly. Head orientation and searching movements may cause changes in acceleration baselines and irregular gyroscope fluctuations. A fixed sniffing frequency is not required.\nStanding: A posture supported by all four limbs, with the torso off the ground. When still, acceleration usually varies slightly around relatively stable baselines, and gyroscope signals are relatively steady; small head and neck movements may occur. It can overlap with Lying chest and Sitting, with no universal distinguishing axis value.\nTrotting: A faster, two-beat gait in which diagonally opposite limbs move in pairs. It may produce relatively regular, repeated acceleration oscillations and corresponding neck angular motion. The rhythm is usually faster than slow walking, but the amplitude and frequency vary with the individual dog and its speed.\nWalking: A slower, four-beat gait in which the limbs move sequentially. It may produce slower, repeated gait-related fluctuations and neck angular motion, sometimes with very small amplitudes. Slow walking can be confused with static postures; do not use a fixed amplitude or frequency threshold.\n\nConsider the temporal variation, repetition, rhythm, and rotational context insofar as they can be inferred from the learned image representation. Select exactly one of the following labels: Galloping, Lying chest, Sitting, Sniffing, Standing, Trotting, Walking.\nOutput only one JSON object in the form {\"label\":\"LABEL\"}. The label must use one of the exact English names above. Do not include explanations, extra fields, or Markdown.\n",
+  "prompt_sha256": "20c6161d8206149719c416b7f6538b3ab541918b8d7cbb0253d7bebe36816a81",
+  "image_manifest_sha256": "f60a192f77276f7edde7e25f87f68134daba12eb8ffc11bd0c375c3dfc90f6bc",
+  "data_dir": "dataset/vlm_imu2img_simple/validation",
+  "windows_sha256": "04b09eea20d60f63c581c782db5accb4750678f3f5e8a061dc55f01dcd0f9202",
+  "split_sha256": "3c8bc060f4f31da0d012a3ae419de626f3438bbaf23e3f7aa37dc7695aa35862",
+  "image_size": [
+    224,
+    224
+  ],
+  "visual_tokens": 49,
+  "converter_epoch": null,
+  "generation": {
+    "temperature": 0,
+    "enable_thinking": false,
+    "max_new_tokens": 32,
+    "seed": 20261101,
+    "dtype": "bfloat16",
+    "guided_decoding": false,
+    "speculative_decoding": false
+  },
+  "engine": {
+    "tensor_parallel_size": 1,
+    "max_model_len": 4096,
+    "max_num_seqs": 32,
+    "max_num_batched_tokens": 8192,
+    "gpu_memory_utilization": 0.85,
+    "enable_prefix_caching": false,
+    "flashinfer_sampler": false,
+    "min_pixels": 50176,
+    "max_pixels": 1474560
+  },
+  "supervision_note": "Qwen remains frozen. Images are supervised converter representations; this is not zero-label system evaluation."
+}

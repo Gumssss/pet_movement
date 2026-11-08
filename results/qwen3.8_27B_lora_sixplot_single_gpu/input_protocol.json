@@ -1,0 +1,24 @@
+{
+  "splits": [
+    {
+      "split": "train",
+      "windows": 16461,
+      "manifest_sha256": "2ba0d6e46d868b8b1e4114f95adbd65fb185b3072303f1257a9760b545064424"
+    },
+    {
+      "split": "validation",
+      "windows": 4727,
+      "manifest_sha256": "2ba0d6e46d868b8b1e4114f95adbd65fb185b3072303f1257a9760b545064424"
+    },
+    {
+      "split": "test",
+      "windows": 3708,
+      "manifest_sha256": "5f8e2c76874c447a255314e4baba8481b0c6a73c554ba144f1dcbca959e7c464"
+    }
+  ],
+  "render_protocol_sha256": "f4f3b0e0c78f79545db592d5ad8c75725ec80e4861a9aad6e6dd88ccbe5c39f2",
+  "axis_limits_source": "dataset/vlm/render_protocol.json: training-derived fixed y_limits",
+  "prompt_sha256": "ac4659d4c4f2d1366c7d34a36b81ab35cb50dcb2acbe598f3ffbe0bad541f209",
+  "renderer_sha256": "18671d8bcdb94979fe4813f19db52a0bcc300bf85e332734a56e5b6525ddbdf2",
+  "all24896_image_hashes_verified": true
+}

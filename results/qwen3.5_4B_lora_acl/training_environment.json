@@ -1,0 +1,11 @@
+{
+  "NCCL_P2P_DISABLE": "1",
+  "NCCL_IB_DISABLE": "1",
+  "world_size": 2,
+  "physical_gpus": [
+    0,
+    1
+  ],
+  "private_dependencies": ".venv/lora-packages",
+  "note": "Default P2P attempt stopped before optimizer steps; active run uses compatible host transport."
+}

@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "scripts/kimi_classify.py", line 15, in <module>
+    from qwen_classify import parse
+ModuleNotFoundError: No module named 'qwen_classify'
+Kimi: 1/3708; session 7.9s; {'ok': 1}

@@ -1,0 +1,14 @@
+{
+  "state": "complete",
+  "epochs": 3,
+  "optimizer_steps": 1545,
+  "best_epoch": 1,
+  "best_validation_nll": 0.08038086889832215,
+  "training_windows": 16461,
+  "sample_presentations": 49386,
+  "world_size": 2,
+  "session_wall_seconds": 3954.8414069570135,
+  "session_optimizer_steps": 1545,
+  "code_sha256": "dc45934822d7573947cb4e23932bbcb89d5a6fe61ef1410091f48bc3fd768ff0",
+  "completed_utc": "2026-11-04T03:36:49.265452+00:00"
+}

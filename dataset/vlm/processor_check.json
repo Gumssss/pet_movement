@@ -1,0 +1,36 @@
+{
+  "4B": {
+    "export_size": [
+      1280,
+      1152
+    ],
+    "processed_size": [
+      1280,
+      1152
+    ],
+    "image_grid_thw": [
+      1,
+      72,
+      80
+    ],
+    "image_tokens": 1440,
+    "max_pixel_reconstruction_error": 0
+  },
+  "27B": {
+    "export_size": [
+      1280,
+      1152
+    ],
+    "processed_size": [
+      1280,
+      1152
+    ],
+    "image_grid_thw": [
+      1,
+      72,
+      80
+    ],
+    "image_tokens": 1440,
+    "max_pixel_reconstruction_error": 0
+  }
+}

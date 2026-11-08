@@ -1,0 +1,22 @@
+{
+  "3.8-27B": {
+    "export_size": [
+      512,
+      409
+    ],
+    "processed_size": [
+      512,
+      416
+    ],
+    "image_grid_thw": [
+      1,
+      26,
+      32
+    ],
+    "image_tokens": 208,
+    "total_input_tokens": 1022,
+    "prompt_language": "en",
+    "prompt_sha256": "10f93478c6dc4ced4084c7f049e70476bb0e1bd9ae7a09f114b1ffa4653a57f8",
+    "resize_note": "author-like 512x409 raster rounded by actual Qwen processor to 512x416; processed preview saved for visual inspection"
+  }
+}

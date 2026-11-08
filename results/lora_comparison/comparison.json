@@ -1,0 +1,94 @@
+{
+  "experiments": {
+    "sixplot": {
+      "scores": {
+        "macro_f1": 0.755951474936836,
+        "balanced_accuracy": 0.7579974021929244,
+        "accuracy": 0.6852750809061489
+      },
+      "selected_epoch": 3,
+      "status_counts": {
+        "ok": 3708
+      },
+      "prediction_counts": {
+        "Trotting": 413,
+        "Sitting": 687,
+        "Standing": 602,
+        "Lying chest": 955,
+        "Walking": 343,
+        "Sniffing": 679,
+        "Galloping": 29
+      },
+      "training_session_wall_seconds": 17425.01500117802,
+      "training_peak_allocated_GiB_rank0": 13.817427158355713
+    },
+    "imu2img_frozen": {
+      "scores": {
+        "macro_f1": 0.7030404483430727,
+        "balanced_accuracy": 0.7117129164164552,
+        "accuracy": 0.6402373247033442
+      },
+      "selected_epoch": 3,
+      "status_counts": {
+        "ok": 3708
+      },
+      "prediction_counts": {
+        "Trotting": 426,
+        "Sitting": 829,
+        "Standing": 488,
+        "Lying chest": 850,
+        "Walking": 461,
+        "Sniffing": 628,
+        "Galloping": 26
+      },
+      "training_session_wall_seconds": 923.0261711280327,
+      "training_peak_allocated_GiB_rank0": 15.399024963378906
+    },
+    "imu2img_joint": {
+      "scores": {
+        "macro_f1": 0.7128712215449922,
+        "balanced_accuracy": 0.7214041813245793,
+        "accuracy": 0.6480582524271845
+      },
+      "selected_epoch": 3,
+      "status_counts": {
+        "ok": 3708
+      },
+      "prediction_counts": {
+        "Trotting": 418,
+        "Sitting": 903,
+        "Lying chest": 833,
+        "Standing": 442,
+        "Walking": 464,
+        "Sniffing": 622,
+        "Galloping": 26
+      },
+      "training_session_wall_seconds": 957.1065784490202,
+      "training_peak_allocated_GiB_rank0": 15.42961311340332
+    }
+  },
+  "paired_differences": {
+    "imu2img_frozen_minus_sixplot": {
+      "macro_f1_difference": -0.052911026593763344,
+      "paired_dog_bootstrap_95ci": [
+        -0.13177217176568545,
+        -0.0015373404694952741
+      ]
+    },
+    "imu2img_joint_minus_imu2img_frozen": {
+      "macro_f1_difference": 0.009830773201919496,
+      "paired_dog_bootstrap_95ci": [
+        -0.0020463005087365954,
+        0.04312490564533784
+      ]
+    }
+  },
+  "same_initial_lora_sha256": "0f3a2247f98b8d81e01ce60345ba295702d6c9e0a641a0f1a4eb80ed5d1e86cc",
+  "same_frozen_qwen_base_sha256": "08743713ee4b48ca06c7885248b488018997a7c7515de4956f940816f93f8b86",
+  "historical_files_unchanged": 290,
+  "qwen_official_base_files_unchanged": true,
+  "test_windows": 3708,
+  "test_dogs": 9,
+  "single_training_seed": 20261101,
+  "completed_utc": "2026-11-05T03:38:26.941411+00:00"
+}

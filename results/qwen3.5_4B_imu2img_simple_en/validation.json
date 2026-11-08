@@ -1,0 +1,19 @@
+{
+  "windows": 3708,
+  "raw_csv_metrics_consistent": true,
+  "qwen_finetuned": false,
+  "input_windows_images_and_labels_verified": true,
+  "scores": {
+    "macro_f1": 0.023738872403560828,
+    "balanced_accuracy": 0.14285714285714285,
+    "accuracy": 0.09061488673139159
+  },
+  "status_counts": {
+    "ok": 3708
+  },
+  "prediction_counts": {
+    "Walking": 3708
+  },
+  "qwen_parameter_files_unchanged": true,
+  "historical_files_unchanged": 200
+}

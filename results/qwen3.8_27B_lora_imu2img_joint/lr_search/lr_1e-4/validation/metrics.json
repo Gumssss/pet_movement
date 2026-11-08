@@ -1,0 +1,173 @@
+{
+  "macro_f1": 0.28260071518591545,
+  "balanced_accuracy": 0.33033566283460264,
+  "accuracy": 0.3797334461603554,
+  "model": "Qwen3.8-27B-lora-imu2img-joint",
+  "split": "validation",
+  "windows": 4727,
+  "inference_backend": "vllm",
+  "prompt_language": "en",
+  "status_counts": {
+    "ok": 4727
+  },
+  "parse_success_rate": 1.0,
+  "failures_counted_as_incorrect": true,
+  "prediction_counts": {
+    "Sniffing": 1358,
+    "Standing": 390,
+    "Lying chest": 1601,
+    "Walking": 605,
+    "Sitting": 773
+  },
+  "classification_report": {
+    "Galloping": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 12.0
+    },
+    "Lying chest": {
+      "precision": 0.36727045596502184,
+      "recall": 0.56,
+      "f1-score": 0.44360618634477555,
+      "support": 1050.0
+    },
+    "Sitting": {
+      "precision": 0.36093143596377747,
+      "recall": 0.279839518555667,
+      "f1-score": 0.3152542372881356,
+      "support": 997.0
+    },
+    "Sniffing": {
+      "precision": 0.38880706921944036,
+      "recall": 0.7597122302158273,
+      "f1-score": 0.5143692157817827,
+      "support": 695.0
+    },
+    "Standing": {
+      "precision": 0.3230769230769231,
+      "recall": 0.14668218859138532,
+      "f1-score": 0.20176140912730184,
+      "support": 859.0
+    },
+    "Trotting": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 630.0
+    },
+    "Walking": {
+      "precision": 0.45289256198347105,
+      "recall": 0.5661157024793388,
+      "f1-score": 0.5032139577594124,
+      "support": 484.0
+    },
+    "accuracy": 0.3797334461603554,
+    "macro avg": {
+      "precision": 0.2704254923155191,
+      "recall": 0.33033566283460264,
+      "f1-score": 0.28260071518591545,
+      "support": 4727.0
+    },
+    "weighted avg": {
+      "precision": 0.31995485729844453,
+      "recall": 0.3797334461603554,
+      "f1-score": 0.3288449716950566,
+      "support": 4727.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      0,
+      0,
+      0,
+      12,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      588,
+      288,
+      10,
+      117,
+      0,
+      47,
+      0
+    ],
+    [
+      0,
+      546,
+      279,
+      0,
+      123,
+      0,
+      49,
+      0
+    ],
+    [
+      0,
+      4,
+      2,
+      528,
+      4,
+      0,
+      157,
+      0
+    ],
+    [
+      0,
+      449,
+      200,
+      6,
+      126,
+      0,
+      78,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      630,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      14,
+      4,
+      172,
+      20,
+      0,
+      274,
+      0
+    ]
+  ],
+  "confusion_rows": [
+    "Galloping",
+    "Lying chest",
+    "Sitting",
+    "Sniffing",
+    "Standing",
+    "Trotting",
+    "Walking"
+  ],
+  "confusion_columns": [
+    "Galloping",
+    "Lying chest",
+    "Sitting",
+    "Sniffing",
+    "Standing",
+    "Trotting",
+    "Walking",
+    "__INVALID__"
+  ],
+  "mean_input_tokens": 200.0,
+  "total_input_tokens": 945400,
+  "total_generated_tokens": 39780
+}

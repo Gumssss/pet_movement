@@ -1,0 +1,4 @@
+Mantis TokenGeneratorUnit and helpers, from https://github.com/vfeofanov/mantis
+Commit 23ecfe493830db177546ef159947de7d79a573bd
+TokenGeneratorUnit is extracted verbatim from src/mantis/architecture/version1.py; helper files are unmodified.
+Original license is included in LICENSE. Only imports needed for the standalone token generator were added.

@@ -1,0 +1,46 @@
+{
+  "raw_csv_metrics_consistent": true,
+  "inputs_and_labels_verified": true,
+  "raw_parser_verified": true,
+  "all_failures_counted_in_denominator": true,
+  "windows": 3708,
+  "scores": {
+    "macro_f1": 0.7128712215449922,
+    "balanced_accuracy": 0.7214041813245793,
+    "accuracy": 0.6480582524271845
+  },
+  "all_250_merged_weights_equal_base_plus_lora": true,
+  "non_target_weights_match_base_in_export_dtype": 473,
+  "base_only_unused_mtp_weights": [
+    "mtp.fc.weight",
+    "mtp.layers.0.input_layernorm.weight",
+    "mtp.layers.0.mlp.down_proj.weight",
+    "mtp.layers.0.mlp.gate_proj.weight",
+    "mtp.layers.0.mlp.up_proj.weight",
+    "mtp.layers.0.post_attention_layernorm.weight",
+    "mtp.layers.0.self_attn.k_norm.weight",
+    "mtp.layers.0.self_attn.k_proj.weight",
+    "mtp.layers.0.self_attn.o_proj.weight",
+    "mtp.layers.0.self_attn.q_norm.weight",
+    "mtp.layers.0.self_attn.q_proj.weight",
+    "mtp.layers.0.self_attn.v_proj.weight",
+    "mtp.norm.weight",
+    "mtp.pre_fc_norm_embedding.weight",
+    "mtp.pre_fc_norm_hidden.weight"
+  ],
+  "merged_projection_counts": {
+    "language_attention": 152,
+    "ViT": 96,
+    "visual_projection": 2
+  },
+  "converter_weight_changes_l1": {
+    "encoders": 51.96419906546362,
+    "decoders": 77.1631208434701
+  },
+  "selected_adapter_parameters": 5226496,
+  "rounding": "Source norms may be FP32; cast source to export BF16. Cast FP32 LoRA delta to BF16 before BF16 addition, matching PEFT safe_merge.",
+  "same_fresh_lora_initialization_checked_in_suite": true,
+  "qwen_base_frozen": true,
+  "checkpoint_selected_on_full_validation": true,
+  "selected_epoch": 3
+}

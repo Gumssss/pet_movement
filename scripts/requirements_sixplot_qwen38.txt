@@ -1,0 +1,6 @@
+# Added in project-private .venv/wandb-packages with --no-deps.
+# Native torch/transformers/vllm/PEFT use the existing pinned experiment environment.
+wandb==0.31.0
+cwevals==0.0.1b1
+xxhash==4.0.2
+platformdirs==4.14.5

@@ -1,0 +1,83 @@
+{
+  "version": "imu_2s_acl_shared_axis_v1",
+  "experiment": "imu_2s_acl_shared_axis_zero_shot_en",
+  "paper_url": "https://aclanthology.org/2024.emnlp-main.133/",
+  "author_code_commit": "c45ed732dc57d7823a311cab6e93d292b5ed32a1",
+  "author_code_url": "https://github.com/diamond264/ByMyEyes/blob/c45ed732dc57d7823a311cab6e93d292b5ed32a1/core/visualizer.py",
+  "method_scope": "single shared-axis normalized waveform adaptation; no automatic visualization search or few-shot examples",
+  "window_manifest_sha256": "04b09eea20d60f63c581c782db5accb4750678f3f5e8a061dc55f01dcd0f9202",
+  "split_sha256": "3c8bc060f4f31da0d012a3ae419de626f3438bbaf23e3f7aa37dc7695aa35862",
+  "normalization_file": "normalization.json",
+  "normalization_sha256": "3db0e4033c204fc657e2b702efe65f85b4a6437ecae299e9c71f758162466ef2",
+  "research_file": "method.md",
+  "processor_check_file": "processor_check_qwen38.json",
+  "channels": [
+    "ANeck_x",
+    "ANeck_y",
+    "ANeck_z",
+    "GNeck_x",
+    "GNeck_y",
+    "GNeck_z"
+  ],
+  "colors": [
+    "#0072B2",
+    "#D55E00",
+    "#009E73",
+    "#CC79A7",
+    "#E69F00",
+    "#332288"
+  ],
+  "sampling_hz": 100,
+  "samples_per_window": 200,
+  "input_signal": "all six original channels, training-standardized before plotting; no magnitude or time-frequency conversion",
+  "layout": "six colored traces overlaid on one shared x/y coordinate system with channel legend",
+  "scale_fit_split": "train",
+  "scale_fit_windows": 16461,
+  "range_rule": "min of per-channel training z-score 0.001 quantiles, max of 0.999 quantiles; add 5% of the shared span on both sides",
+  "per_channel_z_quantiles": [
+    [
+      -3.893220571179354,
+      -3.498715722405598,
+      -5.473877189739633,
+      -6.2136318228865415,
+      -5.638411166179528,
+      -5.582525760719156
+    ],
+    [
+      4.27785813891756,
+      3.125213137237706,
+      3.781427657594991,
+      5.318439451427931,
+      5.80436486171867,
+      6.143696785308769
+    ]
+  ],
+  "shared_y_limits": [
+    -6.831498253296307,
+    6.761563215718535
+  ],
+  "out_of_range": "training-fixed shared limits; clipped display with colored boundary triangles; per-channel counts and standardized min/max logged",
+  "width": 512,
+  "height": 409,
+  "dpi": 100,
+  "font": "DejaVu Sans",
+  "font_size_pt": 10,
+  "line_width_pt": 1.5,
+  "background": "white",
+  "time_axis_seconds": [
+    0,
+    2
+  ],
+  "legend": {
+    "location": "upper right",
+    "columns": 2,
+    "font_size_pt": 7.5
+  },
+  "suptitle_font_size_pt": 20,
+  "image_format": "WebP lossless RGB; no private metadata",
+  "test_windows": 3708,
+  "title": "target data",
+  "axes_title": "raw waveform",
+  "filename_rule": "same opaque SHA256(window_id) identifier, in a separate image directory",
+  "comparison_note": "Same Qwen3.8-27B, English behavioral priors, vLLM and test windows; changes include channel-wise training standardization, shared-axis overlay, paper-size image and matching visual-description text. This is not a full few-shot/VisGen reproduction."
+}

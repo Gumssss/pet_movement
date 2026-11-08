@@ -1,0 +1,18 @@
+{
+  "key": "qwen38_27b",
+  "stage": "formal",
+  "peak_lr": 0.0001,
+  "optimizer_step": 258,
+  "total_steps": 258,
+  "sampler_epoch": 3,
+  "train_answer_nll": 0.15023814973292843,
+  "learning_rates": [
+    0.0,
+    0.0
+  ],
+  "wall_seconds": 4695.089099035016,
+  "microbatch_per_gpu": 96,
+  "effective_batch_size": 192,
+  "peak_allocated_GiB_rank0": 74.49768543243408,
+  "peak_reserved_GiB_rank0": 80.921875
+}

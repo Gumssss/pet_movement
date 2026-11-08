@@ -1,0 +1,8 @@
+{
+  "train_windows": 16461,
+  "validation_windows": 4727,
+  "manifest_sha256": "2ba0d6e46d868b8b1e4114f95adbd65fb185b3072303f1257a9760b545064424",
+  "renderer_sha256": "18671d8bcdb94979fe4813f19db52a0bcc300bf85e332734a56e5b6525ddbdf2",
+  "render_protocol_sha256": "f4f3b0e0c78f79545db592d5ad8c75725ec80e4861a9aad6e6dd88ccbe5c39f2",
+  "rule": "Historical six-plot renderer unchanged; training-fixed axes, 1280x1152, all200 points/6axes; no new test assets."
+}

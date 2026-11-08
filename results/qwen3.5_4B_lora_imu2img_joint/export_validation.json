@@ -1,0 +1,25 @@
+{
+  "selected_epoch": 3,
+  "adapter_sha256": "234ff24faaffd9b1f4bdc32cc136a41acb3678560493f0ab06175bfcadc1c1e2",
+  "merged_for_vllm": true,
+  "nonzero_scopes": {
+    "ViT": {
+      "module": "base_model.model.model.visual.blocks.0.attn.qkv",
+      "delta_l1": 499.4465637207031
+    },
+    "visual_projection": {
+      "module": "base_model.model.model.visual.merger.linear_fc1",
+      "delta_l1": 2211.974853515625
+    },
+    "language_attention": {
+      "module": "base_model.model.model.language_model.layers.0.linear_attn.out_proj",
+      "delta_l1": 490.05426025390625
+    }
+  },
+  "merged_files_sha256": {
+    "model-00001-of-00002.safetensors": "0871e11093a366a05ca4d1977e40f8914cf554101ef830fbae763c6ca5e24997",
+    "converter.safetensors": "9a7f68ee5f3af20e038af3b424ef57c3f1fbc22e11ff4b91f61a4feaa62f1754",
+    "model-00002-of-00002.safetensors": "358df07a24c598bd109b32f266126902401cf810819ef523a1574bc3c62dea25"
+  },
+  "source_checkpoint": "models/Qwen3.5-4B-lora-imu2img-joint/checkpoints/epoch_3"
+}

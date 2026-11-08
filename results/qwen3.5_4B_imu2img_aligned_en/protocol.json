@@ -1,0 +1,55 @@
+{
+  "model": "Qwen3.5-4B",
+  "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "qwen_finetuned": false,
+  "qwen_trainable_parameters": 0,
+  "experiment": "imu2img_frozen_qwen_qwen_aligned_converter_test",
+  "kind": "qwen_aligned_converter_test",
+  "split": "test",
+  "expected_windows": 3708,
+  "classes": [
+    "Galloping",
+    "Lying chest",
+    "Sitting",
+    "Sniffing",
+    "Standing",
+    "Trotting",
+    "Walking"
+  ],
+  "inference_backend": "vllm",
+  "backend_version": "0.26.0",
+  "prompt_language": "en",
+  "prompt": "Classify the dog's behavior from this learned IMU representation.\nThe image contains a 7-by-7 grid of learned patches, ordered chronologically from left to right and then top to bottom.\nRed contains acceleration-derived features; green contains gyroscope-derived features. Blue is constant because no magnetometer is available.\nPixel brightness does not directly represent raw signal amplitude.\nChoose exactly one label: Galloping, Lying chest, Sitting, Sniffing, Standing, Trotting, Walking.\nReturn only one JSON object in the form {\"label\":\"LABEL\"}. Use an exact label from the list. Do not include explanations, extra fields, or Markdown.\n",
+  "prompt_sha256": "3c7e5c664620114df7b8a010f5c4f8736ba164f504991aa8ecf7859b437805a1",
+  "image_manifest_sha256": "4d13105c140c4ef66b3de0945011eb98fc404feeabfa2f3ae5d6b71059327253",
+  "data_dir": "dataset/vlm_imu2img_qwen",
+  "windows_sha256": "04b09eea20d60f63c581c782db5accb4750678f3f5e8a061dc55f01dcd0f9202",
+  "split_sha256": "3c8bc060f4f31da0d012a3ae419de626f3438bbaf23e3f7aa37dc7695aa35862",
+  "image_size": [
+    224,
+    224
+  ],
+  "visual_tokens": 49,
+  "converter_epoch": 3,
+  "generation": {
+    "temperature": 0,
+    "enable_thinking": false,
+    "max_new_tokens": 32,
+    "seed": 20261101,
+    "dtype": "bfloat16",
+    "guided_decoding": false,
+    "speculative_decoding": false
+  },
+  "engine": {
+    "tensor_parallel_size": 1,
+    "max_model_len": 4096,
+    "max_num_seqs": 32,
+    "max_num_batched_tokens": 8192,
+    "gpu_memory_utilization": 0.85,
+    "enable_prefix_caching": false,
+    "flashinfer_sampler": false,
+    "min_pixels": 50176,
+    "max_pixels": 1474560
+  },
+  "supervision_note": "Qwen remains frozen. Images are supervised converter representations; this is not zero-label system evaluation."
+}

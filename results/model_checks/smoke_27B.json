@@ -1,0 +1,14 @@
+{
+  "model": "/home/exet6233/pet/宠物医疗/models/Qwen3.5-27B",
+  "device": "cuda:1",
+  "dtype": "torch.bfloat16",
+  "prompt": "只输出这四个字：部署成功",
+  "image": null,
+  "response": "部署成功",
+  "input_tokens": 19,
+  "generated_tokens": 3,
+  "load_seconds": 3.356,
+  "generation_seconds": 0.544,
+  "peak_cuda_memory_GiB": 51.14,
+  "torch_version": "2.11.0+cu130"
+}

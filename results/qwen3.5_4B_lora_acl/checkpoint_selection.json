@@ -1,0 +1,9 @@
+{
+  "epoch": 3,
+  "optimizer_step": 1545,
+  "validation_answer_nll": 0.11494745307935895,
+  "validation_answer_tokens": 38860,
+  "best_epoch": 1,
+  "best_validation_nll": 0.08038086889832215,
+  "epoch_wall_seconds": 1311.8030078599695
+}

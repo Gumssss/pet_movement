@@ -1,0 +1,10 @@
+{
+  "model_load_seconds": 27.52150957006961,
+  "whole_session_wall_seconds": 258.1800199269783,
+  "stages": [
+    "old_validation",
+    "simple_validation",
+    "simple_test"
+  ],
+  "qwen_finetuned": false
+}

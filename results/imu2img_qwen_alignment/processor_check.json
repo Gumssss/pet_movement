@@ -1,0 +1,22 @@
+{
+  "patch_size": 16,
+  "temporal_patch_size": 2,
+  "merge_size": 2,
+  "grid": [
+    1,
+    14,
+    14
+  ],
+  "visual_tokens": 49,
+  "prefix_tokens": 200,
+  "mean": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "std": [
+    0.5,
+    0.5,
+    0.5
+  ]
+}

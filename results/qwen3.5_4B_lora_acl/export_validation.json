@@ -1,0 +1,26 @@
+{
+  "merged_for_vllm": true,
+  "selected_adapter_sha256": "7d1efad6658ef325ee7fdc1e8de30b0fc67f1f091fbce19cf3534ce5ded85375",
+  "nonzero_merged_scopes": {
+    "ViT": {
+      "module": "base_model.model.model.visual.blocks.0.attn.qkv",
+      "delta_l1": 567.4793090820312,
+      "delta_max": 0.002449515275657177
+    },
+    "visual_projection": {
+      "module": "base_model.model.model.visual.merger.linear_fc1",
+      "delta_l1": 2548.740234375,
+      "delta_max": 0.0020192181691527367
+    },
+    "language_attention": {
+      "module": "base_model.model.model.language_model.layers.0.linear_attn.out_proj",
+      "delta_l1": 399.8577880859375,
+      "delta_max": 0.0009327280567958951
+    }
+  },
+  "merged_weight_files_sha256": {
+    "model-00001-of-00002.safetensors": "23ba821eb2a42ab9883f5f30ec7f91ff5939ce5aafb174a5f84826aefe63314c",
+    "model-00002-of-00002.safetensors": "05ecaf2ca29d5f897ef81531206a76640839061fbf9fe730bb01af91544e1b6c"
+  },
+  "best_checkpoint": 1
+}

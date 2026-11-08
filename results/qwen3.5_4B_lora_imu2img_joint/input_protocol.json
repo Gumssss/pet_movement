@@ -1,0 +1,11 @@
+{
+  "cache_sha256": "0be823f51ecae5b5e6a11460ce7f2cb5f3a4294b12a64d19f1a9e12183e6369f",
+  "windows_sha256": "04b09eea20d60f63c581c782db5accb4750678f3f5e8a061dc55f01dcd0f9202",
+  "split_sha256": "3c8bc060f4f31da0d012a3ae419de626f3438bbaf23e3f7aa37dc7695aa35862",
+  "prompt_sha256": "3c7e5c664620114df7b8a010f5c4f8736ba164f504991aa8ecf7859b437805a1",
+  "render_protocol_sha256": "6e2eb297ffbbdac12997e4844644e30ae8d3abdf16b8be2d9bfa629444739660",
+  "test_manifest_sha256": "4d13105c140c4ef66b3de0945011eb98fc404feeabfa2f3ae5d6b71059327253",
+  "warm_converter_sha256": "3be624934ae5d8fefb282dc61159ecdc5b7b9ad939777d2b80a5fb7cfdb604d3",
+  "training_images": "Generated on the fly from original RMS196 inputs, BF16 converter, rounded8bit official differentiable preprocessing; converter frozen only in experiment2",
+  "fixed_validation_image_manifest_sha256": "93a5fbf62e3d2d070763175e3e677a9c47aa676a90fc14bd1098520fd23cd2fe"
+}

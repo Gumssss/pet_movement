@@ -1,0 +1,28 @@
+{
+  "best_lr": 0.0001,
+  "best_macro_f1": 0.39977934940661325,
+  "scores": [
+    {
+      "lr": 0.0001,
+      "macro_f1": 0.39977934940661325,
+      "balanced_accuracy": 0.4601927650786122,
+      "accuracy": 0.5111064099851914
+    },
+    {
+      "lr": 3e-05,
+      "macro_f1": 0.2566853926950314,
+      "balanced_accuracy": 0.326278678892125,
+      "accuracy": 0.38713771948381637
+    },
+    {
+      "lr": 1e-05,
+      "macro_f1": 0.056667980826103866,
+      "balanced_accuracy": 0.14182752100353233,
+      "accuracy": 0.18277977575629364
+    }
+  ],
+  "metric": "Full validation vLLM macro-F1",
+  "optimizer_steps_per_candidate": 100,
+  "ties": "lowest LR",
+  "test_used_for_selection": false
+}

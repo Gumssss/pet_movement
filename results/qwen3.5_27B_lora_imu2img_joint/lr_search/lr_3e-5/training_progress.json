@@ -1,0 +1,18 @@
+{
+  "key": "qwen35_27b",
+  "stage": "pilot",
+  "peak_lr": 3e-05,
+  "optimizer_step": 100,
+  "total_steps": 100,
+  "sampler_epoch": 2,
+  "train_answer_nll": 0.2128431295314764,
+  "learning_rates": [
+    0.0,
+    0.0
+  ],
+  "wall_seconds": 1688.857577724033,
+  "microbatch_per_gpu": 96,
+  "effective_batch_size": 192,
+  "peak_allocated_GiB_rank0": 74.5533504486084,
+  "peak_reserved_GiB_rank0": 83.181640625
+}

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "scripts/lora_27b.py",
+    "evaluate",
+    "--key",
+    "qwen38_27b",
+    "--tag",
+    "3",
+    "--device",
+    "cuda:0"
+  ],
+  "log": "results/qwen3.8_27B_lora_imu2img_joint/validation_epoch3.log",
+  "started_utc": "2026-11-05T11:04:13.718292+00:00",
+  "state": "stopped_by_user_configuration_change",
+  "stopped_utc": "2026-11-05T11:06:43.375779+00:00",
+  "replacement": "results/lora_27b_single_gpu"
+}

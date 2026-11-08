@@ -1,0 +1,17 @@
+{
+  "all_256_pixel_intensities_official_bf16_reference_equal": true,
+  "max_float_error": 0.0,
+  "straight_through_gradient_of_temporal_duplicate_pack_verified": true,
+  "qwen_parameter_files_unchanged": true,
+  "qwen_parameters_in_memory_unchanged": true,
+  "qwen_parameter_sha256": "83798a04335da0c1e533fca5a2bd595ddf75782fe2d12af353478bd3d4879bb0",
+  "historical_files_unchanged": 200,
+  "converter_weight_changes_l1": {
+    "encoders": 692.7042149184272,
+    "decoders": 1366.91503572464
+  },
+  "only_835584_converter_parameters_trained": true,
+  "all_checkpoint_scores_independently_verified": true,
+  "checkpoint_selected_only_by_validation": true,
+  "selected_epoch": 3
+}

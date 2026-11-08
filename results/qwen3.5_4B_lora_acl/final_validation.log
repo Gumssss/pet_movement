@@ -1,0 +1,16 @@
+{
+  "base_scores": {
+    "macro_f1": 0.07536077409577555,
+    "balanced_accuracy": 0.20905923344947736,
+    "accuracy": 0.16235167206040993
+  },
+  "lora_scores": {
+    "macro_f1": 0.6735484200473429,
+    "balanced_accuracy": 0.6764632223756261,
+    "accuracy": 0.6232470334412082
+  },
+  "selected_epoch": 1,
+  "trainable_parameters": 5226496,
+  "all_250_merged_weights_verified": true
+}
+LoRA training, matched vLLM tests, independent checks, reports and model registry complete.

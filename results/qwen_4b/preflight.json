@@ -1,0 +1,14 @@
+{
+  "split": "train",
+  "purpose": "technical check only; not included in evaluation",
+  "response": "```json\n{\"label\":\"Walking\"}\n```\n",
+  "parsed_label": "Walking",
+  "status": "ok",
+  "input_tokens": 2096,
+  "generated_tokens": 13,
+  "preprocess_seconds": 0.05938523099757731,
+  "generation_seconds": 0.7148724029539153,
+  "image_to_response_seconds": 0.7742576339514926,
+  "load_seconds": 1.6365245589986444,
+  "device": "cuda:0"
+}

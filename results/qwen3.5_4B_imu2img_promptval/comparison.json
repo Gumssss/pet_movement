@@ -1,0 +1,13 @@
+{
+  "old_prompt_validation": {
+    "macro_f1": 0.02653727006058612,
+    "balanced_accuracy": 0.14285714285714285,
+    "accuracy": 0.10239052253014597
+  },
+  "simple_prompt_validation": {
+    "macro_f1": 0.02653727006058612,
+    "balanced_accuracy": 0.14285714285714285,
+    "accuracy": 0.10239052253014597
+  },
+  "selection_note": "Simplified prompt was fixed before both validation results; no prompt search or test-dependent changes."
+}

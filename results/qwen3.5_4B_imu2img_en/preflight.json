@@ -1,0 +1,10 @@
+{
+  "split": "train",
+  "purpose": "Local technical check only; excluded from test scores",
+  "response": "{\"label\":\"Walking\"}",
+  "prediction": "Walking",
+  "status": "ok",
+  "input_tokens": 930,
+  "generated_tokens": 6,
+  "seconds": 9.494471665937454
+}

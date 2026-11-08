@@ -1,0 +1,133 @@
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/723 [00:00<?, ?it/s]Loading weights:   0%|          | 0/723 [00:00<?, ?it/s]Loading weights: 100%|██████████| 723/723 [00:00<00:00, 15373.02it/s]
+Loading weights: 100%|██████████| 723/723 [00:00<00:00, 13524.64it/s]
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 10, "total_steps": 1545, "train_answer_nll": 0.20431684733535838, "learning_rates": [2.564102564102564e-05], "wall_seconds": 6.583592279930599, "peak_allocated_GiB_rank0": 15.399023056030273}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 20, "total_steps": 1545, "train_answer_nll": 0.18699023551846655, "learning_rates": [5.128205128205128e-05], "wall_seconds": 12.13291228399612, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 30, "total_steps": 1545, "train_answer_nll": 0.173294883932601, "learning_rates": [7.692307692307693e-05], "wall_seconds": 18.386963270022534, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 40, "total_steps": 1545, "train_answer_nll": 0.16430322693321966, "learning_rates": [0.00010256410256410256], "wall_seconds": 24.044416444958188, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 50, "total_steps": 1545, "train_answer_nll": 0.15470610498052548, "learning_rates": [0.00012820512820512823], "wall_seconds": 29.611825492000207, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 60, "total_steps": 1545, "train_answer_nll": 0.14919344577354585, "learning_rates": [0.00015384615384615385], "wall_seconds": 35.22618977096863, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 70, "total_steps": 1545, "train_answer_nll": 0.1437872785830592, "learning_rates": [0.0001794871794871795], "wall_seconds": 40.895401862915605, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 80, "total_steps": 1545, "train_answer_nll": 0.14236215472742558, "learning_rates": [0.00019972733469665984], "wall_seconds": 46.44551724998746, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 90, "total_steps": 1545, "train_answer_nll": 0.13922193394301055, "learning_rates": [0.0001983640081799591], "wall_seconds": 51.98799226200208, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 100, "total_steps": 1545, "train_answer_nll": 0.13654066566994272, "learning_rates": [0.00019700068166325836], "wall_seconds": 57.65845070593059, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 110, "total_steps": 1545, "train_answer_nll": 0.13443065476866417, "learning_rates": [0.0001956373551465576], "wall_seconds": 63.232456195983104, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 120, "total_steps": 1545, "train_answer_nll": 0.13278631530945473, "learning_rates": [0.00019427402862985687], "wall_seconds": 68.82910782494582, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 130, "total_steps": 1545, "train_answer_nll": 0.13172351430613963, "learning_rates": [0.00019291070211315613], "wall_seconds": 74.4635685950052, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 140, "total_steps": 1545, "train_answer_nll": 0.13084898198492784, "learning_rates": [0.00019154737559645536], "wall_seconds": 80.12991150992457, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 150, "total_steps": 1545, "train_answer_nll": 0.1290655664857908, "learning_rates": [0.0001901840490797546], "wall_seconds": 86.53042669291608, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 160, "total_steps": 1545, "train_answer_nll": 0.12743424207006476, "learning_rates": [0.00018882072256305385], "wall_seconds": 92.16702289495151, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 170, "total_steps": 1545, "train_answer_nll": 0.12609411233113765, "learning_rates": [0.0001874573960463531], "wall_seconds": 97.80815121391788, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 180, "total_steps": 1545, "train_answer_nll": 0.12487298852454284, "learning_rates": [0.00018609406952965236], "wall_seconds": 103.54572046897374, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 190, "total_steps": 1545, "train_answer_nll": 0.12402935846014673, "learning_rates": [0.00018473074301295162], "wall_seconds": 109.159383459948, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 200, "total_steps": 1545, "train_answer_nll": 0.12278133258202273, "learning_rates": [0.00018336741649625085], "wall_seconds": 114.80671096302103, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 210, "total_steps": 1545, "train_answer_nll": 0.12226850403150653, "learning_rates": [0.0001820040899795501], "wall_seconds": 120.43398213596083, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 220, "total_steps": 1545, "train_answer_nll": 0.12165883945284518, "learning_rates": [0.00018064076346284937], "wall_seconds": 126.09539659298025, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 230, "total_steps": 1545, "train_answer_nll": 0.12072269401734655, "learning_rates": [0.0001792774369461486], "wall_seconds": 131.6530547349248, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 240, "total_steps": 1545, "train_answer_nll": 0.11991591578007721, "learning_rates": [0.00017791411042944786], "wall_seconds": 137.23051623697393, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 250, "total_steps": 1545, "train_answer_nll": 0.11919048155042536, "learning_rates": [0.00017655078391274712], "wall_seconds": 142.86917836999055, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 260, "total_steps": 1545, "train_answer_nll": 0.11898956125139674, "learning_rates": [0.00017518745739604637], "wall_seconds": 149.01417917502113, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 270, "total_steps": 1545, "train_answer_nll": 0.11847733362253524, "learning_rates": [0.0001738241308793456], "wall_seconds": 154.56556827691384, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 280, "total_steps": 1545, "train_answer_nll": 0.11778854049428661, "learning_rates": [0.00017246080436264486], "wall_seconds": 160.15114566893317, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 290, "total_steps": 1545, "train_answer_nll": 0.11758029027566463, "learning_rates": [0.00017109747784594412], "wall_seconds": 165.77961580595002, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 300, "total_steps": 1545, "train_answer_nll": 0.11721674743758825, "learning_rates": [0.00016973415132924335], "wall_seconds": 171.35468871798366, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 310, "total_steps": 1545, "train_answer_nll": 0.1168743130137163, "learning_rates": [0.0001683708248125426], "wall_seconds": 177.00206505099777, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 320, "total_steps": 1545, "train_answer_nll": 0.11635293727817167, "learning_rates": [0.00016700749829584187], "wall_seconds": 182.55517417297233, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 330, "total_steps": 1545, "train_answer_nll": 0.11589846748040492, "learning_rates": [0.0001656441717791411], "wall_seconds": 188.17369033698924, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 340, "total_steps": 1545, "train_answer_nll": 0.11559147480716858, "learning_rates": [0.00016428084526244036], "wall_seconds": 193.8131467240164, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 350, "total_steps": 1545, "train_answer_nll": 0.11539365694621063, "learning_rates": [0.00016291751874573961], "wall_seconds": 199.40988825296517, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 360, "total_steps": 1545, "train_answer_nll": 0.11489398559652357, "learning_rates": [0.00016155419222903887], "wall_seconds": 205.05188639997505, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 370, "total_steps": 1545, "train_answer_nll": 0.11438929358693366, "learning_rates": [0.00016019086571233813], "wall_seconds": 210.69118596601766, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 380, "total_steps": 1545, "train_answer_nll": 0.11405752858715441, "learning_rates": [0.00015882753919563736], "wall_seconds": 216.97028710797895, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 390, "total_steps": 1545, "train_answer_nll": 0.1135964937903635, "learning_rates": [0.00015746421267893662], "wall_seconds": 222.56311583996285, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 400, "total_steps": 1545, "train_answer_nll": 0.11338580643558245, "learning_rates": [0.00015610088616223585], "wall_seconds": 228.19285684800707, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 410, "total_steps": 1545, "train_answer_nll": 0.11296128475367, "learning_rates": [0.0001547375596455351], "wall_seconds": 233.81091210292652, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 420, "total_steps": 1545, "train_answer_nll": 0.11252457612362084, "learning_rates": [0.00015337423312883436], "wall_seconds": 239.391236260999, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 430, "total_steps": 1545, "train_answer_nll": 0.1122990338884085, "learning_rates": [0.00015201090661213362], "wall_seconds": 245.13014996098354, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 440, "total_steps": 1545, "train_answer_nll": 0.11193323124420662, "learning_rates": [0.00015064758009543288], "wall_seconds": 250.77109061495867, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 450, "total_steps": 1545, "train_answer_nll": 0.11167858109910242, "learning_rates": [0.0001492842535787321], "wall_seconds": 256.4274706169963, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 460, "total_steps": 1545, "train_answer_nll": 0.11135287728129963, "learning_rates": [0.00014792092706203134], "wall_seconds": 262.274778965977, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 470, "total_steps": 1545, "train_answer_nll": 0.11083541512129236, "learning_rates": [0.0001465576005453306], "wall_seconds": 267.9055492739426, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 480, "total_steps": 1545, "train_answer_nll": 0.11049776167342276, "learning_rates": [0.00014519427402862986], "wall_seconds": 273.49597461300436, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 490, "total_steps": 1545, "train_answer_nll": 0.11013053409710916, "learning_rates": [0.00014383094751192912], "wall_seconds": 279.81029174500145, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 500, "total_steps": 1545, "train_answer_nll": 0.10993977765231562, "learning_rates": [0.00014246762099522837], "wall_seconds": 285.5249877750175, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 510, "total_steps": 1545, "train_answer_nll": 0.1095511089454324, "learning_rates": [0.00014110429447852763], "wall_seconds": 291.0963213139912, "peak_allocated_GiB_rank0": 15.399023532867432}
+TRAIN {"key": "imu2img_frozen", "epoch": 1, "optimizer_step": 515, "total_steps": 1545, "train_answer_nll": 0.1094549440370757, "learning_rates": [0.00014042263122017725], "wall_seconds": 294.6663479169365, "peak_allocated_GiB_rank0": 15.399023532867432}
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/exet6233/pet/pet_movement/scripts/lora_comparison.py", line 525, in <module>
+[rank1]:     elif args.command=='train':train(args.key)
+[rank1]:                                ^^^^^^^^^^^^^^^
+[rank1]:   File "/home/exet6233/pet/pet_movement/scripts/lora_comparison.py", line 319, in train
+[rank1]:     assert versions==[p._version for p in frozen]
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]: AssertionError
+[rank1]:[E1104 21:21:48.906964739 ProcessGroupNCCL.cpp:612] [Rank 1] Collective WorkNCCL(SeqNum=1116, OpType=ALLREDUCE, NumelIn=2, NumelOut=2, Timeout(ms)=600000) raised the following async exception: NCCL error: unhandled system error (run with NCCL_DEBUG=INFO for details), NCCL version 2.28.9
+ncclSystemError: System call (e.g. socket, malloc) or external library call failed or device error. 
+Last error:
+
+Exception raised from checkForNCCLErrorsInternal at /pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:2770 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x9d (0x7ac17557305d in /home/exet6233/miniconda3/envs/ecg/lib/python3.12/site-packages/torch/lib/libc10.so)
+frame #1: c10d::ProcessGroupNCCL::checkForNCCLErrorsInternal(std::shared_ptr<c10d::NCCLComm>&) + 0x380 (0x7ac0c14fb160 in /home/exet6233/miniconda3/envs/ecg/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::WorkNCCL::checkAndSetException() + 0x80 (0x7ac0c1502500 in /home/exet6233/miniconda3/envs/ecg/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::WorkNCCL::isStarted() + 0x58 (0x7ac0c15028a8 in /home/exet6233/miniconda3/envs/ecg/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::Watchdog::runLoop() + 0xae4 (0x7ac0c15072f4 in /home/exet6233/miniconda3/envs/ecg/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: c10d::ProcessGroupNCCL::Watchdog::run() + 0x157 (0x7ac0c15093b7 in /home/exet6233/miniconda3/envs/ecg/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0xdf0e6 (0x7ac1784ea0e6 in /home/exet6233/miniconda3/envs/ecg/bin/../lib/libstdc++.so.6)
+frame #7: <unknown function> + 0x9cb84 (0x7ac17be9cb84 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #8: <unknown function> + 0x129ecc (0x7ac17bf29ecc in /lib/x86_64-linux-gnu/libc.so.6)
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/exet6233/pet/pet_movement/scripts/lora_comparison.py", line 525, in <module>
+[rank0]:     elif args.command=='train':train(args.key)
+[rank0]:                                ^^^^^^^^^^^^^^^
+[rank0]:   File "/home/exet6233/pet/pet_movement/scripts/lora_comparison.py", line 319, in train
+[rank0]:     assert versions==[p._version for p in frozen]
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: AssertionError
+[rank0]:[W1104 21:21:49.030563491 ProcessGroupNCCL.cpp:1575] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+W1104 21:21:49.877000 2617220 site-packages/torch/distributed/elastic/multiprocessing/api.py:1012] Sending process 2617381 closing signal SIGTERM
+E1104 21:21:50.142000 2617220 site-packages/torch/distributed/elastic/multiprocessing/api.py:986] failed (exitcode: 1) local_rank: 1 (pid: 2617382) of binary: /home/exet6233/pet/pet_movement/.venv/bin/python
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/exet6233/miniconda3/envs/ecg/lib/python3.12/site-packages/torch/distributed/run.py", line 994, in <module>
+    main()
+  File "/home/exet6233/miniconda3/envs/ecg/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 362, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/exet6233/miniconda3/envs/ecg/lib/python3.12/site-packages/torch/distributed/run.py", line 990, in main
+    run(args)
+  File "/home/exet6233/miniconda3/envs/ecg/lib/python3.12/site-packages/torch/distributed/run.py", line 981, in run
+    elastic_launch(
+  File "/home/exet6233/miniconda3/envs/ecg/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 170, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/exet6233/miniconda3/envs/ecg/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 317, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+scripts/lora_comparison.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-11-04_21:21:50
+  host      : engs-33112.eng.ox.ac.uk
+  rank      : 0 (local_rank: 0)
+  exitcode  : -15 (pid: 2617381)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 2617381
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-11-04_21:21:49
+  host      : engs-33112.eng.ox.ac.uk
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 2617382)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

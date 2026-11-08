@@ -1,0 +1,3 @@
+{"epoch": 1, "optimizer_step": 515, "validation_answer_nll": 0.2554181776277441, "validation_tokens": 38860, "epoch_wall_seconds": 215.5961504529696, "checkpoint_sha256": "1333fcf798775f1d30562514dc55ebc53ab5b001aab84004fb8482052084d3b6"}
+{"epoch": 2, "optimizer_step": 1030, "validation_answer_nll": 0.21891124865717945, "validation_tokens": 38860, "epoch_wall_seconds": 203.45625865098555, "checkpoint_sha256": "fd861e2ceb7d3b7b6e34b4468562e96d5687eb7a96743a6c7b97a7608c2f418f"}
+{"epoch": 3, "optimizer_step": 1545, "validation_answer_nll": 0.2044850725889574, "validation_tokens": 38860, "epoch_wall_seconds": 203.34790314291604, "checkpoint_sha256": "3be624934ae5d8fefb282dc61159ecdc5b7b9ad939777d2b80a5fb7cfdb604d3"}

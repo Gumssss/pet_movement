@@ -1,0 +1,65 @@
+{
+  "model": "Qwen3.5-4B",
+  "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "model_repo_id": "Qwen/Qwen3.5-4B",
+  "experiment": "qwen35_4b_imu2img_vllm_en",
+  "image_method": "imu2img",
+  "classes": [
+    "Galloping",
+    "Lying chest",
+    "Sitting",
+    "Sniffing",
+    "Standing",
+    "Trotting",
+    "Walking"
+  ],
+  "inference_backend": "vllm",
+  "backend_version": "0.26.0",
+  "prompt_language": "en",
+  "evaluation_split": "test",
+  "expected_windows": 3708,
+  "qwen_training_examples": 0,
+  "qwen_finetuned": false,
+  "prompt_examples": 0,
+  "data_dir": "dataset/vlm_imu2img",
+  "input_image_size": [
+    224,
+    224
+  ],
+  "prompt_sha256": "20c6161d8206149719c416b7f6538b3ab541918b8d7cbb0253d7bebe36816a81",
+  "render_protocol_sha256": "5b63ebdfbcbcdcdbc65bcf95082bd26e3a97f51d9a7d3ffdacdc5454e4265632",
+  "images_manifest_sha256": "69f72a816c899ef9071c8e76a05031a2f7d91a86407528641473fe51e093b7ab",
+  "windows_sha256": "04b09eea20d60f63c581c782db5accb4750678f3f5e8a061dc55f01dcd0f9202",
+  "split_sha256": "3c8bc060f4f31da0d012a3ae419de626f3438bbaf23e3f7aa37dc7695aa35862",
+  "generation": {
+    "temperature": 0,
+    "enable_thinking": false,
+    "max_new_tokens": 32,
+    "seed": 20261101,
+    "dtype": "bfloat16",
+    "guided_decoding": false,
+    "speculative_decoding": false
+  },
+  "engine": {
+    "tensor_parallel_size": 1,
+    "max_model_len": 4096,
+    "max_num_seqs": 32,
+    "max_num_batched_tokens": 8192,
+    "gpu_memory_utilization": 0.85,
+    "enable_prefix_caching": false,
+    "flashinfer_sampler": false
+  },
+  "parsing": "Same strict label-only JSON parser; parse failures/refusals/truncation counted incorrect; no semantic retries.",
+  "timing_scope": "Observed vLLM request wall time includes internal processing, scheduling, compute and decoding.",
+  "converter_training_windows": 16461,
+  "converter_training_protocol_sha256": "55487660acc5e10d0b909e2925c2d79f1c27cf789e3ae3c31e9438ecc6e19225",
+  "converter_weights_sha256": "a8e6f9df2e1a4a743c31f554d1f78274cf2b3de5ed9a1176a67d9368a92a2e6a",
+  "method_sha256": "c6b5336ca43f03e19aa81c9ce527bab8d38e4f11602e5662b28d387d8dfb653b",
+  "paper_source_reference_sha256": "1c0c1d2cdf5bba2e451acf58d0178ceb1e2d2a66c7bcf72efde71eaf744918fd",
+  "image_processor_limits": {
+    "min_pixels": 50176,
+    "max_pixels": 1474560
+  },
+  "image_processor_note": "Lower minimum pixel budget keeps original 224x224 raster and 7x7 merged visual-token grid; ordinary large images unaffected by their existing 256x256 minimum.",
+  "pipeline_note": "Qwen is frozen/zero-shot; the image converter was supervised using training labels. This is not a zero-label pipeline or a full reproduction of the original SHL system."
+}

@@ -1,0 +1,25 @@
+{
+  "stage": "pilot",
+  "peak_lr": 3e-05,
+  "optimizer_steps": 100,
+  "sampler_epochs_started": 2,
+  "sample_presentations": 19150,
+  "input_order_sha256_per_rank": [
+    "5fa92c8b74e64969291d2481217f739cfea4a731abd6ccb621693386fc7cd114",
+    "bdfe87d0a5d9ac22cdd2ed6bf2b09eb2f745dea421147ed42377eaaa36f20d52"
+  ],
+  "initial_lora_sha256": "f51bbf2ea667a9eeef46a331787cebac70dbb419b2f42459886627bc12c3d01e",
+  "warm_converter_sha256": "3be624934ae5d8fefb282dc61159ecdc5b7b9ad939777d2b80a5fb7cfdb604d3",
+  "qwen_base_versions_unchanged": true,
+  "qwen_base_gradients_always_none": true,
+  "session_wall_seconds": 1688.8587127149804,
+  "peak_allocated_GiB_rank0": 74.5533504486084,
+  "peak_reserved_GiB_rank0": 83.181640625,
+  "common_code_sha256": "1406d23d540173548e99a2bede8d5d667e5461990df1fb45d3c0afeed1c8f88e",
+  "code_sha256": "b4a940f16f741ae2ed28fd3af0ecbea6cef2f52dcffd7ff9dec6c7a56d2b1ad6",
+  "checkpoint": {
+    "path": "models/Qwen3.5-27B-lora-imu2img-joint/lr_search/lr_3e-5",
+    "adapter_sha256": "b6aee5a4918f07dfd27f99694462e46d2e5dc922d727c16d3dd566727a478481",
+    "converter_sha256": "6a2f4dfff31e6d388303f397ecf095f642b732ace1886492a2bfca57c8d63e85"
+  }
+}

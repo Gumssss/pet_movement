@@ -1,0 +1,14 @@
+{
+  "test_windows": 3708,
+  "scores": {
+    "macro_f1": 0.07536077409577555,
+    "balanced_accuracy": 0.20905923344947736,
+    "accuracy": 0.16235167206040993
+  },
+  "raw_csv_metrics_consistent": true,
+  "test_pixels_and_prompt_verified": true,
+  "inference_backend": "vllm",
+  "status_counts": {
+    "ok": 3708
+  }
+}

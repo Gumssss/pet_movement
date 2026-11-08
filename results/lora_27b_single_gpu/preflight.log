@@ -1,0 +1,1 @@
+RUN results/qwen3.8_27B_lora_imu2img_joint_single_gpu/single_gpu_check.log

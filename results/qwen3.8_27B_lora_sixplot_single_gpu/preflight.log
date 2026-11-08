@@ -1,0 +1,13 @@
+RUN results/qwen3.8_27B_lora_sixplot_single_gpu/single_gpu_check.log
+Traceback (most recent call last):
+  File "/home/exet6233/pet/pet_movement/scripts/sixplot_qwen38_lora.py", line 461, in <module>
+    try:pipeline(args.command=='preflight')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/exet6233/pet/pet_movement/scripts/sixplot_qwen38_lora.py", line 414, in pipeline
+    if not (c.SUITE/'single_gpu_check.json').exists():run_process([script,'single-check','--key',key],c.SUITE/'single_gpu_check.log')
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/exet6233/pet/pet_movement/scripts/sixplot_qwen38_lora.py", line 385, in run_process
+    subprocess.run([str(ROOT/'.venv/bin/python'),'-B',*arguments],cwd=ROOT,stdout=f,stderr=subprocess.STDOUT,env=env,check=True)
+  File "/home/exet6233/miniconda3/envs/ecg/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/home/exet6233/pet/pet_movement/.venv/bin/python', '-B', 'scripts/sixplot_qwen38_lora.py', 'single-check', '--key', 'qwen38_27b']' returned non-zero exit status 1.

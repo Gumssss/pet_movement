@@ -1,0 +1,11 @@
+{
+  "microbatch_per_gpu": 10,
+  "world_size": 1,
+  "gradient_accumulation": 1,
+  "effective_batch_size": 10,
+  "gpu_uuid": "GPU-0ded27d3-e266-f20b-2476-f2980be2980e",
+  "physical_gpu": 0,
+  "free_physical_gpu": 1,
+  "profile_sha256": "17e1fbd2cf9ad9d92610cf9368448d6960926ad32bc235797d05522fcd3df90b",
+  "rule": "Largest batch passing3 consecutive native-image optimizer updates with>=2GiB actual free device memory"
+}

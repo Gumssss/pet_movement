@@ -1,0 +1,14 @@
+{
+  "test_windows": 3708,
+  "scores": {
+    "macro_f1": 0.26509172285815746,
+    "balanced_accuracy": 0.40803623972517855,
+    "accuracy": 0.2961165048543689
+  },
+  "status_counts": {
+    "ok": 3708
+  },
+  "prior_files_unchanged": 92,
+  "runtime_seconds": 4267.793321375037
+}
+Kimi result fully verified; final reports and handoff updated.

@@ -1,0 +1,32 @@
+{
+  "sessions": [
+    {
+      "started_utc": "2026-11-04T01:04:29.832645+00:00",
+      "inference_backend": "moonshot_api",
+      "base_url": "https://api.moonshot.ai/v1",
+      "model": "kimi-k3.1-pro",
+      "concurrency": 1,
+      "completed_at_start": 0,
+      "code_sha256": "fb02bcf5a87e53e3c91384021b83e093d5b0619fc680f426106c8d8a30d0d411",
+      "httpx_version": "0.28.1",
+      "state": "partial",
+      "ended_utc": "2026-11-04T01:04:37.703892+00:00",
+      "session_wall_seconds": 7.871329104993492,
+      "session_completed": 1
+    },
+    {
+      "started_utc": "2026-11-04T01:05:24.683757+00:00",
+      "inference_backend": "moonshot_api",
+      "base_url": "https://api.moonshot.ai/v1",
+      "model": "kimi-k3.1-pro",
+      "concurrency": 16,
+      "completed_at_start": 1,
+      "code_sha256": "fb02bcf5a87e53e3c91384021b83e093d5b0619fc680f426106c8d8a30d0d411",
+      "httpx_version": "0.28.1",
+      "state": "complete",
+      "ended_utc": "2026-11-04T02:16:24.605640+00:00",
+      "session_wall_seconds": 4259.921992270043,
+      "session_completed": 3707
+    }
+  ]
+}

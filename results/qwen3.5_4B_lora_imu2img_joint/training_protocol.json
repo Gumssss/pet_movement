@@ -1,0 +1,98 @@
+{
+  "state": "authorized_and_fixed_before_training",
+  "experiments": [
+    "sixplot",
+    "imu2img_frozen",
+    "imu2img_joint"
+  ],
+  "seed": 20261101,
+  "epochs": 3,
+  "lora": {
+    "r": 4,
+    "alpha": 8,
+    "dropout": 0.05,
+    "target_scopes": [
+      "ViT",
+      "visual_projection",
+      "language_attention"
+    ],
+    "trainable_parameters": 5226496,
+    "initialization": "Fresh PEFT LoRA from the original Qwen3.5-4B, identical seed; no prior ACL adapter"
+  },
+  "base_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "warm_converter_sha256": "3be624934ae5d8fefb282dc61159ecdc5b7b9ad939777d2b80a5fb7cfdb604d3",
+  "warm_converter": "Original frozen-Qwen-aligned converter epoch3",
+  "optimizer": "AdamW",
+  "lora_learning_rate": 0.0002,
+  "joint_converter_learning_rate": 1e-05,
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "epsilon": 1e-08,
+  "warmup_ratio": 0.05,
+  "scheduler": "linear",
+  "max_grad_norm": 1.0,
+  "microbatch_per_gpu": 4,
+  "world_size": 2,
+  "gradient_accumulation": 4,
+  "effective_batch_size": 32,
+  "dtype": "BF16 Qwen base; FP32 LoRA/converter/optimizer; BF16 converter forward and 8-bit straight-through bridge",
+  "gradient_checkpointing": {
+    "sixplot": true,
+    "imu2img_frozen": false,
+    "imu2img_joint": false
+  },
+  "train_windows": 16461,
+  "validation_windows": 4727,
+  "test_windows": 3708,
+  "selection": "Full validation greedy vLLM macro-F1 over all3 checkpoints; earliest epoch on ties; test excluded",
+  "loss": "Unweighted answer JSON plus EOS token cross entropy, all input/padding masked; no resampling or augmentation",
+  "prompts": {
+    "sixplot": {
+      "path": "results/qwen3.5_4B_lora_sixplot/prompt.txt",
+      "sha256": "ac4659d4c4f2d1366c7d34a36b81ab35cb50dcb2acbe598f3ffbe0bad541f209"
+    },
+    "imu2img_frozen": {
+      "path": "results/qwen3.5_4B_lora_imu2img_frozen/prompt.txt",
+      "sha256": "3c7e5c664620114df7b8a010f5c4f8736ba164f504991aa8ecf7859b437805a1"
+    },
+    "imu2img_joint": {
+      "path": "results/qwen3.5_4B_lora_imu2img_joint/prompt.txt",
+      "sha256": "3c7e5c664620114df7b8a010f5c4f8736ba164f504991aa8ecf7859b437805a1"
+    }
+  },
+  "windows_sha256": "04b09eea20d60f63c581c782db5accb4750678f3f5e8a061dc55f01dcd0f9202",
+  "splits_sha256": "3c8bc060f4f31da0d012a3ae419de626f3438bbaf23e3f7aa37dc7695aa35862",
+  "comparisons": "1vs2 compares image representation plus paired prompt; 2vs3 changes only converter optimization (same warm converter, fresh LoRA, prompt and optimizer-step budget).",
+  "label_budget_note": "All use the same16461 labeled training windows. IMU2IMG starts from a converter that previously received additional supervised training; warm-start compute is reported separately.",
+  "test_note": "This fixed test set has been viewed in earlier experiments; this run is fixed before its new test outputs.",
+  "key": "imu2img_joint",
+  "model_name": "Qwen3.5-4B-lora-imu2img-joint",
+  "qwen_base_frozen_hash_before": "08743713ee4b48ca06c7885248b488018997a7c7515de4956f940816f93f8b86",
+  "initial_lora_sha256": "0f3a2247f98b8d81e01ce60345ba295702d6c9e0a641a0f1a4eb80ed5d1e86cc",
+  "converter_trainable_parameters": 835584,
+  "processor": {
+    "prefix_tokens": 200,
+    "grid": [
+      1,
+      14,
+      14
+    ],
+    "visual_tokens": 49,
+    "image_size": [
+      224,
+      224
+    ],
+    "prompt_sha256": "3c7e5c664620114df7b8a010f5c4f8736ba164f504991aa8ecf7859b437805a1"
+  },
+  "trainable_parameters": 6062080,
+  "versions": {
+    "torch": "2.11.0",
+    "transformers": "5.14.1",
+    "peft": "0.21.2",
+    "vllm": "0.26.0"
+  },
+  "code_sha256": "616e6642c14ec550eab1b74a73b144437e2228b3083597c93a89150dddc004a9"
+}

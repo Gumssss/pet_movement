@@ -1,0 +1,26 @@
+{
+  "stage": "pilot",
+  "peak_lr": 1e-05,
+  "optimizer_steps": 100,
+  "sampler_epochs_started": 1,
+  "sample_presentations": 1000,
+  "input_order_sha256_per_rank": [
+    "dbc23cbee121249dd0460590e4f1232376b0bf6462c7e76a95b92981e6ef4fb6"
+  ],
+  "initial_lora_sha256": "f51bbf2ea667a9eeef46a331787cebac70dbb419b2f42459886627bc12c3d01e",
+  "qwen_base_versions_unchanged": true,
+  "qwen_base_gradients_always_none": true,
+  "session_wall_seconds": 2210.833565214998,
+  "microbatch_per_gpu": 10,
+  "gradient_accumulation": 1,
+  "effective_batch_size": 10,
+  "gpu_uuid": "GPU-0ded27d3-e266-f20b-2476-f2980be2980e",
+  "peak_allocated_GiB": 79.5839672088623,
+  "peak_reserved_GiB": 87.423828125,
+  "common_code_sha256": "d3d7c17bb48f7dc3acc31195d81742633c06470c2c1d4c2ca8d77493c03f345b",
+  "code_sha256": "1f2b28c2805bb29df450985c0e47e418c11c2630e7e302cf91f4ad5b0d887ce2",
+  "checkpoint": {
+    "path": "models/Qwen3.8-27B-lora-sixplot-single-gpu/lr_search/lr_1e-5",
+    "adapter_sha256": "c0fb8286a8dfbfd1c2d83078a824278bd5de6aa70cabb5e4c18518da3730cc9f"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "test_windows": 3708,
+  "same_fixed_images_verified": true,
+  "english_prompt_verified": true,
+  "inference_backend": "vllm",
+  "vllm_version": "0.26.0",
+  "raw_csv_metrics_consistent": true,
+  "all_prior_results_unchanged": true,
+  "frozen_inputs_verified": true,
+  "scores": {
+    "macro_f1": 0.15796699156311375,
+    "balanced_accuracy": 0.32928103327228936,
+    "accuracy": 0.20550161812297735
+  },
+  "prediction_counts": {
+    "Galloping": 212,
+    "Trotting": 100,
+    "Standing": 2658,
+    "Lying chest": 369,
+    "Walking": 369
+  },
+  "status_counts": {
+    "ok": 3708
+  }
+}

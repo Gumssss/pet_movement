@@ -1,0 +1,58 @@
+# Model weights and local runtime dependencies
+/models/
+/.venv/
+/.cache/
+/.codex/
+/.agents/
+/.aws/
+
+# Python and editor caches
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+
+# Credentials and machine-local configuration
+.env
+.env.*
+*.env
+!.env.example
+.netrc
+.git-credentials
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Raw dataset and reproducible numerical caches
+/dataset/犬只运动传感器数据集/
+/dataset/cache/
+*.npz
+*.npy
+
+# Bulk generated images; retain small preview files and image manifests
+/dataset/**/images/
+
+# Local archives and exported bundles
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+
+# Additional weight/checkpoint formats, even outside models/
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+
+# W&B machine-local aliases/cache; keep offline runs, metrics and loss curves
+**/wandb/latest-run
+**/wandb/debug.log
+**/wandb/debug-internal.log
+**/wandb/**/logs/debug-core.log
+**/tracking/cache/

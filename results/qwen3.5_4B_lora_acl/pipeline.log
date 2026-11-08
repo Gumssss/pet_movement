@@ -1,0 +1,22 @@
+START merge selected adapter
+COMPLETE merge selected adapter
+START matched base vLLM run
+COMPLETE matched base vLLM run
+START matched base evaluation
+COMPLETE matched base evaluation
+START merged LoRA vLLM run
+COMPLETE merged LoRA vLLM run
+START LoRA evaluation
+COMPLETE LoRA evaluation
+START independent verification and reports
+Traceback (most recent call last):
+  File "/tmp/pet_lora_pipeline.py", line 22, in <module>
+    execute('independent verification and reports',['/tmp/pet_finish_lora.py'],'results/qwen3.5_4B_lora_acl/final_validation.log')
+  File "/tmp/pet_lora_pipeline.py", line 10, in execute
+    subprocess.run([PY,'-B',*args],cwd=ROOT,stdout=f,stderr=subprocess.STDOUT,check=True)
+  File "/home/exet6233/miniconda3/envs/ecg/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/home/exet6233/pet/pet_movement/.venv/bin/python', '-B', '/tmp/pet_finish_lora.py']' returned non-zero exit status 1.
+
+RECOVERED independent verification: corrected checker BF16 casting order; 250 matrices match exactly.
+ALL WORK COMPLETE

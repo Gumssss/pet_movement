@@ -1,0 +1,17 @@
+{
+  "prompt_validation_old_f1": 0.02653727006058612,
+  "prompt_validation_simple_f1": 0.02653727006058612,
+  "matched_baseline_scores": {
+    "macro_f1": 0.023738872403560828,
+    "balanced_accuracy": 0.14285714285714285,
+    "accuracy": 0.09061488673139159
+  },
+  "aligned_scores": {
+    "macro_f1": 0.12580948797218766,
+    "balanced_accuracy": 0.27512869940621987,
+    "accuracy": 0.2974649406688242
+  },
+  "selected_epoch": 3,
+  "qwen_parameter_memory_and_files_unchanged": true,
+  "historical_files_unchanged": 200
+}

@@ -1,0 +1,35 @@
+{
+  "selected_epoch": 2,
+  "adapter_sha256": "5ccfdc4c05e7d64cd46be96f182ee32a69652ad97309276b3ebdb65c077488bd",
+  "converter_sha256": "03ebcf3acd92c52c5a1a1e69349dbf2febf2b931d27e78d22264888c83071674",
+  "merged_for_vllm": true,
+  "nonzero_scopes": {
+    "ViT": {
+      "module": "base_model.model.model.visual.blocks.0.attn.qkv",
+      "delta_l1": 256.840576171875
+    },
+    "visual_projection": {
+      "module": "base_model.model.model.visual.merger.linear_fc1",
+      "delta_l1": 1254.655517578125
+    },
+    "language_attention": {
+      "module": "base_model.model.model.language_model.layers.0.linear_attn.out_proj",
+      "delta_l1": 618.7080688476562
+    }
+  },
+  "merged_weight_files_sha256": {
+    "model-00003-of-00012.safetensors": "a51c3f10a332452be6fc347d24f56a6d61cb9caa2def3f530462c58934ddd055",
+    "model-00010-of-00012.safetensors": "41518adfe1a8c985d9cec55a5992d1aac6014fc53e66619e44906348d1245350",
+    "model-00002-of-00012.safetensors": "25611ad6b342279c419693894ab35a3233436394d8a717c961e3480740631632",
+    "model-00005-of-00012.safetensors": "98850640d0bd40ffa33a7d3880870fb9cef952e19b1c62ed12056400e7d7719d",
+    "model-00008-of-00012.safetensors": "9feb1996704c2bf0f634e1d84aa6bb2dd6e02abc5febf71a183e9a2b41d0cd57",
+    "model-00012-of-00012.safetensors": "7c0713bd56d55faacba3df20d29205e1751ac301ea5be44da4a0b9a0a7a07a31",
+    "model-00009-of-00012.safetensors": "8220b8db47a06a072f9d559fe13bd55433d2f2d9ccfa92429d1b865ebd3791b3",
+    "model-00007-of-00012.safetensors": "0d2f696ccdb105f79a62e5c1beb44b1485cc55a1f27745cc74535c24b1ae4c30",
+    "model-00001-of-00012.safetensors": "4c1ebaabbaca559789304b32d41530fb890cb406d30b4113f2e0e754a05dc93d",
+    "model-00006-of-00012.safetensors": "d0948024c05f21235bf827cf890d64d5c1b60f55b6171aeda73ffbfe87fb7ffa",
+    "model-00011-of-00012.safetensors": "0a832e91cdaf5e3f60706720a64c85fe66ee098bb361f8a48eedb722c7879658",
+    "model-00004-of-00012.safetensors": "eb7a423a2187a77c3ff08abc1bc8cb2d10ce422640ea449425e2046866b610af"
+  },
+  "checkpoint": "models/Qwen3.5-27B-lora-imu2img-joint/checkpoints/epoch_2"
+}

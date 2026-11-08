@@ -1,0 +1,28 @@
+{
+  "qwen_4b": {
+    "macro_f1": 0.0954456031047706,
+    "balanced_accuracy": 0.24390243902439024,
+    "accuracy": 0.21386192017259978,
+    "windows": 3708,
+    "status_counts": {
+      "ok": 3708
+    },
+    "raw_csv_metrics_consistent": true,
+    "frozen_prompt_and_input_hashes_verified": true,
+    "runtime_batch_count_verified": true
+  },
+  "qwen_27b": {
+    "macro_f1": 0.27552486166933454,
+    "balanced_accuracy": 0.32222381632672936,
+    "accuracy": 0.2464940668824164,
+    "windows": 3708,
+    "status_counts": {
+      "ok": 3708
+    },
+    "raw_csv_metrics_consistent": true,
+    "frozen_prompt_and_input_hashes_verified": true,
+    "runtime_batch_count_verified": true
+  },
+  "baseline_and_split_fingerprints_unchanged": true,
+  "kimi_still_empty": true
+}

@@ -1,0 +1,3 @@
+# Research manifests refer to exact SHA-256 values. Preserve source bytes,
+# including existing CSV/JSONL/vendor line endings, across clone/checkout.
+* -text

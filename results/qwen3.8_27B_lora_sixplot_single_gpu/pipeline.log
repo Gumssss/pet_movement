@@ -1,0 +1,18 @@
+RUN results/qwen3.8_27B_lora_sixplot_single_gpu/pilot_train.log
+RUN results/qwen3.8_27B_lora_sixplot_single_gpu/export_pilot_1e-4.log
+RUN results/qwen3.8_27B_lora_sixplot_single_gpu/validation_pilot_1e-4.log
+RUN results/qwen3.8_27B_lora_sixplot_single_gpu/export_pilot_3e-5.log
+RUN results/qwen3.8_27B_lora_sixplot_single_gpu/validation_pilot_3e-5.log
+RUN results/qwen3.8_27B_lora_sixplot_single_gpu/export_pilot_1e-5.log
+RUN results/qwen3.8_27B_lora_sixplot_single_gpu/validation_pilot_1e-5.log
+LR_SELECTED qwen38_27b {"best_lr": 0.0001, "best_macro_f1": 0.501468863850832, "scores": [{"lr": 0.0001, "macro_f1": 0.501468863850832, "balanced_accuracy": 0.532462959451054, "accuracy": 0.5348000846202665}, {"lr": 3e-05, "macro_f1": 0.43499485962387824, "balanced_accuracy": 0.46319531245220713, "accuracy": 0.48127776602496297}, {"lr": 1e-05, "macro_f1": 0.22916180884458043, "balanced_accuracy": 0.3913220066679179, "accuracy": 0.31415273958112966}], "metric": "Full validation vLLM macro-F1", "optimizer_steps_per_candidate": 100, "ties": "lowest LR", "test_used_for_selection": false}
+RUN results/qwen3.8_27B_lora_sixplot_single_gpu/train.log
+RUN results/qwen3.8_27B_lora_sixplot_single_gpu/export_epoch1.log
+RUN results/qwen3.8_27B_lora_sixplot_single_gpu/validation_epoch1.log
+RUN results/qwen3.8_27B_lora_sixplot_single_gpu/export_epoch2.log
+RUN results/qwen3.8_27B_lora_sixplot_single_gpu/validation_epoch2.log
+RUN results/qwen3.8_27B_lora_sixplot_single_gpu/export_epoch3.log
+RUN results/qwen3.8_27B_lora_sixplot_single_gpu/validation_epoch3.log
+RUN results/qwen3.8_27B_lora_sixplot_single_gpu/export_final.log
+RUN results/qwen3.8_27B_lora_sixplot_single_gpu/test.log
+RUN results/qwen3.8_27B_lora_sixplot_single_gpu/validation.log

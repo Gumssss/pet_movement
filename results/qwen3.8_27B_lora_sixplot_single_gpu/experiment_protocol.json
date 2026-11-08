@@ -1,0 +1,73 @@
+{
+  "state": "fixed_before_new_validation_outputs",
+  "model": "Qwen3.8-27B",
+  "keys": [
+    "qwen38_27b"
+  ],
+  "mode": "sixplot",
+  "base_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "seed": 20261101,
+  "world_size": 1,
+  "gpu_uuid": "GPU-0ded27d3-e266-f20b-2476-f2980be2980e",
+  "physical_gpu": 0,
+  "reserved_for_others_gpu": 1,
+  "lora": {
+    "r": 4,
+    "alpha": 8,
+    "dropout": 0.05,
+    "target_scopes": [
+      "ViT",
+      "visual_projection",
+      "language_attention"
+    ],
+    "trainable_parameters": 13881216
+  },
+  "base_weights_frozen": true,
+  "fresh_initialization": "Original Qwen3.8-27B + fresh identical-seed LoRA for each candidate and formal training; no old adapters",
+  "lr_candidates": [
+    0.0001,
+    3e-05,
+    1e-05
+  ],
+  "pilot_optimizer_steps": 100,
+  "lr_selection": "Full4727 validation vLLM greedy Macro-F1; smallest LR on exact ties; test excluded",
+  "formal_epochs": 3,
+  "checkpoint_selection": "Full validation vLLM Macro-F1 across3 epochs; earliest epoch on exact ties; test excluded",
+  "scheduler": "10% linear warmup +90% cosine decay to zero, independently for each pilot and full formal run",
+  "optimizer": "AdamW",
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "epsilon": 1e-08,
+  "weight_decay": 0.01,
+  "max_grad_norm": 1.0,
+  "gradient_checkpointing": true,
+  "use_reentrant": false,
+  "batch_rule": "Largest stable native1280x1152 single-GPU microbatch with2GiB reserved headroom; accumulation1",
+  "gradient_accumulation": 1,
+  "precision": "BF16 original base and forward; FP32 LoRA and AdamW",
+  "train_windows": 16461,
+  "validation_windows": 4727,
+  "test_windows": 3708,
+  "windows_sha256": "04b09eea20d60f63c581c782db5accb4750678f3f5e8a061dc55f01dcd0f9202",
+  "splits_sha256": "3c8bc060f4f31da0d012a3ae419de626f3438bbaf23e3f7aa37dc7695aa35862",
+  "prompt_sha256": "ac4659d4c4f2d1366c7d34a36b81ab35cb50dcb2acbe598f3ffbe0bad541f209",
+  "input_protocol_sha256": "30974e2369a6081edc769c9b30a46fd3f87b0a7cd80c3207a04c3a2cb80f1bac",
+  "image_size": [
+    1280,
+    1152
+  ],
+  "visual_tokens": 1440,
+  "image_method": "Existing sixplot, all200points/all6channels; fixed training-derived axis limits; no IMU2IMG converter",
+  "loss": "Answer JSON+EOS token CE; input/image/padding masked; no augmentation, resampling, loss weighting or dropped windows",
+  "sampling": "Single-rank seeded sampler; repeat reshuffled training set if a100-update pilot exhausts the data; candidates get identical order",
+  "tracking": {
+    "backend": "wandb",
+    "mode": "offline",
+    "project": "pet-movement",
+    "group": "qwen38-27b-sixplot-lora",
+    "logs": "Every optimizer update loss/LR/gradnorm; per-epoch validation NLL; generated validation F1 stored separately"
+  },
+  "test_note": "Fixed dog-disjoint test set was viewed historically; no new test feedback used to select LR/epoch. Extra LR-search training compute is recorded."
+}

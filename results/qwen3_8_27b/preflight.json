@@ -1,0 +1,14 @@
+{
+  "split": "train",
+  "purpose": "technical check only; not included in evaluation",
+  "response": "{\"label\": \"Lying chest\"}",
+  "parsed_label": "Lying chest",
+  "status": "ok",
+  "input_tokens": 2230,
+  "generated_tokens": 9,
+  "preprocess_seconds": 0.06117910600733012,
+  "generation_seconds": 27.673880788963288,
+  "image_to_response_seconds": 27.735059894970618,
+  "load_seconds": 36.45294435310643,
+  "device": "cuda:0"
+}

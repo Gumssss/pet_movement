@@ -1,0 +1,6 @@
+{
+  "state": "complete",
+  "training_merge_both_tests_validation_reports_complete": true,
+  "verification_recovery": "Independent checker corrected to PEFT safe_merge BF16 cast-before-add order; weights and all test responses unchanged; all 250 matrices verified exactly.",
+  "validation_sha256": "f8d2682ba3f266670e6ead58c781d4af645d29cdf2e3aa08f9937fcd09306c76"
+}

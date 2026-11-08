@@ -1,0 +1,14 @@
+{
+  "model": "/home/exet6233/pet/宠物医疗/models/Qwen3.5-27B",
+  "device": "cuda:1",
+  "dtype": "torch.bfloat16",
+  "prompt": "这张图片的主要颜色是什么？只回答颜色。",
+  "image": "/home/exet6233/pet/宠物医疗/deployment/smoke_image.png",
+  "response": "红色",
+  "input_tokens": 88,
+  "generated_tokens": 2,
+  "load_seconds": 3.236,
+  "generation_seconds": 0.618,
+  "peak_cuda_memory_GiB": 51.168,
+  "torch_version": "2.11.0+cu130"
+}

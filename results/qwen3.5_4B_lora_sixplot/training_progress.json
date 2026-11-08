@@ -1,0 +1,12 @@
+{
+  "key": "sixplot",
+  "epoch": 3,
+  "optimizer_step": 1545,
+  "total_steps": 1545,
+  "train_answer_nll": 0.03945923235102858,
+  "learning_rates": [
+    0.0
+  ],
+  "wall_seconds": 17009.765263827052,
+  "peak_allocated_GiB_rank0": 13.817427158355713
+}

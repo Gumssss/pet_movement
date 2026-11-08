@@ -1,0 +1,14 @@
+{
+  "split": "train",
+  "purpose": "technical check only; not included in evaluation",
+  "response": "{\"label\": \"Standing\"}",
+  "parsed_label": "Standing",
+  "status": "ok",
+  "input_tokens": 2096,
+  "generated_tokens": 7,
+  "preprocess_seconds": 0.05600832705385983,
+  "generation_seconds": 1.1298082550056279,
+  "image_to_response_seconds": 1.1858165820594877,
+  "load_seconds": 3.500269162002951,
+  "device": "cuda:1"
+}

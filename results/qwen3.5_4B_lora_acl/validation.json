@@ -1,0 +1,35 @@
+{
+  "test_windows": 3708,
+  "scores": {
+    "macro_f1": 0.6735484200473429,
+    "balanced_accuracy": 0.6764632223756261,
+    "accuracy": 0.6232470334412082
+  },
+  "raw_csv_metrics_consistent": true,
+  "test_pixels_and_prompt_verified": true,
+  "inference_backend": "vllm",
+  "status_counts": {
+    "ok": 3708
+  },
+  "matched_base_protocol_verified": true,
+  "training_epochs": 3,
+  "selected_epoch": 1,
+  "checkpoint_selected_only_by_validation": true,
+  "all_historical_files_unchanged": true,
+  "original_base_weight_hashes_unchanged": true,
+  "merge_validation": {
+    "all_250_merged_projection_weights_equal_base_plus_selected_lora": true,
+    "verified_modules_by_scope": {
+      "language_attention": 152,
+      "ViT": 96,
+      "visual_projection": 2
+    },
+    "modules_with_nonzero_bfloat16_changes": {
+      "language_attention": 152,
+      "ViT": 96,
+      "visual_projection": 2
+    },
+    "max_weight_error": 0.0,
+    "rounding_rule": "PEFT0.21.2 safe_merge casts the FP32 LoRA delta to base BF16 before adding to the BF16 base; verified in this exact order."
+  }
+}

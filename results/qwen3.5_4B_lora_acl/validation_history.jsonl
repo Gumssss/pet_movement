@@ -1,0 +1,3 @@
+{"epoch": 1, "optimizer_step": 515, "validation_answer_nll": 0.08038086889832215, "validation_answer_tokens": 38860, "best_epoch": 1, "best_validation_nll": 0.08038086889832215, "epoch_wall_seconds": 1332.5520462739514}
+{"epoch": 2, "optimizer_step": 1030, "validation_answer_nll": 0.09343831806186716, "validation_answer_tokens": 38860, "best_epoch": 1, "best_validation_nll": 0.08038086889832215, "epoch_wall_seconds": 1310.3066085800529}
+{"epoch": 3, "optimizer_step": 1545, "validation_answer_nll": 0.11494745307935895, "validation_answer_tokens": 38860, "best_epoch": 1, "best_validation_nll": 0.08038086889832215, "epoch_wall_seconds": 1311.8030078599695}

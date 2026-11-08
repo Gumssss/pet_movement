@@ -1,0 +1,13 @@
+Loading weights:   0%|          | 0/200 [00:00<?, ?it/s]Loading weights: 100%|██████████| 200/200 [00:00<00:00, 16025.61it/s]
+{
+  "purpose": "512 training-window forward/backward check only; no optimizer update",
+  "loss": 1.9494580030441284,
+  "gradient_norms": {
+    "converter.encoders": 1.8124070218296737,
+    "converter.decoders": 1.1666465209931407,
+    "vit": 2.684187671291738,
+    "classifier": 2.539924387999662
+  },
+  "seconds": 0.3415673009585589,
+  "peak_allocated_GiB": 10.864799976348877
+}

@@ -1,0 +1,353 @@
+{
+  "macro_f1": 0.15796699156311375,
+  "balanced_accuracy": 0.32928103327228936,
+  "accuracy": 0.20550161812297735,
+  "model": "Qwen3.8-27B",
+  "experiment": "imu_2s_v1_literature_zero_shot_en",
+  "test_windows": 3708,
+  "inference_backend": "vllm",
+  "prompt_language": "en",
+  "status_counts": {
+    "ok": 3708
+  },
+  "parse_success_rate": 1.0,
+  "failures_counted_as_incorrect": true,
+  "classification_report": {
+    "Galloping": {
+      "precision": 0.13679245283018868,
+      "recall": 1.0,
+      "f1-score": 0.24066390041493776,
+      "support": 29.0
+    },
+    "Lying chest": {
+      "precision": 0.20596205962059622,
+      "recall": 0.08745684695051784,
+      "f1-score": 0.12277867528271405,
+      "support": 869.0
+    },
+    "Sitting": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 813.0
+    },
+    "Sniffing": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 671.0
+    },
+    "Standing": {
+      "precision": 0.2076749435665914,
+      "recall": 0.9616724738675958,
+      "f1-score": 0.3415841584158416,
+      "support": 574.0
+    },
+    "Trotting": {
+      "precision": 0.99,
+      "recall": 0.23798076923076922,
+      "f1-score": 0.38372093023255816,
+      "support": 416.0
+    },
+    "Walking": {
+      "precision": 0.016260162601626018,
+      "recall": 0.017857142857142856,
+      "f1-score": 0.01702127659574468,
+      "support": 336.0
+    },
+    "accuracy": 0.20550161812297735,
+    "macro avg": {
+      "precision": 0.22238423123128606,
+      "recall": 0.32928103327228936,
+      "f1-score": 0.15796699156311375,
+      "support": 3708.0
+    },
+    "weighted avg": {
+      "precision": 0.1940282748607722,
+      "recall": 0.20550161812297735,
+      "f1-score": 0.12812575101842483,
+      "support": 3708.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      29,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      76,
+      0,
+      0,
+      792,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      29,
+      0,
+      0,
+      783,
+      0,
+      1,
+      0
+    ],
+    [
+      38,
+      152,
+      0,
+      0,
+      293,
+      1,
+      187,
+      0
+    ],
+    [
+      1,
+      20,
+      0,
+      0,
+      552,
+      0,
+      1,
+      0
+    ],
+    [
+      144,
+      0,
+      0,
+      0,
+      0,
+      99,
+      173,
+      0
+    ],
+    [
+      0,
+      92,
+      0,
+      0,
+      238,
+      0,
+      6,
+      0
+    ]
+  ],
+  "confusion_rows": [
+    "Galloping",
+    "Lying chest",
+    "Sitting",
+    "Sniffing",
+    "Standing",
+    "Trotting",
+    "Walking"
+  ],
+  "confusion_columns": [
+    "Galloping",
+    "Lying chest",
+    "Sitting",
+    "Sniffing",
+    "Standing",
+    "Trotting",
+    "Walking",
+    "__INVALID__"
+  ],
+  "per_dog": {
+    "20": {
+      "macro_f1": 0.1165104736533308,
+      "balanced_accuracy": 0.20950952219968447,
+      "accuracy": 0.17252396166134185,
+      "windows": 313,
+      "class_support": [
+        0,
+        87,
+        81,
+        67,
+        51,
+        16,
+        11
+      ]
+    },
+    "21": {
+      "macro_f1": 0.0691147669408539,
+      "balanced_accuracy": 0.28289203612479474,
+      "accuracy": 0.15476190476190477,
+      "windows": 420,
+      "class_support": [
+        2,
+        87,
+        75,
+        69,
+        64,
+        38,
+        85
+      ]
+    },
+    "25": {
+      "macro_f1": 0.10476459344645361,
+      "balanced_accuracy": 0.2912891986062718,
+      "accuracy": 0.06022408963585434,
+      "windows": 714,
+      "class_support": [
+        2,
+        170,
+        170,
+        134,
+        30,
+        123,
+        85
+      ]
+    },
+    "28": {
+      "macro_f1": 0.1685652038593215,
+      "balanced_accuracy": 0.35417204856626194,
+      "accuracy": 0.24216524216524216,
+      "windows": 351,
+      "class_support": [
+        1,
+        79,
+        78,
+        61,
+        65,
+        35,
+        32
+      ]
+    },
+    "51": {
+      "macro_f1": 0.3656483721947042,
+      "balanced_accuracy": 0.4554809648747055,
+      "accuracy": 0.4596774193548387,
+      "windows": 372,
+      "class_support": [
+        16,
+        92,
+        73,
+        63,
+        64,
+        58,
+        6
+      ]
+    },
+    "52": {
+      "macro_f1": 0.12581798527426397,
+      "balanced_accuracy": 0.31753762110904965,
+      "accuracy": 0.20535714285714285,
+      "windows": 336,
+      "class_support": [
+        1,
+        88,
+        69,
+        87,
+        63,
+        22,
+        6
+      ]
+    },
+    "61": {
+      "macro_f1": 0.09069891940120949,
+      "balanced_accuracy": 0.18839979221293227,
+      "accuracy": 0.17699115044247787,
+      "windows": 452,
+      "class_support": [
+        0,
+        82,
+        78,
+        61,
+        68,
+        87,
+        76
+      ]
+    },
+    "65": {
+      "macro_f1": 0.2252317544454249,
+      "balanced_accuracy": 0.36428571428571427,
+      "accuracy": 0.25753424657534246,
+      "windows": 365,
+      "class_support": [
+        6,
+        92,
+        96,
+        58,
+        79,
+        10,
+        24
+      ]
+    },
+    "68": {
+      "macro_f1": 0.18116026335661586,
+      "balanced_accuracy": 0.3421900161030596,
+      "accuracy": 0.2623376623376623,
+      "windows": 385,
+      "class_support": [
+        1,
+        92,
+        93,
+        71,
+        90,
+        27,
+        11
+      ]
+    }
+  },
+  "dog_bootstrap_95ci": {
+    "macro_f1": [
+      0.0940223657732057,
+      0.2457395305550821
+    ],
+    "balanced_accuracy": [
+      0.30215494129480935,
+      0.3771477625320518
+    ],
+    "accuracy": [
+      0.13795654466869048,
+      0.29231711049892867
+    ]
+  },
+  "mean_input_tokens": 2230.0,
+  "total_input_tokens": 8268840,
+  "total_generated_tokens": 27200,
+  "amortized_image_to_response_seconds_p50": 0.4387989524693694,
+  "amortized_image_to_response_seconds_p95": 0.4413626935602224,
+  "latency_note": "batch wall time per item is amortized throughput cost, not single-request latency; preflight.json is separate",
+  "rendering": {
+    "total_render_seconds": 555.0838960448746,
+    "windows_with_out_of_range": 468,
+    "out_of_range_points": {
+      "ANeck_x_below": 701,
+      "ANeck_x_above": 62,
+      "ANeck_y_below": 616,
+      "ANeck_y_above": 328,
+      "ANeck_z_below": 613,
+      "ANeck_z_above": 371,
+      "GNeck_x_below": 1002,
+      "GNeck_x_above": 780,
+      "GNeck_y_below": 600,
+      "GNeck_y_above": 285,
+      "GNeck_z_below": 918,
+      "GNeck_z_above": 475
+    },
+    "total_channel_samples": 4449600
+  },
+  "runtime": {
+    "load_seconds_total": 36.45294435310643,
+    "model_run_wall_seconds_total": 1698.2439725449076,
+    "peak_cuda_allocated_GiB": null,
+    "formal_preprocess_seconds_total": 15.689555002143607,
+    "formal_generation_seconds_total": 1608.7119231704855,
+    "formal_image_to_response_seconds_total": 1624.4014781726291,
+    "render_plus_inference_seconds_per_window": 0.5877792271352491,
+    "cost_note": "rendering + parent image/template preparation + vLLM engine request wall time, amortized per window; excludes engine initialization/compile/warmup, preflight, external JSON parsing, manifest I/O, waits and 2s acquisition; whole-run wall time is separate.",
+    "observed_gpu_process_memory_GiB_peak": 82.439453125,
+    "memory_measurement": "NVML sum of this process and its vLLM children on the selected GPU, sampled after engine init and each batch; includes cache reservation; not a PyTorch allocator peak",
+    "vllm_engine_call_seconds_total": 1608.7119231704855,
+    "timing_scope": "vLLM engine call includes internal tokenization/image processing, scheduling, GPU execution and output detokenization; it is not GPU kernel time alone."
+  }
+}

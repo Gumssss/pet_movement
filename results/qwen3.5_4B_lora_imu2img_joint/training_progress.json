@@ -1,0 +1,13 @@
+{
+  "key": "imu2img_joint",
+  "epoch": 3,
+  "optimizer_step": 1545,
+  "total_steps": 1545,
+  "train_answer_nll": 0.0795275856377432,
+  "learning_rates": [
+    0.0,
+    0.0
+  ],
+  "wall_seconds": 919.6170935729751,
+  "peak_allocated_GiB_rank0": 15.42961311340332
+}

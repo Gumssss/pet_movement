@@ -1,0 +1,10 @@
+{
+  "model": "Qwen3.5-4B",
+  "test_windows": 3708,
+  "macro_f1": 0.09838986189918934,
+  "balanced_accuracy": 0.25563091090094575,
+  "accuracy": 0.2168284789644013,
+  "status_counts": {
+    "ok": 3708
+  }
+}

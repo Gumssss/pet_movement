@@ -1,0 +1,27 @@
+{
+  "metric": "Full validation vLLM macro-F1",
+  "scores": [
+    {
+      "epoch": 1,
+      "macro_f1": 0.5817709854456269,
+      "balanced_accuracy": 0.6493125358990627,
+      "accuracy": 0.56991749524011
+    },
+    {
+      "epoch": 2,
+      "macro_f1": 0.6459146612611112,
+      "balanced_accuracy": 0.6750745518584746,
+      "accuracy": 0.5957266765390311
+    },
+    {
+      "epoch": 3,
+      "macro_f1": 0.6993762122937559,
+      "balanced_accuracy": 0.7139168315901437,
+      "accuracy": 0.6151893378464142
+    }
+  ],
+  "best_epoch": 3,
+  "best_macro_f1": 0.6993762122937559,
+  "test_used_for_selection": false,
+  "tie_break": "earliest epoch"
+}

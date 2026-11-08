@@ -1,0 +1,12 @@
+{
+  "paper_url": "https://aclanthology.org/2024.emnlp-main.133/",
+  "repository": "https://github.com/diamond264/ByMyEyes",
+  "commit": "c45ed732dc57d7823a311cab6e93d292b5ed32a1",
+  "files": {
+    "core/visualizer.py": "64a3f770439cc04af32447b4ace786bfed870580bb627face643137787daa429",
+    "core/solver.py": "3e1f9b44a3cdb7fed9381783ec094fbcfdcd889b299ba22f66eca9c2b26dcd0b",
+    "data_utils/preprocessor.py": "7d95382dd0a1135c837f77517954c985fd7ea6e2e9bfa1043f188199eb97e98d",
+    "core/vis_generator.py": "a574287d03633c16384e160d26e48d53b566c2e94e491941f7c90c936bf3de4f",
+    "LICENSE": "e27e0c98325a2119e2b3d5d83830a636f5b64730bfa2ad35a54a7dc3a2d96a71"
+  }
+}

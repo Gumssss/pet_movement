@@ -1,0 +1,10 @@
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/723 [00:00<?, ?it/s]Loading weights: 100%|██████████| 723/723 [00:00<00:00, 13845.68it/s]
+Traceback (most recent call last):
+  File "/home/exet6233/pet/pet_movement/scripts/align_imu2img_qwen.py", line 377, in <module>
+    args=parser.parse_args();{'prepare':prepare,'smoke':smoke,'train':train,'render':render}[args.command](args)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/exet6233/pet/pet_movement/scripts/align_imu2img_qwen.py", line 241, in smoke
+    bf16_equal=torch.equal(packed.to(torch.bfloat16),reference.to(torch.bfloat16));assert bf16_equal
+                                                                                          ^^^^^^^^^^
+AssertionError

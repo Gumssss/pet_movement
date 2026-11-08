@@ -1,0 +1,11 @@
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/1184 [00:00<?, ?it/s]Loading weights: 100%|██████████| 1184/1184 [00:00<00:00, 16495.02it/s]
+TRAIN {"key": "qwen38_27b", "stage": "pilot", "peak_lr": 0.0001, "optimizer_step": 3, "total_steps": 3, "sampler_epoch": 1, "train_answer_nll": 0.2570009006795658, "learning_rates": [0.0], "wall_seconds": 79.26978563598823, "microbatch_per_gpu": 12, "gradient_accumulation": 1, "effective_batch_size": 12, "actual_samples_this_update": 12, "cuda_visible_devices": "GPU-0ded27d3-e266-f20b-2476-f2980be2980e", "peak_allocated_GiB": 85.27482414245605, "peak_reserved_GiB": 92.9453125}
+Traceback (most recent call last):
+  File "/home/exet6233/pet/pet_movement/scripts/sixplot_qwen38_lora.py", line 483, in <module>
+    elif args.command=='single-check':train(args.key,'pilot',check_only=True)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/exet6233/pet/pet_movement/scripts/sixplot_qwen38_lora.py", line 253, in train
+    assert record['free_device_GiB_after_training']>=2,'CAPACITY_HEADROOM_LT_2GIB'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CAPACITY_HEADROOM_LT_2GIB

@@ -1,0 +1,11 @@
+{
+  "epochs": 10,
+  "best_epoch": 7,
+  "best_validation_macro_f1": 0.7480024243342218,
+  "train_windows": 16461,
+  "validation_windows": 4727,
+  "qwen_finetuned": false,
+  "session_wall_seconds": 43.96627092710696,
+  "code_sha256": "325eb7a211016fbaa657805162bdb29425e32d2ce8e8ff8c8176ee03eef67ae0",
+  "best_checkpoint_sha256": "a475021e7b37ce6ade8013cec548e3871eec13674d2cca5fc5b865b58d08f00f"
+}

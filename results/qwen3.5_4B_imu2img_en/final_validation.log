@@ -1,0 +1,24 @@
+{
+  "ordinary_scores": {
+    "macro_f1": 0.09838986189918934,
+    "balanced_accuracy": 0.25563091090094575,
+    "accuracy": 0.2168284789644013
+  },
+  "imu2img_scores": {
+    "macro_f1": 0.023738872403560828,
+    "balanced_accuracy": 0.14285714285714285,
+    "accuracy": 0.09061488673139159
+  },
+  "converter": {
+    "epochs": 10,
+    "selected_epoch": 7,
+    "selected_only_by_validation_macro_f1": true,
+    "selected_converter_checkpoint_exact_match": true,
+    "independent_rms_and_center_crop_verified": true,
+    "row_major_49_tile_mapping_verified": true,
+    "missing_magnetometer_channel_constant": true,
+    "validation_classifier_macro_f1": 0.7480024243342218,
+    "qwen_never_trained": true
+  },
+  "historical_files_unchanged": 156
+}

@@ -1,0 +1,10 @@
+{
+  "microbatch_per_gpu": 96,
+  "world_size": 1,
+  "gradient_accumulation": 2,
+  "effective_batch_size": 192,
+  "physical_gpu": 0,
+  "gpu_uuid": "GPU-0ded27d3-e266-f20b-2476-f2980be2980e",
+  "free_physical_gpu": 1,
+  "rule": "User-approved single GPU, batch96 accumulation2; tested jointly with checkpointing"
+}

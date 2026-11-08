@@ -1,0 +1,57 @@
+{
+  "model": "Qwen3.8-27B-lora-sixplot-single-gpu",
+  "key": "qwen38_27b",
+  "stage": "formal",
+  "tag": "3",
+  "split": "validation",
+  "classes": [
+    "Galloping",
+    "Lying chest",
+    "Sitting",
+    "Sniffing",
+    "Standing",
+    "Trotting",
+    "Walking"
+  ],
+  "base_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "expected_windows": 4727,
+  "inference_backend": "vllm",
+  "vllm_version": "0.26.0",
+  "qwen_base_weights_frozen": true,
+  "lora_r": 4,
+  "lora_alpha": 8,
+  "image_dir": "dataset/vlm/supervised",
+  "image_manifest_sha256": "2ba0d6e46d868b8b1e4114f95adbd65fb185b3072303f1257a9760b545064424",
+  "render_protocol_sha256": "f4f3b0e0c78f79545db592d5ad8c75725ec80e4861a9aad6e6dd88ccbe5c39f2",
+  "adapter_sha256": "4502da442b7de984cfb6f296ece43289400b98d0e3ac180d298f872cc0fb6c28",
+  "training_protocol_sha256": "b5158b46b190046941a36cca2ff74e557e797ae9bd181120150b428a29d2a035",
+  "prompt_sha256": "ac4659d4c4f2d1366c7d34a36b81ab35cb50dcb2acbe598f3ffbe0bad541f209",
+  "windows_sha256": "04b09eea20d60f63c581c782db5accb4750678f3f5e8a061dc55f01dcd0f9202",
+  "splits_sha256": "3c8bc060f4f31da0d012a3ae419de626f3438bbaf23e3f7aa37dc7695aa35862",
+  "image_size": [
+    1280,
+    1152
+  ],
+  "visual_tokens": 1440,
+  "gpu_uuid": "GPU-0ded27d3-e266-f20b-2476-f2980be2980e",
+  "cuda_visible_device_count": 1,
+  "generation": {
+    "temperature": 0,
+    "enable_thinking": false,
+    "max_new_tokens": 32,
+    "seed": 20261101,
+    "guided_decoding": false
+  },
+  "engine": {
+    "dtype": "bfloat16",
+    "tensor_parallel_size": 1,
+    "max_model_len": 4096,
+    "max_num_seqs": 16,
+    "max_num_batched_tokens": 8192,
+    "gpu_memory_utilization": 0.85,
+    "enable_prefix_caching": false,
+    "min_pixels": 65536,
+    "max_pixels": 1474560,
+    "flashinfer_sampler": false
+  }
+}

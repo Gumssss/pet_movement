@@ -1,0 +1,9 @@
+{
+  "state": "complete",
+  "experiments": [
+    "sixplot",
+    "imu2img_frozen",
+    "imu2img_joint"
+  ],
+  "reports_pending": true
+}

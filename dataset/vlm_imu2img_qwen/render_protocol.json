@@ -1,0 +1,20 @@
+{
+  "version": "imu2img_frozen_qwen_aligned_rgb_v1",
+  "width": 224,
+  "height": 224,
+  "image_format": "WebP lossless RGB",
+  "source_window_samples": 200,
+  "encoder_rms_samples": 196,
+  "patches": 49,
+  "tile_size": 32,
+  "blue_channel": 128,
+  "converter_epoch": 3,
+  "converter_weights_sha256": "3be624934ae5d8fefb282dc61159ecdc5b7b9ad939777d2b80a5fb7cfdb604d3",
+  "training_protocol_sha256": "5cf07efeb52d121631019d6a32954139ff0e47131106c1dc65a465dd0f84365c",
+  "prompt_sha256": "3c7e5c664620114df7b8a010f5c4f8736ba164f504991aa8ecf7859b437805a1",
+  "window_manifest_sha256": "04b09eea20d60f63c581c782db5accb4750678f3f5e8a061dc55f01dcd0f9202",
+  "split_sha256": "3c8bc060f4f31da0d012a3ae419de626f3438bbaf23e3f7aa37dc7695aa35862",
+  "precision": "BF16 converter forward with FP32 parameters; identical 8-bit quantization to training STE forward and original rendering",
+  "qwen_finetuned": false,
+  "supervision": "Converter trained on answer labels through frozen Qwen; not a zero-label system"
+}

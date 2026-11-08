@@ -1,0 +1,15 @@
+{
+  "paper_doi": "10.1145/3714394.3756208",
+  "paper_url": "https://gw-jung.github.io/pdf/lee2025imu2img.pdf",
+  "paper_sha256": "89b15c482be3b6d3c9a183f10cf10405e2a1eb467e810176b88e091d447973fe",
+  "mantis_repo": "https://github.com/vfeofanov/mantis",
+  "mantis_revision": "23ecfe493830db177546ef159947de7d79a573bd",
+  "mantis_vendor_files_sha256": {
+    "encoders.py": "09307da167ee72c7d1833f32aa762db43a63cc222f1a7e6bc3638cdd00d72a97",
+    "LICENSE": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6",
+    "token_generator.py": "dd6d04107e6e365abaedcf3e5f6ef4047fc12463cc3b47d47f0daf43a7697d7a",
+    "convolution.py": "bca81f9469c110350b2dd68b8823a268d23067b6e3e14153918b17d0d1bd862e",
+    "NOTICE": "228f7bb9abfc5f90e95009457e5a7bf6ce170ca33104d765a599abdc9c59a7ee",
+    "__init__.py": "df92d8600d342a7d49f722ef0b0c3735f865df73504ca72862f63115f742303f"
+  }
+}

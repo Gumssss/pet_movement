@@ -1,0 +1,46 @@
+Three experiment protocols and prompts fixed.
+RUN train.log
+Traceback (most recent call last):
+  File "/home/exet6233/pet/pet_movement/scripts/lora_comparison.py", line 521, in <module>
+    elif args.command=='pipeline':pipeline()
+                                  ^^^^^^^^^^
+  File "/home/exet6233/pet/pet_movement/scripts/lora_comparison.py", line 489, in pipeline
+    run_process(['-m','torch.distributed.run','--standalone','--nnodes','1','--nproc_per_node','2',script,'train','--key',key],out(key)/'train.log',environment)
+  File "/home/exet6233/pet/pet_movement/scripts/lora_comparison.py", line 472, in run_process
+    subprocess.run([str(ROOT/'.venv/bin/python'),'-B',*arguments],cwd=ROOT,stdout=f,stderr=subprocess.STDOUT,
+  File "/home/exet6233/miniconda3/envs/ecg/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/home/exet6233/pet/pet_movement/.venv/bin/python', '-B', '-m', 'torch.distributed.run', '--standalone', '--nnodes', '1', '--nproc_per_node', '2', 'scripts/lora_comparison.py', 'train', '--key', 'imu2img_frozen']' returned non-zero exit status 1.
+Three experiment protocols and prompts fixed.
+RUN export_epoch1.log
+RUN validation_epoch1.log
+RUN export_epoch2.log
+RUN validation_epoch2.log
+RUN export_epoch3.log
+RUN validation_epoch3.log
+RUN export_final.log
+RUN test.log
+RUN backward.log
+RUN train.log
+RUN export_epoch1.log
+RUN render_epoch1.log
+RUN validation_epoch1.log
+RUN export_epoch2.log
+RUN render_epoch2.log
+RUN validation_epoch2.log
+RUN export_epoch3.log
+RUN render_epoch3.log
+RUN validation_epoch3.log
+RUN export_final.log
+RUN render_test.log
+RUN test.log
+RUN train.log
+RUN export_epoch1.log
+RUN validation_epoch1.log
+RUN export_epoch2.log
+RUN validation_epoch2.log
+RUN export_epoch3.log
+RUN validation_epoch3.log
+RUN export_final.log
+RUN test.log
+ALL THREE EXPERIMENTS GENERATED

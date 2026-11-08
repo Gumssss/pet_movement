@@ -1,0 +1,10 @@
+{
+  "mode": "offline",
+  "id": "i8renc21",
+  "project": "pet-movement",
+  "group": "qwen38-27b-sixplot-lora",
+  "name": "qwen38-sixplot-formal-3-validation",
+  "files_dir": "/home/exet6233/pet/pet_movement/results/qwen3.8_27B_lora_sixplot_single_gpu/validation/epoch_3/evaluation_tracking/wandb/offline-run-20261107_022109-i8renc21/files",
+  "website_url": null,
+  "sdk_version": "0.31.0"
+}

@@ -1,0 +1,49 @@
+{
+  "model": "Qwen3.5-4B",
+  "experiment": "imu_2s_acl_shared_axis_en_zero_shot_base4b",
+  "classes": [
+    "Galloping",
+    "Lying chest",
+    "Sitting",
+    "Sniffing",
+    "Standing",
+    "Trotting",
+    "Walking"
+  ],
+  "base_model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "inference_backend": "vllm",
+  "backend_version": "0.26.0",
+  "prompt_language": "en",
+  "evaluation_split": "test",
+  "expected_windows": 3708,
+  "data_dir": "dataset/vlm_acl",
+  "input_image_size": [
+    512,
+    409
+  ],
+  "prompt_sha256": "10f93478c6dc4ced4084c7f049e70476bb0e1bd9ae7a09f114b1ffa4653a57f8",
+  "images_manifest_sha256": "c041b9b33cbcb73c99398a347221890b93d6bc62e00bc5f9104451603fbee839",
+  "render_protocol_sha256": "e1c58b73dc297515fdbc6fa3b61cf1872063796476f7e6ccfcbbf15b7177accb",
+  "windows_sha256": "04b09eea20d60f63c581c782db5accb4750678f3f5e8a061dc55f01dcd0f9202",
+  "split_sha256": "3c8bc060f4f31da0d012a3ae419de626f3438bbaf23e3f7aa37dc7695aa35862",
+  "generation": {
+    "temperature": 0,
+    "enable_thinking": false,
+    "max_new_tokens": 32,
+    "seed": 20261101,
+    "dtype": "bfloat16",
+    "guided_decoding": false,
+    "speculative_decoding": false
+  },
+  "engine": {
+    "tensor_parallel_size": 1,
+    "max_model_len": 4096,
+    "max_num_seqs": 32,
+    "max_num_batched_tokens": 8192,
+    "gpu_memory_utilization": 0.85,
+    "enable_prefix_caching": false,
+    "flashinfer_sampler": false
+  },
+  "training_examples": 0,
+  "comparison_note": "Same Qwen3.5-4B base revision, ACL image pixels, English prompt, tokenizer/processor, vLLM settings and 3708 test windows; only the selected merged LoRA differs."
+}

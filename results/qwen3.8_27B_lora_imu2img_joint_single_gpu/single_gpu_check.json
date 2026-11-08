@@ -1,0 +1,24 @@
+{
+  "stage": "pilot",
+  "peak_lr": 0.0001,
+  "optimizer_steps": 3,
+  "sampler_epochs_started": 1,
+  "sample_presentations": 576,
+  "input_order_sha256_per_rank": [
+    "a03570ec8fd97a4aaa977a4e42c54bebb730920fcffacecbfae3569bad7bd7c6"
+  ],
+  "initial_lora_sha256": "f51bbf2ea667a9eeef46a331787cebac70dbb419b2f42459886627bc12c3d01e",
+  "warm_converter_sha256": "3be624934ae5d8fefb282dc61159ecdc5b7b9ad939777d2b80a5fb7cfdb604d3",
+  "qwen_base_versions_unchanged": true,
+  "qwen_base_gradients_always_none": true,
+  "session_wall_seconds": 100.33011821110267,
+  "microbatch_per_gpu": 96,
+  "gradient_accumulation": 2,
+  "effective_batch_size": 192,
+  "gpu_uuid": "GPU-0ded27d3-e266-f20b-2476-f2980be2980e",
+  "peak_allocated_GiB": 74.49768257141113,
+  "peak_reserved_GiB": 83.71875,
+  "common_code_sha256": "99860d9fe90ec81f840d1a4878a71ea47641e5b99f345077fea3dadce8871aca",
+  "code_sha256": "7f68e2d43fd8c10d04e97b530cfe7b5f457c78a1d5ca43b8522705de76e6c8f0",
+  "technical_only": true
+}

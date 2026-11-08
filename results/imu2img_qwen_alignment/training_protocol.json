@@ -1,0 +1,69 @@
+{
+  "experiment": "frozen_qwen_answer_supervised_imu2img_alignment",
+  "base_qwen": "Qwen/Qwen3.5-4B",
+  "base_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "qwen_trainable_parameters": 0,
+  "converter_trainable_parameters": 835584,
+  "qwen_mode": "eval; all weights frozen; autograd through activations enabled",
+  "warm_start_converter_sha256": "a8e6f9df2e1a4a743c31f554d1f78274cf2b3de5ed9a1176a67d9368a92a2e6a",
+  "warm_start_source": "Original ViT-supervised IMU2IMG best epoch7",
+  "prompt_sha256": "3c7e5c664620114df7b8a010f5c4f8736ba164f504991aa8ecf7859b437805a1",
+  "epochs": 3,
+  "seed": 20261101,
+  "learning_rate": 0.0001,
+  "optimizer": "AdamW",
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "epsilon": 1e-08,
+  "weight_decay": 0.01,
+  "scheduler": "linear",
+  "warmup_ratio": 0.05,
+  "max_gradient_norm": 1.0,
+  "world_size": 2,
+  "microbatch_per_gpu": 16,
+  "gradient_accumulation": 1,
+  "effective_batch_size": 32,
+  "ddp_sampler_padding_per_epoch": 1,
+  "precision": "FP32 converter weights/optimizer with BF16 converter forward, matching original rendering; frozen BF16 Qwen; FP32 quantization/normalization bridge",
+  "train_windows": 16461,
+  "validation_windows": 4727,
+  "test_windows": 3708,
+  "loss": "Only answer JSON + EOS token cross entropy; all image/user/nonthinking-prefix/padding labels masked",
+  "checkpoint_selection": "Full validation greedy vLLM macro-F1 over all3 epoch converters; earliest on ties; test excluded",
+  "validation_answer_nll": "Monitored at each epoch; not the final checkpoint selection metric",
+  "image_path": "RMS and crop unchanged; FP32 converter -> 8-bit round straight-through -> RGB normalization -> differentiable Qwen patchification",
+  "export": "Same 8-bit rounding + lossless WebP; 224x224, B128; Qwen min_pixels224²; no PIL/detach in training path",
+  "processor": {
+    "patch_size": 16,
+    "temporal_patch_size": 2,
+    "merge_size": 2,
+    "grid": [
+      1,
+      14,
+      14
+    ],
+    "visual_tokens": 49,
+    "prefix_tokens": 200,
+    "mean": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "std": [
+      0.5,
+      0.5,
+      0.5
+    ]
+  },
+  "data_source": "Same original2s/200source-sample windows; encoder RMS196points,49x4patches",
+  "windows_sha256": "04b09eea20d60f63c581c782db5accb4750678f3f5e8a061dc55f01dcd0f9202",
+  "split_sha256": "3c8bc060f4f31da0d012a3ae419de626f3438bbaf23e3f7aa37dc7695aa35862",
+  "versions": {
+    "torch": "2.11.0",
+    "transformers": "5.14.1",
+    "flash-linear-attention": "0.6.0",
+    "fla-core": "0.6.0"
+  }
+}

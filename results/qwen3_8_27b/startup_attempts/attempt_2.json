@@ -1,0 +1,7 @@
+{
+  "phase": "memory_instrumentation_after_engine_init",
+  "formal_samples": 0,
+  "reason": "vLLM rejected serialization of a custom apply_model callable",
+  "resolution": "Use direct NVML process-tree memory measurement; no pickle serialization option enabled",
+  "log": "attempt_2.log"
+}

@@ -1,0 +1,24 @@
+{
+  "stage": "pilot",
+  "peak_lr": 0.0001,
+  "optimizer_steps": 3,
+  "sampler_epochs_started": 1,
+  "sample_presentations": 30,
+  "input_order_sha256_per_rank": [
+    "0f84902dc76268cf8bee785870ea8cd1a1f6dea59f13a7a4c51752b1aa1da329"
+  ],
+  "initial_lora_sha256": "f51bbf2ea667a9eeef46a331787cebac70dbb419b2f42459886627bc12c3d01e",
+  "qwen_base_versions_unchanged": true,
+  "qwen_base_gradients_always_none": true,
+  "session_wall_seconds": 67.79904235398863,
+  "microbatch_per_gpu": 10,
+  "gradient_accumulation": 1,
+  "effective_batch_size": 10,
+  "gpu_uuid": "GPU-0ded27d3-e266-f20b-2476-f2980be2980e",
+  "peak_allocated_GiB": 79.58475303649902,
+  "peak_reserved_GiB": 88.080078125,
+  "common_code_sha256": "d3d7c17bb48f7dc3acc31195d81742633c06470c2c1d4c2ca8d77493c03f345b",
+  "code_sha256": "0e5b5241a63ed8f69309700312ba714140e415a2ca5cce023f321928c8d0ed69",
+  "free_device_GiB_after_training": 5.317138671875,
+  "technical_only": true
+}

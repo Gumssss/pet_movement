@@ -1,0 +1,734 @@
+{
+  "seed": 20261101,
+  "channels": [
+    "ANeck_x",
+    "ANeck_y",
+    "ANeck_z",
+    "GNeck_x",
+    "GNeck_y",
+    "GNeck_z"
+  ],
+  "classes": [
+    "Galloping",
+    "Lying chest",
+    "Sitting",
+    "Sniffing",
+    "Standing",
+    "Trotting",
+    "Walking"
+  ],
+  "sampling_hz": 100,
+  "window_samples": 200,
+  "stride_samples": 200,
+  "splits": {
+    "train": [
+      16,
+      18,
+      19,
+      23,
+      26,
+      27,
+      29,
+      30,
+      33,
+      34,
+      36,
+      43,
+      44,
+      46,
+      47,
+      48,
+      49,
+      55,
+      57,
+      58,
+      60,
+      63,
+      66,
+      67,
+      70,
+      72,
+      74
+    ],
+    "validation": [
+      22,
+      39,
+      41,
+      45,
+      53,
+      54,
+      56,
+      59,
+      73
+    ],
+    "test": [
+      20,
+      21,
+      25,
+      28,
+      51,
+      52,
+      61,
+      65,
+      68
+    ]
+  },
+  "label_rule": "Exactly one of seven target behaviors in any annotation column at every sample, identical through entire window; auxiliary labels allowed; Task and PointEvent not inputs.",
+  "version": "Local files; release version unverified. Archive SHA256 is authoritative fingerprint.",
+  "units": "Raw stored units, no physical-unit conversion; source text does not unambiguously specify units. CSV header order retained (description swaps ANeck x/y).",
+  "cnn": "Conv1d(6,32,7),BN,ReLU,MaxPool2; Conv1d(32,64,5),BN,ReLU,MaxPool2; Conv1d(64,96,3),BN,ReLU,GlobalAvgPool,Dropout(.2),Linear(96,7)",
+  "cnn_training": {
+    "max_epochs": 35,
+    "early_stop_patience": 7,
+    "batch_size": 128,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "class_weights": "inverse square root of training frequency",
+    "selection": "validation Macro-F1 only"
+  },
+  "rf": {
+    "n_estimators": 200,
+    "min_samples_leaf": 2,
+    "max_features": "sqrt",
+    "class_weight": "balanced_subsample"
+  },
+  "audit": {
+    "stats": {
+      "sole_galloping_rows": 3668,
+      "rows": 10611068,
+      "no_target_rows": 4575322,
+      "multiple_target_rows": 0,
+      "unannotated_rows": 3649386,
+      "nonfinite_signal_rows": 0,
+      "timestamp_breaks": 0,
+      "tail_rows": 6468,
+      "candidate_windows": 53023,
+      "rejected_windows": 28127
+    },
+    "classes": {
+      "Galloping": {
+        "rows_with_label": 174926,
+        "windows": 140,
+        "dogs": 34
+      },
+      "Lying chest": {
+        "rows_with_label": 1129902,
+        "windows": 5377,
+        "dogs": 45
+      },
+      "Sitting": {
+        "rows_with_label": 1120116,
+        "windows": 5184,
+        "dogs": 45
+      },
+      "Sniffing": {
+        "rows_with_label": 1026178,
+        "windows": 4263,
+        "dogs": 45
+      },
+      "Standing": {
+        "rows_with_label": 1027710,
+        "windows": 4400,
+        "dogs": 45
+      },
+      "Trotting": {
+        "rows_with_label": 773879,
+        "windows": 2883,
+        "dogs": 44
+      },
+      "Walking": {
+        "rows_with_label": 783035,
+        "windows": 2649,
+        "dogs": 45
+      }
+    },
+    "raw_labels": {
+      "<undefined>": 22080867,
+      "Synchronization": 16755,
+      "Walking": 783035,
+      "Shaking": 42179,
+      "Sniffing": 1026178,
+      "Eating": 312806,
+      "Sitting": 1120116,
+      "Trotting": 773879,
+      "Pacing": 78599,
+      "Lying chest": 1129902,
+      "Playing": 937026,
+      "Standing": 1027710,
+      "Panting": 1777641,
+      "Jumping": 42076,
+      "Tugging": 297102,
+      "Galloping": 174926,
+      "Carrying object": 145859,
+      "Drinking": 64721,
+      "Bowing": 1540,
+      "Extra_Synchronization": 287
+    },
+    "sessions": [
+      {
+        "dog": 16,
+        "test": 1,
+        "rows": 164004,
+        "breaks": 0
+      },
+      {
+        "dog": 16,
+        "test": 2,
+        "rows": 156872,
+        "breaks": 0
+      },
+      {
+        "dog": 18,
+        "test": 1,
+        "rows": 175336,
+        "breaks": 0
+      },
+      {
+        "dog": 19,
+        "test": 2,
+        "rows": 157376,
+        "breaks": 0
+      },
+      {
+        "dog": 20,
+        "test": 1,
+        "rows": 185904,
+        "breaks": 0
+      },
+      {
+        "dog": 21,
+        "test": 1,
+        "rows": 173332,
+        "breaks": 0
+      },
+      {
+        "dog": 22,
+        "test": 2,
+        "rows": 160404,
+        "breaks": 0
+      },
+      {
+        "dog": 23,
+        "test": 1,
+        "rows": 168108,
+        "breaks": 0
+      },
+      {
+        "dog": 23,
+        "test": 2,
+        "rows": 151028,
+        "breaks": 0
+      },
+      {
+        "dog": 25,
+        "test": 1,
+        "rows": 164512,
+        "breaks": 0
+      },
+      {
+        "dog": 25,
+        "test": 2,
+        "rows": 152504,
+        "breaks": 0
+      },
+      {
+        "dog": 26,
+        "test": 1,
+        "rows": 170676,
+        "breaks": 0
+      },
+      {
+        "dog": 26,
+        "test": 2,
+        "rows": 161288,
+        "breaks": 0
+      },
+      {
+        "dog": 27,
+        "test": 1,
+        "rows": 171168,
+        "breaks": 0
+      },
+      {
+        "dog": 27,
+        "test": 2,
+        "rows": 156348,
+        "breaks": 0
+      },
+      {
+        "dog": 28,
+        "test": 1,
+        "rows": 166264,
+        "breaks": 0
+      },
+      {
+        "dog": 29,
+        "test": 1,
+        "rows": 171988,
+        "breaks": 0
+      },
+      {
+        "dog": 29,
+        "test": 2,
+        "rows": 152980,
+        "breaks": 0
+      },
+      {
+        "dog": 30,
+        "test": 1,
+        "rows": 171612,
+        "breaks": 0
+      },
+      {
+        "dog": 30,
+        "test": 2,
+        "rows": 163860,
+        "breaks": 0
+      },
+      {
+        "dog": 33,
+        "test": 1,
+        "rows": 169024,
+        "breaks": 0
+      },
+      {
+        "dog": 34,
+        "test": 1,
+        "rows": 169404,
+        "breaks": 0
+      },
+      {
+        "dog": 34,
+        "test": 2,
+        "rows": 149080,
+        "breaks": 0
+      },
+      {
+        "dog": 36,
+        "test": 1,
+        "rows": 187852,
+        "breaks": 0
+      },
+      {
+        "dog": 39,
+        "test": 1,
+        "rows": 184328,
+        "breaks": 0
+      },
+      {
+        "dog": 39,
+        "test": 2,
+        "rows": 185316,
+        "breaks": 0
+      },
+      {
+        "dog": 41,
+        "test": 1,
+        "rows": 173276,
+        "breaks": 0
+      },
+      {
+        "dog": 41,
+        "test": 2,
+        "rows": 157452,
+        "breaks": 0
+      },
+      {
+        "dog": 43,
+        "test": 1,
+        "rows": 176928,
+        "breaks": 0
+      },
+      {
+        "dog": 43,
+        "test": 2,
+        "rows": 148980,
+        "breaks": 0
+      },
+      {
+        "dog": 44,
+        "test": 1,
+        "rows": 217656,
+        "breaks": 0
+      },
+      {
+        "dog": 45,
+        "test": 1,
+        "rows": 166764,
+        "breaks": 0
+      },
+      {
+        "dog": 45,
+        "test": 2,
+        "rows": 149980,
+        "breaks": 0
+      },
+      {
+        "dog": 46,
+        "test": 1,
+        "rows": 146584,
+        "breaks": 0
+      },
+      {
+        "dog": 46,
+        "test": 2,
+        "rows": 148864,
+        "breaks": 0
+      },
+      {
+        "dog": 47,
+        "test": 1,
+        "rows": 190608,
+        "breaks": 0
+      },
+      {
+        "dog": 47,
+        "test": 2,
+        "rows": 160120,
+        "breaks": 0
+      },
+      {
+        "dog": 48,
+        "test": 1,
+        "rows": 175148,
+        "breaks": 0
+      },
+      {
+        "dog": 48,
+        "test": 2,
+        "rows": 148756,
+        "breaks": 0
+      },
+      {
+        "dog": 49,
+        "test": 1,
+        "rows": 162900,
+        "breaks": 0
+      },
+      {
+        "dog": 49,
+        "test": 2,
+        "rows": 160580,
+        "breaks": 0
+      },
+      {
+        "dog": 51,
+        "test": 1,
+        "rows": 171576,
+        "breaks": 0
+      },
+      {
+        "dog": 52,
+        "test": 1,
+        "rows": 193528,
+        "breaks": 0
+      },
+      {
+        "dog": 53,
+        "test": 1,
+        "rows": 193572,
+        "breaks": 0
+      },
+      {
+        "dog": 54,
+        "test": 1,
+        "rows": 184444,
+        "breaks": 0
+      },
+      {
+        "dog": 55,
+        "test": 1,
+        "rows": 175164,
+        "breaks": 0
+      },
+      {
+        "dog": 56,
+        "test": 1,
+        "rows": 180512,
+        "breaks": 0
+      },
+      {
+        "dog": 57,
+        "test": 1,
+        "rows": 182588,
+        "breaks": 0
+      },
+      {
+        "dog": 58,
+        "test": 2,
+        "rows": 161700,
+        "breaks": 0
+      },
+      {
+        "dog": 59,
+        "test": 1,
+        "rows": 153532,
+        "breaks": 0
+      },
+      {
+        "dog": 60,
+        "test": 1,
+        "rows": 168668,
+        "breaks": 0
+      },
+      {
+        "dog": 61,
+        "test": 1,
+        "rows": 178348,
+        "breaks": 0
+      },
+      {
+        "dog": 63,
+        "test": 2,
+        "rows": 205520,
+        "breaks": 0
+      },
+      {
+        "dog": 65,
+        "test": 1,
+        "rows": 173792,
+        "breaks": 0
+      },
+      {
+        "dog": 66,
+        "test": 2,
+        "rows": 151680,
+        "breaks": 0
+      },
+      {
+        "dog": 67,
+        "test": 1,
+        "rows": 187804,
+        "breaks": 0
+      },
+      {
+        "dog": 68,
+        "test": 1,
+        "rows": 186972,
+        "breaks": 0
+      },
+      {
+        "dog": 70,
+        "test": 1,
+        "rows": 192036,
+        "breaks": 0
+      },
+      {
+        "dog": 72,
+        "test": 1,
+        "rows": 160404,
+        "breaks": 0
+      },
+      {
+        "dog": 73,
+        "test": 1,
+        "rows": 195552,
+        "breaks": 0
+      },
+      {
+        "dog": 74,
+        "test": 1,
+        "rows": 195688,
+        "breaks": 0
+      },
+      {
+        "dog": 74,
+        "test": 2,
+        "rows": 192824,
+        "breaks": 0
+      }
+    ],
+    "csv_zip_sha256": "47f9e41428c0591d3c980aff1b59981eac14567a02019cc044f69ef4648a3b46"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "sklearn": "1.9.1",
+    "torch": "2.15.0"
+  },
+  "evaluation": "One fixed dog holdout, one training seed; clean-window seven-class task, not whole continuous stream or clinical validation.",
+  "cnn_search": {
+    "configurations": [
+      {
+        "lr": 0.001,
+        "weight_decay": 0.0001,
+        "dropout": 0.2,
+        "batch_size": 128,
+        "class_weight_power": 0.5,
+        "scheduler": "none"
+      },
+      {
+        "lr": 0.0003,
+        "weight_decay": 0.0001,
+        "dropout": 0.2,
+        "batch_size": 128,
+        "class_weight_power": 0.5,
+        "scheduler": "none"
+      },
+      {
+        "lr": 0.0006,
+        "weight_decay": 0.0001,
+        "dropout": 0.2,
+        "batch_size": 128,
+        "class_weight_power": 0.5,
+        "scheduler": "none"
+      },
+      {
+        "lr": 0.002,
+        "weight_decay": 0.0001,
+        "dropout": 0.2,
+        "batch_size": 128,
+        "class_weight_power": 0.5,
+        "scheduler": "none"
+      },
+      {
+        "lr": 0.003,
+        "weight_decay": 0.0001,
+        "dropout": 0.2,
+        "batch_size": 128,
+        "class_weight_power": 0.5,
+        "scheduler": "none"
+      },
+      {
+        "lr": 0.001,
+        "weight_decay": 1e-05,
+        "dropout": 0.2,
+        "batch_size": 128,
+        "class_weight_power": 0.5,
+        "scheduler": "none"
+      },
+      {
+        "lr": 0.001,
+        "weight_decay": 0.001,
+        "dropout": 0.2,
+        "batch_size": 128,
+        "class_weight_power": 0.5,
+        "scheduler": "none"
+      },
+      {
+        "lr": 0.001,
+        "weight_decay": 0.01,
+        "dropout": 0.2,
+        "batch_size": 128,
+        "class_weight_power": 0.5,
+        "scheduler": "none"
+      },
+      {
+        "lr": 0.001,
+        "weight_decay": 0.0001,
+        "dropout": 0.1,
+        "batch_size": 128,
+        "class_weight_power": 0.5,
+        "scheduler": "none"
+      },
+      {
+        "lr": 0.001,
+        "weight_decay": 0.0001,
+        "dropout": 0.35,
+        "batch_size": 128,
+        "class_weight_power": 0.5,
+        "scheduler": "none"
+      },
+      {
+        "lr": 0.001,
+        "weight_decay": 0.0001,
+        "dropout": 0.5,
+        "batch_size": 128,
+        "class_weight_power": 0.5,
+        "scheduler": "none"
+      },
+      {
+        "lr": 0.001,
+        "weight_decay": 0.0001,
+        "dropout": 0.2,
+        "batch_size": 64,
+        "class_weight_power": 0.5,
+        "scheduler": "none"
+      },
+      {
+        "lr": 0.001,
+        "weight_decay": 0.0001,
+        "dropout": 0.2,
+        "batch_size": 256,
+        "class_weight_power": 0.5,
+        "scheduler": "none"
+      },
+      {
+        "lr": 0.001,
+        "weight_decay": 0.0001,
+        "dropout": 0.2,
+        "batch_size": 128,
+        "class_weight_power": 0.0,
+        "scheduler": "none"
+      },
+      {
+        "lr": 0.001,
+        "weight_decay": 0.0001,
+        "dropout": 0.2,
+        "batch_size": 128,
+        "class_weight_power": 1.0,
+        "scheduler": "none"
+      },
+      {
+        "lr": 0.001,
+        "weight_decay": 0.0001,
+        "dropout": 0.2,
+        "batch_size": 128,
+        "class_weight_power": 0.5,
+        "scheduler": "cosine"
+      },
+      {
+        "lr": 0.0006,
+        "weight_decay": 0.001,
+        "dropout": 0.35,
+        "batch_size": 128,
+        "class_weight_power": 0.5,
+        "scheduler": "cosine"
+      },
+      {
+        "lr": 0.002,
+        "weight_decay": 0.0001,
+        "dropout": 0.1,
+        "batch_size": 256,
+        "class_weight_power": 0.5,
+        "scheduler": "cosine"
+      },
+      {
+        "lr": 0.001,
+        "weight_decay": 0.001,
+        "dropout": 0.35,
+        "batch_size": 128,
+        "class_weight_power": 1.0,
+        "scheduler": "cosine"
+      },
+      {
+        "lr": 0.0006,
+        "weight_decay": 0.0001,
+        "dropout": 0.2,
+        "batch_size": 256,
+        "class_weight_power": 0.0,
+        "scheduler": "cosine"
+      }
+    ],
+    "max_epochs": 35,
+    "patience": 7,
+    "min_delta": 1e-06,
+    "selection": "validation Macro-F1; ties choose earlier trial",
+    "seed": 20261101,
+    "device": "mps",
+    "threads": 2,
+    "torch_version": "2.15.0",
+    "note": "Fresh training per trial, not continuing from baseline weights. Same architecture, changed training hyperparameters/dropout. Fixed seed, MPS bitwise reproducibility not guaranteed. Test not used in search; prior baseline test was already reported."
+  },
+  "split_file": "dataset/splits/dog_splits.json",
+  "windows_file": "dataset/splits/windows.csv",
+  "predictions_files": {
+    "cnn": "results/cnn/predictions.csv",
+    "random_forest": "results/random_forest/predictions.csv"
+  },
+  "metrics_files": {
+    "cnn": "results/cnn/metrics.json",
+    "random_forest": "results/random_forest/metrics.json"
+  }
+}

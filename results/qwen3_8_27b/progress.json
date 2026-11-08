@@ -1,0 +1,11 @@
+{
+  "completed": 3708,
+  "expected": 3708,
+  "session_completed": 3708,
+  "remaining": 0,
+  "batch_size": 32,
+  "session_wall_seconds": 1629.698206681991,
+  "status_counts": {
+    "ok": 3708
+  }
+}

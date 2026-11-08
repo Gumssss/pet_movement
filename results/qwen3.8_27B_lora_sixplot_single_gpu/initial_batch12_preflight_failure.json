@@ -1,0 +1,6 @@
+{
+  "state": "failed",
+  "type": "CalledProcessError",
+  "error": "Command '['/home/exet6233/pet/pet_movement/.venv/bin/python', '-B', 'scripts/sixplot_qwen38_lora.py', 'single-check', '--key', 'qwen38_27b']' returned non-zero exit status 1.",
+  "utc": "2026-11-05T11:50:26.429767+00:00"
+}

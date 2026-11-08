@@ -1,0 +1,11 @@
+{
+  "microbatch_per_gpu": 96,
+  "world_size": 2,
+  "gradient_accumulation": 1,
+  "effective_batch_size": 192,
+  "rule": "Common minimum of largest safe profiled batches, with2GiB reserved headroom",
+  "profile_sha256": {
+    "qwen35_27b": "5e0a4dd7ac74383bfcbe702a072461a0f884c54b4be7f42d93aafb120549a018",
+    "qwen38_27b": "966e621ae516d9c0a70292090853ebceef5ccbd008f93936f95130388b6ef55e"
+  }
+}

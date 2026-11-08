@@ -1,0 +1,13 @@
+{
+  "command": [
+    "scripts/lora_27b_single_gpu.py",
+    "pilot-train",
+    "--key",
+    "qwen38_27b"
+  ],
+  "log": "results/qwen3.8_27B_lora_imu2img_joint_single_gpu/pilot_train.log",
+  "started_utc": "2026-11-05T11:12:06.203940+00:00",
+  "state": "stopped_by_user",
+  "stopped_utc": "2026-11-05T11:13:10.172310+00:00",
+  "automatic_restart": false
+}

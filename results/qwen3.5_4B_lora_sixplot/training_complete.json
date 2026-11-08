@@ -1,0 +1,15 @@
+{
+  "state": "complete",
+  "epochs": 3,
+  "optimizer_steps": 1545,
+  "initial_lora_sha256": "0f3a2247f98b8d81e01ce60345ba295702d6c9e0a641a0f1a4eb80ed5d1e86cc",
+  "qwen_base_frozen_hash_before": "08743713ee4b48ca06c7885248b488018997a7c7515de4956f940816f93f8b86",
+  "qwen_base_frozen_hash_after": "08743713ee4b48ca06c7885248b488018997a7c7515de4956f940816f93f8b86",
+  "qwen_base_versions_unchanged": true,
+  "trainable_parameters": 5226496,
+  "session_wall_seconds": 17425.01500117802,
+  "session_optimizer_steps": 1545,
+  "code_sha256": "616e6642c14ec550eab1b74a73b144437e2228b3083597c93a89150dddc004a9",
+  "completed_utc": "2026-11-05T03:03:53.639167+00:00",
+  "selection_pending": "Full validation vLLM macro-F1"
+}

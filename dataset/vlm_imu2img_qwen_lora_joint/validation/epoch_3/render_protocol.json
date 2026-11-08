@@ -1,0 +1,15 @@
+{
+  "key": "imu2img_joint",
+  "epoch": 3,
+  "split": "validation",
+  "converter_sha256": "9a7f68ee5f3af20e038af3b424ef57c3f1fbc22e11ff4b91f61a4feaa62f1754",
+  "width": 224,
+  "height": 224,
+  "format": "lossless WebP",
+  "B": 128,
+  "source_window_samples": 200,
+  "encoder_rms_samples": 196,
+  "patches": 49,
+  "precision": "BF16 converter; round to8bit; official Qwen preprocessing at224² minimum",
+  "source_protocol_sha256": "6e2eb297ffbbdac12997e4844644e30ae8d3abdf16b8be2d9bfa629444739660"
+}

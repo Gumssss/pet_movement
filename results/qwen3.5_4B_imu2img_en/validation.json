@@ -1,0 +1,35 @@
+{
+  "test_windows": 3708,
+  "raw_csv_metrics_consistent": true,
+  "same_test_windows_and_labels_verified": true,
+  "frozen_input_hashes_verified": true,
+  "qwen_model": "Qwen3.5-4B",
+  "qwen_finetuned": false,
+  "prompt_examples": 0,
+  "inference_backend": "vllm",
+  "scores": {
+    "macro_f1": 0.023738872403560828,
+    "balanced_accuracy": 0.14285714285714285,
+    "accuracy": 0.09061488673139159
+  },
+  "status_counts": {
+    "ok": 3708
+  },
+  "original_qwen_weight_hashes_unchanged": true,
+  "historical_files_unchanged": 156,
+  "matched_model_generation_engine": true,
+  "converter_checks": {
+    "epochs": 10,
+    "selected_epoch": 7,
+    "selected_only_by_validation_macro_f1": true,
+    "selected_converter_checkpoint_exact_match": true,
+    "independent_rms_and_center_crop_verified": true,
+    "row_major_49_tile_mapping_verified": true,
+    "missing_magnetometer_channel_constant": true,
+    "validation_classifier_macro_f1": 0.7480024243342218,
+    "qwen_never_trained": true
+  },
+  "prediction_counts": {
+    "Walking": 3708
+  }
+}

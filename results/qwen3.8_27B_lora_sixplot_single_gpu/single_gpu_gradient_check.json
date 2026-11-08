@@ -1,0 +1,8 @@
+{
+  "lora": {
+    "ViT": 1.1766924094241693,
+    "visual_projection": 0.03546596324077908,
+    "language_attention": 1.7544311909377213
+  },
+  "qwen_base_gradients_none": true
+}

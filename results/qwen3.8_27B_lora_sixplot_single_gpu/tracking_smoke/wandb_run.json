@@ -1,0 +1,10 @@
+{
+  "mode": "offline",
+  "id": "3u2f8h4g",
+  "project": "pet-movement",
+  "group": "technical-checks",
+  "name": "technical-logging-check",
+  "files_dir": "results/qwen3.8_27B_lora_sixplot_single_gpu/tracking_smoke/wandb/offline-run-20261105_114529-3u2f8h4g/files",
+  "website_url": null,
+  "sdk_version": "0.31.0"
+}
