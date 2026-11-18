@@ -1,3 +1,0 @@
-peft==0.21.2
-flash-linear-attention==0.6.0
-fla-core==0.6.0

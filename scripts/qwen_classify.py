@@ -1,4 +1,5 @@
 """Frozen, literature-assisted zero-shot IMU-image classification and evaluation."""
+from pet_imu.paths import recorded_path
 import argparse
 import csv
 import hashlib
@@ -17,19 +18,28 @@ os.environ.setdefault('TRITON_CACHE_DIR', '/tmp/pet-vllm-triton')
 os.environ.setdefault('TORCHINDUCTOR_CACHE_DIR', '/tmp/pet-vllm-inductor')
 os.environ['VLLM_USE_FLASHINFER_SAMPLER'] = '0'
 ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / 'dataset/vlm'
+DATA = ROOT / 'data/vlm'
 MODEL_SPECS = {
     '4B': {'name':'Qwen3.5-4B','folder':'qwen_4b','check':'processor_check.json','research':'research.md'},
     '27B': {'name':'Qwen3.5-27B','folder':'qwen_27b','check':'processor_check.json','research':'research.md'},
     '3.8-27B': {'name':'Qwen3.8-27B','folder':'qwen3_8_27b','check':'processor_check_qwen38.json','research':'research_en.md'},
 }
 
+def model_path(model):
+    if model == '4B-lora':
+        return ROOT / '.cache/vlm/lora/qwen3.5_4B_lora_acl/checkpoints'
+    return ROOT / 'models' / MODEL_SPECS[model]['name']
+
+
 def result_dir(args):
     if getattr(args,'output_dir',None):
         target=Path(args.output_dir).resolve()
-        assert target.is_relative_to(ROOT/'results') and target != ROOT/'results'
-        return target
-    return ROOT / 'results' / MODEL_SPECS[args.model]['folder']
+        base = ROOT / 'outputs'
+        relative = target.relative_to(base.resolve())
+        if not relative.parts:
+            raise ValueError('Choose an experiment directory inside outputs.')
+        return base / relative
+    return ROOT / 'outputs/vlm/zero_shot' / MODEL_SPECS[args.model]['folder']
 
 def process_gpu_memory(device):
     import os,psutil,pynvml
@@ -52,7 +62,7 @@ def write_json(path, data):
     temp.replace(path)
 
 def inputs():
-    with (ROOT / 'dataset/splits/windows.csv').open(newline='') as stream:
+    with (ROOT / 'data/splits/windows.csv').open(newline='') as stream:
         rows = list(csv.DictReader(stream))
     records = [{'window_id': w['window_id'], 'image_file': str((DATA/'images'/('sample_' +
                 hashlib.sha256(w['window_id'].encode()).hexdigest()[:20] + '.webp')).relative_to(ROOT))}
@@ -92,7 +102,7 @@ def load_model(args):
     from vllm import LLM
     torch.set_num_threads(8)
     torch.manual_seed(20261101)
-    path = ROOT / 'models' / MODEL_SPECS[args.model]['name']
+    path = model_path(args.model)
     started = time.perf_counter()
     processor = AutoProcessor.from_pretrained(path, local_files_only=True)
     processor.tokenizer.padding_side = 'left'
@@ -136,12 +146,12 @@ def run(args):
     spec = MODEL_SPECS[args.model]
     dest = result_dir(args)
     dest.mkdir(exist_ok=True)
-    classes = json.loads((ROOT / 'results/protocol.json').read_text())['classes']
-    prompt_path = Path(args.prompt).resolve() if args.prompt else DATA/'prompt.txt'
+    classes = json.loads((ROOT / 'outputs/protocol.json').read_text())['classes']
+    prompt_path = Path(args.prompt).absolute() if args.prompt else DATA/'prompt.txt'
     prompt = prompt_path.read_text()
     render_protocol = json.loads((DATA/'render_protocol.json').read_text())
-    assert render_protocol['window_manifest_sha256'] == sha(ROOT/'dataset/splits/windows.csv')
-    assert render_protocol['split_sha256'] == sha(ROOT/'dataset/splits/dog_splits.json')
+    assert render_protocol['window_manifest_sha256'] == sha(ROOT/'data/splits/windows.csv')
+    assert render_protocol['split_sha256'] == sha(ROOT/'data/splits/dog_splits.json')
     expected_size=(render_protocol['width'],render_protocol['height'])
     assert all(isinstance(v,int) and v>0 for v in expected_size)
     research_file=render_protocol.get('research_file',spec['research'])
@@ -155,7 +165,7 @@ def run(args):
         'experiment': render_protocol.get('experiment', 'imu_2s_v1_literature_zero_shot_en' if args.model=='3.8-27B' else 'imu_2s_v1_literature_zero_shot'), 'model': spec['name'],
         'model_revision': manifest['revision'], 'classes': classes,
         'prompt_sha256': sha(prompt_path), 'render_protocol_sha256': sha(DATA/'render_protocol.json'),
-        'research_sha256': sha(DATA/research_file), 'windows_sha256': sha(ROOT/'dataset/splits/windows.csv'),
+        'research_sha256': sha(DATA/research_file), 'windows_sha256': sha(ROOT/'data/splits/windows.csv'),
         'planned_inputs_sha256': hashlib.sha256(json.dumps(planned,sort_keys=True).encode()).hexdigest(),
         'evaluation_split': 'test', 'expected_windows': 3708, 'training_examples': 0,
         'generation': {'do_sample':False,'enable_thinking':False,'max_new_tokens':32,'dtype':'bfloat16','attention':'sdpa'},
@@ -178,7 +188,7 @@ def run(args):
                       processor_check_sha256=sha(DATA/check_file),
                       images_manifest_sha256=sha(DATA/'images.csv'),
                       comparison_note=render_protocol.get('comparison_note','Model version and prompt language both differ from the 2026-11-02 Chinese experiments.'))
-    if DATA != ROOT/'dataset/vlm':
+    if DATA != ROOT/'data/vlm':
         frozen.update(data_dir=str(DATA.relative_to(ROOT)),input_image_size=list(expected_size),
                       processor_grid=processor_check[args.model]['image_grid_thw'])
     pp = dest/'protocol.json'
@@ -226,8 +236,8 @@ def run(args):
             paths=[]
             for r in current:
                 saved=rendered[r['window_id']]
-                assert saved['image_file']==r['image_file']
-                path=ROOT/r['image_file']
+                assert recorded_path(saved['image_file']) == recorded_path(r['image_file'])
+                path=recorded_path(r['image_file'])
                 assert sha(path)==saved['image_sha256']
                 paths.append(path)
             try:
@@ -286,7 +296,7 @@ def evaluate(args):
     p=json.loads((dest/'protocol.json').read_text());classes=p['classes']
     rows=[json.loads(line) for line in (dest/'responses.jsonl').read_text().splitlines()]
     assert len(rows)==len({r['window_id'] for r in rows})==3708
-    windows=pd.read_csv(ROOT/'dataset/splits/windows.csv');w=windows[windows.split.eq('test')].copy()
+    windows=pd.read_csv(ROOT/'data/splits/windows.csv');w=windows[windows.split.eq('test')].copy()
     raw=pd.DataFrame(rows)
     assert set(raw.window_id)==set(w.window_id)
     joined=w.merge(raw,on='window_id',validate='one_to_one',sort=False)
@@ -358,11 +368,13 @@ if __name__=='__main__':
     parser.add_argument('--batch-size',type=int,default=4)
     parser.add_argument('--preflight-only',action='store_true')
     parser.add_argument('--prompt',type=Path,help='Explicit prompt file; use the stored result prompt to reproduce historical Chinese runs')
-    parser.add_argument('--output-dir',type=Path,help='New result directory under the project results directory')
-    parser.add_argument('--data-dir',type=Path,default=DATA,help='Frozen image/prompt dataset directory under the project dataset directory')
+    parser.add_argument('--output-dir',type=Path,help='New result directory under the project outputs directory')
+    parser.add_argument('--data-dir',type=Path,default=DATA,help='Frozen image/prompt dataset directory under the project data directory')
     args=parser.parse_args()
-    DATA=args.data_dir.resolve()
-    if not DATA.is_relative_to(ROOT/'dataset') or not DATA.is_dir():
-        parser.error('data-dir must be an existing directory under the project dataset directory')
+    root_data = ROOT / 'data'
+    physical = args.data_dir.resolve()
+    if not physical.is_relative_to(root_data.resolve()) or not physical.is_dir():
+        parser.error('data-dir must be an existing directory under the project data directory')
+    DATA = root_data / physical.relative_to(root_data.resolve())
     if args.batch_size<1:parser.error('batch size must be positive')
     run(args) if args.command=='run' else evaluate(args)

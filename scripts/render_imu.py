@@ -14,23 +14,17 @@ from matplotlib.ticker import FormatStrFormatter
 import numpy as np
 import pandas as pd
 from PIL import Image
+if __package__:
+    from .pet_imu.data import load_windows
+else:
+    from pet_imu.data import load_windows
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = ROOT / 'dataset/vlm'
+BASE = ROOT / 'data/vlm'
 COLORS = ['#0072B2', '#D55E00', '#009E73', '#CC79A7', '#E69F00', '#332288']
 
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
-
-def load_windows():
-    w = pd.read_csv(ROOT / 'dataset/splits/windows.csv')
-    z = np.load(ROOT / 'dataset/cache/pet_windows.npz')
-    p = json.loads((ROOT / 'results/protocol.json').read_text())
-    assert len(w) == len(z['X']) == 24896
-    assert np.array_equal(w.dog_id, z['dogs']) and np.array_equal(w.session, z['tests'])
-    assert np.allclose(w.start_sec, z['starts'])
-    assert np.array_equal(w.label, np.array(p['classes'])[z['y']])
-    return w, z['X'], p
 
 def make_protocol(w, x, p):
     train = x[w.split.eq('train')].reshape(-1, 6)
@@ -38,8 +32,8 @@ def make_protocol(w, x, p):
     q = np.quantile(train, [.001, .999], axis=0)
     pad = .05 * np.maximum(q[1] - q[0], 1e-6)
     return {
-        'version': 'imu_2s_v1', 'window_manifest_sha256': sha(ROOT / 'dataset/splits/windows.csv'),
-        'split_sha256': sha(ROOT / 'dataset/splits/dog_splits.json'),
+        'version': 'imu_2s_v1', 'window_manifest_sha256': sha(ROOT / 'data/splits/windows.csv'),
+        'split_sha256': sha(ROOT / 'data/splits/dog_splits.json'),
         'channels': p['channels'], 'colors': COLORS, 'sampling_hz': 100,
         'samples_per_window': 200, 'input_signal': 'raw stored values; no magnitude reduction or normalization',
         'scale_fit_split': 'train', 'scale_fit_windows': int(w.split.eq('train').sum()),

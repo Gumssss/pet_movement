@@ -1,4 +1,5 @@
 """Moonshot API zero-shot evaluation on the frozen, anonymous ACL test images."""
+from pet_imu.paths import recorded_hash_path, recorded_path
 import argparse
 import asyncio
 import base64
@@ -11,12 +12,11 @@ import os
 from pathlib import Path
 import time
 
-import httpx
 from qwen_classify import parse
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / 'dataset/vlm_acl'
-DEST = ROOT / 'results/kimi/k3.1_pro_acl'
+DATA = ROOT / 'data/vlm_acl'
+DEST = ROOT / 'outputs/vlm/api/kimi/k3.1_pro_acl'
 MODEL = 'kimi-k3.1-pro'
 BASE = 'https://api.moonshot.ai/v1'
 MAX_TOKENS = 4096
@@ -38,7 +38,7 @@ def write(path, value):
 
 
 def records():
-    with (ROOT / 'dataset/splits/windows.csv').open() as f:
+    with (ROOT / 'data/splits/windows.csv').open() as f:
         windows = [r for r in csv.DictReader(f) if r['split'] == 'test']
     with (DATA / 'images.csv').open() as f:
         images = list(csv.DictReader(f))
@@ -47,7 +47,7 @@ def records():
     assert len({r['window_id'] for r in windows}) == 3708
     for w, im in zip(windows, images):
         expected = 'sample_' + hashlib.sha256(w['window_id'].encode()).hexdigest()[:20] + '.webp'
-        path = ROOT / im['image_file']
+        path = recorded_path(im['image_file'])
         assert path.parent == DATA / 'images' and path.name == expected
         assert sha(path) == im['image_sha256']
     return windows, images
@@ -57,10 +57,10 @@ def prepare():
     from PIL import Image
     DEST.mkdir(parents=True, exist_ok=True)
     windows, images = records()
-    classes = json.loads((ROOT / 'results/protocol.json').read_text())['classes']
+    classes = json.loads((ROOT / 'outputs/protocol.json').read_text())['classes']
     assert (DATA / 'prompt.txt').read_text().isascii()
     for im in images:
-        with Image.open(ROOT / im['image_file']) as img:
+        with Image.open(recorded_path(im['image_file'])) as img:
             assert img.size == (512, 409) and img.format == 'WEBP' and img.mode == 'RGB'
             assert not any(k in img.info for k in ['exif', 'xmp', 'icc_profile'])
     frozen = {
@@ -74,8 +74,8 @@ def prepare():
         'render_protocol_sha256': sha(DATA / 'render_protocol.json'),
         'normalization_sha256': sha(DATA / 'normalization.json'),
         'images_manifest_sha256': sha(DATA / 'images.csv'),
-        'windows_sha256': sha(ROOT / 'dataset/splits/windows.csv'),
-        'split_sha256': sha(ROOT / 'dataset/splits/dog_splits.json'),
+        'windows_sha256': sha(ROOT / 'data/splits/windows.csv'),
+        'split_sha256': sha(ROOT / 'data/splits/dog_splits.json'),
         'input_image_size': [512, 409], 'image_mime_type': 'image/webp',
         'generation': {'reasoning_effort': 'low', 'max_tokens': MAX_TOKENS,
                        'thinking': 'always enabled by provider',
@@ -101,10 +101,10 @@ def prepare():
     else:
         (DEST / 'prompt.txt').write_bytes((DATA / 'prompt.txt').read_bytes())
     if not (DEST / 'prior_files_sha256.json').exists():
-        paths = [p for p in (ROOT / 'results').rglob('*')
-                 if p.is_file() and not p.is_relative_to(DEST) and p.parent != ROOT / 'results']
-        paths += [ROOT / 'results/protocol.json']
-        paths += [p for p in (ROOT / 'dataset').rglob('*')
+        paths = [p for p in (ROOT / 'outputs').rglob('*')
+                 if p.is_file() and not p.is_relative_to(DEST) and p.parent != ROOT / 'outputs']
+        paths += [ROOT / 'outputs/protocol.json']
+        paths += [p for p in (ROOT / 'data').rglob('*')
                   if p.is_file() and p.suffix in ['.json', '.csv', '.txt', '.md'] and p.stat().st_size < 30_000_000]
         write(DEST / 'prior_files_sha256.json', {str(p.relative_to(ROOT)): sha(p) for p in paths})
     write(DEST / 'input_validation.json', {'test_windows': 3708, 'image_hashes_dimensions_metadata_verified': True,
@@ -118,7 +118,9 @@ class StopRun(Exception):
 
 
 async def infer_one(client, image, prompt, classes, key):
-    image_bytes = (ROOT / image['image_file']).read_bytes()
+    from httpx import TransportError
+
+    image_bytes = (recorded_path(image['image_file'])).read_bytes()
     assert hashlib.sha256(image_bytes).hexdigest() == image['image_sha256']
     payload = {'model': MODEL, 'reasoning_effort': 'low', 'max_tokens': MAX_TOKENS,
                'messages': [{'role': 'user', 'content': [
@@ -155,7 +157,7 @@ async def infer_one(client, image, prompt, classes, key):
                 retry_after = response.headers.get('retry-after', '')
                 delay = float(retry_after) if retry_after.replace('.', '', 1).isdigit() else 2 ** (attempt + 1)
                 await asyncio.sleep(min(delay, 60))
-        except httpx.TransportError as exc:
+        except TransportError as exc:
             attempts.append({'attempt': attempt + 1, 'network_error_type': type(exc).__name__,
                              'request_seconds': time.perf_counter() - call_started})
             if attempt + 1 < RETRIES:
@@ -198,6 +200,8 @@ def load_raw():
 
 
 async def run(args):
+    import httpx
+
     _, images, protocol = prepare()
     key = os.environ.get('MOONSHOT_API_KEY', '')
     if not key:
@@ -302,7 +306,7 @@ def evaluate():
         assert r['returned_model'] == MODEL and r['inference_backend'] == 'moonshot_api'
     old_files = json.loads((DEST / 'prior_files_sha256.json').read_text())
     for path, digest in old_files.items():
-        assert sha(ROOT / path) == digest, path
+        assert sha(recorded_hash_path(path)) == digest, path
     m.update(model=MODEL, inference_backend='moonshot_api', experiment=p['experiment'], test_windows=3708,
              status_counts=dict(Counter(df.status)), parse_success_rate=float(df.status.eq('ok').mean()), failures_counted_as_incorrect=True,
              classification_report=classification_report(truth, predicted, labels=classes, output_dict=True, zero_division=0),

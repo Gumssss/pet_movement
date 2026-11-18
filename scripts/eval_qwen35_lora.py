@@ -1,4 +1,5 @@
 """Matched vLLM evaluations of Qwen3.5-4B and its merged vision/attention LoRA."""
+from pet_imu.paths import recorded_path
 import argparse
 from collections import Counter
 import importlib.metadata as md
@@ -8,7 +9,7 @@ import time
 import qwen_classify as q
 
 ROOT = q.ROOT
-DATA = ROOT / 'dataset/vlm_acl'
+DATA = ROOT / 'data/vlm_acl'
 
 
 def setup(args):
@@ -17,22 +18,22 @@ def setup(args):
     args.model = '4B' if args.variant == 'base' else '4B-lora'
     name = 'Qwen3.5-4B' if args.variant == 'base' else 'Qwen3.5-4B-lora'
     folder = 'qwen3.5_4B_acl' if args.variant == 'base' else 'qwen3.5_4B_lora_acl'
-    args.output_dir = ROOT / 'results' / folder
+    args.output_dir = ROOT / 'outputs/vlm' / ('zero_shot' if args.variant == 'base' else 'lora') / folder
     dest = args.output_dir; dest.mkdir(exist_ok=True)
     records = q.inputs(); rendered = q.read_rendered()
     assert len(rendered) == len(records) == 3708
     for r in records:
-        assert q.sha(ROOT / r['image_file']) == rendered[r['window_id']]['image_sha256']
-    classes = json.loads((ROOT / 'results/protocol.json').read_text())['classes']
+        assert q.sha(recorded_path(r['image_file'])) == rendered[r['window_id']]['image_sha256']
+    classes = json.loads((ROOT / 'outputs/protocol.json').read_text())['classes']
     base_revision = json.loads((ROOT / 'models/model_manifest.json').read_text())['Qwen3.5-4B']['revision']
     config = {'model': name, 'experiment': 'imu_2s_acl_shared_axis_en_' + ('supervised_lora' if args.variant == 'lora' else 'zero_shot_base4b'),
               'classes': classes, 'base_model_revision': base_revision, 'inference_backend': 'vllm',
               'backend_version': md.version('vllm'), 'prompt_language': 'en', 'evaluation_split': 'test', 'expected_windows': 3708,
-              'data_dir': 'dataset/vlm_acl', 'input_image_size': [512, 409],
+              'data_dir': 'data/vlm_acl', 'input_image_size': [512, 409],
               'prompt_sha256': q.sha(DATA / 'prompt.txt'), 'images_manifest_sha256': q.sha(DATA / 'images.csv'),
               'render_protocol_sha256': q.sha(DATA / 'render_protocol.json'),
-              'windows_sha256': q.sha(ROOT / 'dataset/splits/windows.csv'),
-              'split_sha256': q.sha(ROOT / 'dataset/splits/dog_splits.json'),
+              'windows_sha256': q.sha(ROOT / 'data/splits/windows.csv'),
+              'split_sha256': q.sha(ROOT / 'data/splits/dog_splits.json'),
               'generation': {'temperature': 0, 'enable_thinking': False, 'max_new_tokens': 32, 'seed': 20261101,
                              'dtype': 'bfloat16', 'guided_decoding': False, 'speculative_decoding': False},
               'engine': {'tensor_parallel_size': 1, 'max_model_len': 4096, 'max_num_seqs': 32, 'max_num_batched_tokens': 8192,
@@ -41,7 +42,7 @@ def setup(args):
               'comparison_note': 'Same Qwen3.5-4B base revision, ACL image pixels, English prompt, tokenizer/processor, vLLM settings and 3708 test windows; only the selected merged LoRA differs.'}
     if args.variant == 'lora':
         training = json.loads((dest / 'training_complete.json').read_text())
-        config.update(selected_adapter_sha256=q.sha(ROOT / 'models/Qwen3.5-4B-lora/adapter/adapter_model.safetensors'),
+        config.update(selected_adapter_sha256=q.sha(ROOT / '.cache/vlm/lora/qwen3.5_4B_lora_acl/checkpoints/adapter/adapter_model.safetensors'),
                       selected_epoch=training['best_epoch'], checkpoint_selection='minimum validation answer-token NLL',
                       training_protocol_sha256=q.sha(dest / 'training_protocol.json'), export_validation_sha256=q.sha(dest / 'export_validation.json'))
     path = dest / 'protocol.json'
@@ -76,7 +77,7 @@ def run(args):
         for start in range(0, len(pending), args.batch_size):
             group = pending[start:start + args.batch_size]
             texts, counts, lengths, truncated, pre, gen, wall = q.generate(model, processor,
-                          [ROOT / r['image_file'] for r in group], prompt, args.device, (512, 409))
+                          [recorded_path(r['image_file']) for r in group], prompt, args.device, (512, 409))
             timings.append({'n': len(group), 'preprocess_seconds': pre, 'generation_seconds': gen, 'image_to_response_seconds': wall})
             for i, item in enumerate(group):
                 prediction, status = q.parse(texts[i], classes, truncated[i])

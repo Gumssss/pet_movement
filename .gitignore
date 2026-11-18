@@ -1,5 +1,11 @@
-# Model weights and local runtime dependencies
-/models/
+# Local workspace symlinks
+/data
+/models
+/outputs
+/demo
+
+
+# Local runtime dependencies
 /.venv/
 /.cache/
 /.codex/
@@ -11,6 +17,7 @@
 *.py[cod]
 .pytest_cache/
 .mypy_cache/
+.ruff_cache/
 .ipynb_checkpoints/
 .DS_Store
 Thumbs.db
@@ -22,19 +29,21 @@ Thumbs.db
 !.env.example
 .netrc
 .git-credentials
+/configs/openai.json
+/outputs/vlm/api/openai/**/batch_inputs/
 *.pem
 *.key
 *.p12
 *.pfx
 
 # Raw dataset and reproducible numerical caches
-/dataset/犬只运动传感器数据集/
-/dataset/cache/
+/data/犬只运动传感器数据集/
+/data/cache/
 *.npz
 *.npy
 
 # Bulk generated images; retain small preview files and image manifests
-/dataset/**/images/
+/data/**/images/
 
 # Local archives and exported bundles
 *.zip

@@ -10,7 +10,7 @@ import pandas as pd
 from PIL import Image
 
 ROOT=Path(__file__).resolve().parents[1]
-BASE=ROOT/'dataset/vlm_acl'
+BASE=ROOT/'data/vlm_acl'
 COLORS=['#0072B2','#D55E00','#009E73','#CC79A7','#E69F00','#332288']
 AUTHOR_COMMIT='c45ed732dc57d7823a311cab6e93d292b5ed32a1'
 
@@ -20,9 +20,9 @@ def save_fixed(path,value):
     else:path.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n')
 
 def setup():
-    w=pd.read_csv(ROOT/'dataset/splits/windows.csv')
-    z=np.load(ROOT/'dataset/cache/pet_windows.npz');x=z['X']
-    p=json.loads((ROOT/'results/protocol.json').read_text())
+    w=pd.read_csv(ROOT/'data/splits/windows.csv')
+    z=np.load(ROOT/'data/cache/pet_windows.npz');x=z['X']
+    p=json.loads((ROOT/'outputs/protocol.json').read_text())
     assert len(w)==len(x)==24896
     assert np.array_equal(z['dogs'],w.dog_id) and np.array_equal(z['tests'],w.session)
     assert np.allclose(z['starts'],w.start_sec) and np.array_equal(np.array(p['classes'])[z['y']],w.label)
@@ -42,8 +42,8 @@ def setup():
         'author_code_commit':AUTHOR_COMMIT,
         'author_code_url':f'https://github.com/diamond264/ByMyEyes/blob/{AUTHOR_COMMIT}/core/visualizer.py',
         'method_scope':'single shared-axis normalized waveform adaptation; no automatic visualization search or few-shot examples',
-        'window_manifest_sha256':sha(ROOT/'dataset/splits/windows.csv'),
-        'split_sha256':sha(ROOT/'dataset/splits/dog_splits.json'),
+        'window_manifest_sha256':sha(ROOT/'data/splits/windows.csv'),
+        'split_sha256':sha(ROOT/'data/splits/dog_splits.json'),
         'normalization_file':'normalization.json','normalization_sha256':sha(BASE/'normalization.json'),
         'research_file':'method.md','processor_check_file':'processor_check_qwen38.json',
         'channels':p['channels'],'colors':COLORS,'sampling_hz':100,'samples_per_window':200,

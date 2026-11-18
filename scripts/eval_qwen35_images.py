@@ -1,4 +1,5 @@
 """Frozen Qwen3.5-4B/vLLM evaluation of ordinary plots or learned IMU2IMG images."""
+from pet_imu.paths import recorded_path
 import argparse
 from collections import Counter
 import importlib.metadata as md
@@ -10,8 +11,8 @@ import qwen_classify as q
 
 ROOT = q.ROOT
 METHODS = {
-    'ordinary': ('dataset/vlm', 'results/qwen3.5_4B_sixplot_en'),
-    'imu2img': ('dataset/vlm_imu2img', 'results/qwen3.5_4B_imu2img_en'),
+    'ordinary': ('data/vlm', 'outputs/vlm/zero_shot/qwen3.5_4B_sixplot_en'),
+    'imu2img': ('data/vlm_imu2img', 'outputs/vlm/imu2img/qwen3.5_4B_imu2img_en'),
 }
 
 
@@ -43,15 +44,15 @@ def setup(args):
     dest = args.output_dir; dest.mkdir(exist_ok=True)
     q.DATA = data
     render = json.loads((data / 'render_protocol.json').read_text())
-    assert render['window_manifest_sha256'] == q.sha(ROOT / 'dataset/splits/windows.csv')
-    assert render['split_sha256'] == q.sha(ROOT / 'dataset/splits/dog_splits.json')
+    assert render['window_manifest_sha256'] == q.sha(ROOT / 'data/splits/windows.csv')
+    assert render['split_sha256'] == q.sha(ROOT / 'data/splits/dog_splits.json')
     expected_size = (render['width'], render['height'])
     prompt = (data / 'prompt.txt').read_text(); assert prompt.isascii()
     records = q.inputs(); images = q.read_rendered()
     assert len(records) == len(images) == 3708
     for r in records:
-        assert q.sha(ROOT / r['image_file']) == images[r['window_id']]['image_sha256']
-    classes = json.loads((ROOT / 'results/protocol.json').read_text())['classes']
+        assert q.sha(recorded_path(r['image_file'])) == images[r['window_id']]['image_sha256']
+    classes = json.loads((ROOT / 'outputs/protocol.json').read_text())['classes']
     model = json.loads((ROOT / 'models/model_manifest.json').read_text())['Qwen3.5-4B']
     frozen = {'model': 'Qwen3.5-4B', 'model_revision': model['revision'], 'model_repo_id': model['repo_id'],
         'experiment': 'qwen35_4b_' + args.method + '_vllm_en', 'image_method': args.method,
@@ -61,8 +62,8 @@ def setup(args):
         'data_dir': str(data.relative_to(ROOT)), 'input_image_size': list(expected_size),
         'prompt_sha256': q.sha(data / 'prompt.txt'), 'render_protocol_sha256': q.sha(data / 'render_protocol.json'),
         'images_manifest_sha256': q.sha(data / 'images.csv'),
-        'windows_sha256': q.sha(ROOT / 'dataset/splits/windows.csv'),
-        'split_sha256': q.sha(ROOT / 'dataset/splits/dog_splits.json'),
+        'windows_sha256': q.sha(ROOT / 'data/splits/windows.csv'),
+        'split_sha256': q.sha(ROOT / 'data/splits/dog_splits.json'),
         'generation': {'temperature': 0, 'enable_thinking': False, 'max_new_tokens': 32, 'seed': 20261101,
                        'dtype': 'bfloat16', 'guided_decoding': False, 'speculative_decoding': False},
         'engine': {'tensor_parallel_size': 1, 'max_model_len': 4096, 'max_num_seqs': 32,
@@ -122,7 +123,7 @@ def run(args):
         for start in range(0, len(pending), args.batch_size):
             current = pending[start:start + args.batch_size]
             texts, counts, lengths, trunc, pre, gen, wall = q.generate(model, processor,
-                [ROOT / r['image_file'] for r in current], prompt, args.device, size)
+                [recorded_path(r['image_file']) for r in current], prompt, args.device, size)
             timings.append({'n': len(current), 'preprocess_seconds': pre, 'generation_seconds': gen, 'image_to_response_seconds': wall})
             for i, item in enumerate(current):
                 prediction, status = q.parse(texts[i], classes, trunc[i])

@@ -29,11 +29,10 @@ def main():
     if not args.device.startswith('cuda:') or not args.device.split(':')[1].isdigit():
         parser.error('Use a CUDA device such as cuda:0')
     os.environ['CUDA_VISIBLE_DEVICES']=args.device.split(':')[1]
-    from qwen_classify import load_model, process_gpu_memory, MODEL_SPECS
+    from qwen_classify import load_model, process_gpu_memory, MODEL_SPECS, model_path as qwen_model_path
     MODEL_SPECS['4B-lora'] = {'name': 'Qwen3.5-4B-lora'}
     from vllm import SamplingParams
-    names = {'4B':'Qwen3.5-4B', '27B':'Qwen3.5-27B', '3.8-27B':'Qwen3.8-27B', '4B-lora':'Qwen3.5-4B-lora'}
-    model_path = ROOT / 'models' / names[args.model]
+    model_path = qwen_model_path(args.model)
     if not (model_path / 'model.safetensors.index.json').is_file():
         parser.error(f'Model download is incomplete: {model_path}')
     started = time.monotonic()
